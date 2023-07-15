@@ -6,31 +6,38 @@
 //
 
 import SwiftUI
+import Observation
 
 struct OnboardingScreenView: View {
-    @State private var tabIndex: Int = 0
+    @Bindable private var viewModel = OnboardingScreenViewModel()
     
     var body: some View {
-        NavigationView{
+        NavigationView {
             ZStack(alignment: .bottom) {
                 Color.softBlue///Trick way to prevent top space - remove this line to see why this was added
                 ZStack(alignment: .bottom) {
-                    TabView(selection: $tabIndex) {
-                        ForEach(0..<onboardingModels.count, id: \.self) { index in
-                            OnboardingView(model: onboardingModels[index]).tag(index)
+                    TabView(selection: $viewModel.tabIndex) {
+                        ForEach(0..<viewModel.onboardingModels.count, id: \.self) { index in
+                            OnboardingView(model: viewModel.onboardingModels[index]).tag(index)
                         }
                     }.tabViewStyle(.page(indexDisplayMode: .never))
                     
                     VStack {
-                        if onboardingModels.count - 1 == tabIndex {
-                            Text("Giriş Yap").fontWeight(.semibold).frame(maxWidth: .infinity).frame(height: 50).background(.appPrimary).cornerRadius(10).padding(.horizontal, 20).foregroundColor(.softBlue).font(.title3).padding(10)
+                        if viewModel.onboardingModels.count - 1 == viewModel.tabIndex {
+                            NavigationLink {
+                                LoginView().navigationBarBackButtonHidden(true)
+                            } label: {
+                                Text("Giriş Yap").fontWeight(.semibold).frame(maxWidth: .infinity).frame(height: 50).background(.appPrimary).cornerRadius(10).padding(.horizontal, 20).foregroundColor(.softBlue).font(.title3).padding(10)
+                            }
+
                         }
                         
-                        CustomIndicator(totalIndex: 3, selectedIndex: tabIndex).animation(.spring(), value: UUID())
+                        CustomIndicator(totalIndex: 3, selectedIndex: viewModel.tabIndex).animation(.spring(), value: UUID())
                     }.padding(.bottom, 100).animation(.easeInOut, value: UUID())
-                } 
+                }
             }.ignoresSafeArea()
         }.ignoresSafeArea()
+        .preferredColorScheme(.dark)
     }
 }
 
@@ -39,10 +46,3 @@ struct OnboardingScreenView_Previews: PreviewProvider {
         OnboardingScreenView()
     }
 }
-
-
-let onboardingModels: [OnboardingViewItemModel] = [
-    (header: "Merhaba!", title: "Jo-In'e Hoş Geldin", subtitle: "Jo-In ile dilediğin gibi duygu ve düşüncelerini paylaşabilir, sevdiklerinle iletişimde kalabilirsin."),
-   (header: "Başlayalım!", title: "Neler yapabilirsin?", subtitle: "Sevdiklerinle takipleşebilir, mesajlaşabilir ve her anın duygu ve düşüncesini onlarla paylaşabilirsin."),
-    (header: "Hazırsın!", title: "Şimdi Kullanmaya Başla", subtitle: "Hemen şimdi üye olarak başlayabilirsin. Zaten bir hesabın varsa giriş yaparak devam edebilirsin.")
-]

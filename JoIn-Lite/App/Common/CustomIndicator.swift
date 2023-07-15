@@ -6,11 +6,13 @@
 //
 
 import SwiftUI
+import CoreUtils
 
 struct CustomIndicator: View {
     let totalIndex: Int
     let selectedIndex: Int
-    var width: CGFloat = UIScreen.main.bounds.width - 64
+    var width: CGFloat = Screen.size.width - 64
+    
     @Namespace private var animation
     
     var body: some View {
