@@ -14,7 +14,7 @@ struct JoIn_LiteApp: App {
 
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            OnboardingScreenView()
         }
     }
 }
