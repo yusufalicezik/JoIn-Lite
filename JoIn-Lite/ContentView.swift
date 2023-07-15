@@ -6,6 +6,11 @@
 //
 
 import SwiftUI
+import CoreUtils
+import Localization
+import Kingfisher
+import YACNetwork
+import IQKeyboardManagerSwift
 
 struct ContentView: View {
     var body: some View {
@@ -13,12 +18,9 @@ struct ContentView: View {
             Image(systemName: "globe")
                 .imageScale(.large)
                 .foregroundStyle(.tint)
-            Text("Hello, world!")
+            Text("\(Localization.alertDefaultTitle.value)")
         }
         .padding()
     }
 }
 
-#Preview {
-    ContentView()
-}

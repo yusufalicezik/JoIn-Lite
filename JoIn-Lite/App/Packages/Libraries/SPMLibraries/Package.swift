@@ -3,6 +3,8 @@
 
 import PackageDescription
 
+private let localPackagesPath = ".."
+
 let package = Package(
     name: "SPMLibraries",
     platforms: [
@@ -15,6 +17,7 @@ let package = Package(
             targets: ["SPMLibraries"]),
     ],
     dependencies: [
+        // Remote Packages
         .package(
             url: "https://github.com/yusufalicezik/YACNetwork",
             branch: "main"
@@ -23,13 +26,23 @@ let package = Package(
             url: "https://github.com/onevcat/Kingfisher.git",
             .upToNextMajor(from: "7.0.0")
         ),
+        
+        //Local Packages
+        .package(
+            name: "Localization",
+            path: localPackagesPath + "/Localization"
+        ),
+        .package(
+            name: "CoreUtils",
+            path: localPackagesPath + "/CoreUtils"
+        ),
     ],
     targets: [
         // Targets are the basic building blocks of a package, defining a module or a test suite.
         // Targets can depend on other targets in this package and products from dependencies.
         .target(
             name: "SPMLibraries",
-            dependencies: ["YACNetwork", "Kingfisher"]
+            dependencies: ["YACNetwork", "Kingfisher", "Localization", "CoreUtils"]
         ),
         .testTarget(
             name: "SPMLibrariesTests",

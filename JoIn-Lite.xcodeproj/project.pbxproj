@@ -16,12 +16,15 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4810E2222A63561B00C9E1A0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		48A262E82A6334DE00C35D40 /* JoIn-Lite.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "JoIn-Lite.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		48A262EB2A6334DE00C35D40 /* JoIn_LiteApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JoIn_LiteApp.swift; sourceTree = "<group>"; };
 		48A262ED2A6334DE00C35D40 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		48A262EF2A6334DF00C35D40 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		48A262F22A6334DF00C35D40 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		48A263002A6338FF00C35D40 /* SPMLibraries */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = SPMLibraries; path = Libraries/SPMLibraries; sourceTree = "<group>"; };
+		48A263092A633B2100C35D40 /* Localization */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = Localization; sourceTree = "<group>"; };
+		48A2630B2A633C1400C35D40 /* CoreUtils */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = CoreUtils; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,11 +60,9 @@
 		48A262EA2A6334DE00C35D40 /* JoIn-Lite */ = {
 			isa = PBXGroup;
 			children = (
-				48A262FA2A63351F00C35D40 /* Packages */,
-				48A262F92A63350B00C35D40 /* Modules */,
-				48A262EB2A6334DE00C35D40 /* JoIn_LiteApp.swift */,
+				4810E2222A63561B00C9E1A0 /* Info.plist */,
+				48A2630C2A633D8700C35D40 /* App */,
 				48A262ED2A6334DE00C35D40 /* ContentView.swift */,
-				48A262EF2A6334DF00C35D40 /* Assets.xcassets */,
 				48A262F12A6334DF00C35D40 /* Preview Content */,
 			);
 			path = "JoIn-Lite";
@@ -86,6 +87,7 @@
 			isa = PBXGroup;
 			children = (
 				48A263002A6338FF00C35D40 /* SPMLibraries */,
+				48A263082A633B0900C35D40 /* Local */,
 			);
 			path = Packages;
 			sourceTree = "<group>";
@@ -95,6 +97,34 @@
 			children = (
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		48A263082A633B0900C35D40 /* Local */ = {
+			isa = PBXGroup;
+			children = (
+				48A2630B2A633C1400C35D40 /* CoreUtils */,
+				48A263092A633B2100C35D40 /* Localization */,
+			);
+			path = Local;
+			sourceTree = "<group>";
+		};
+		48A2630C2A633D8700C35D40 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				48A262EB2A6334DE00C35D40 /* JoIn_LiteApp.swift */,
+				48A262F92A63350B00C35D40 /* Modules */,
+				48A262FA2A63351F00C35D40 /* Packages */,
+				48A2630D2A633D9B00C35D40 /* Resources */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		48A2630D2A633D9B00C35D40 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				48A262EF2A6334DF00C35D40 /* Assets.xcassets */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -138,11 +168,12 @@
 			};
 			buildConfigurationList = 48A262E32A6334DE00C35D40 /* Build configuration list for PBXProject "JoIn-Lite" */;
 			compatibilityVersion = "Xcode 14.0";
-			developmentRegion = en;
+			developmentRegion = tr;
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
 				Base,
+				tr,
 			);
 			mainGroup = 48A262DF2A6334DE00C35D40;
 			packageReferences = (
@@ -312,6 +343,7 @@
 				DEVELOPMENT_TEAM = 8YH2HY6PT8;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "JoIn-Lite/Info.plist";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -341,6 +373,7 @@
 				DEVELOPMENT_TEAM = 8YH2HY6PT8;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "JoIn-Lite/Info.plist";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
