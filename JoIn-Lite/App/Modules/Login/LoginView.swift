@@ -33,9 +33,21 @@ struct LoginView: View {
                             
                             Button(action: {
                                 //Login action
-                                pageState = .popup(.action(leftAction: {
-                                    print("Clicked Right..")
-                                }))
+                                pageState = .loading
+                                DispatchQueue.main.asyncAfter(deadline: .now() + 4) {
+                                    let action = PopupAction(name: "Tamam") {
+                                        pageState = .default
+                                        print("Evet clicked")
+                                    }
+                                    
+                                    let action2 = PopupAction(name: "Hayır") {
+                                        pageState = .default
+                                        print("Hayır clicked")
+                                    }
+                                    
+                                    let popupUIModel = PopupUIModel(title: "Uyarı", subtitle: "E-mail ya da şifreniz yanlış. Lütfen bilgilerinizi kontrol ederek tekrar giriş yapmayı deneyiniz. Şifrenizi hatırlamıyorsanız şifremi unuttum diyerek parolanızı sıfırlayabilirsiniz.", type: .multiple(actions: [action, action2]))
+                                    pageState = .popup(popupUIModel)
+                                }
                             }, label: {
                                 RoundedRectangle(cornerRadius: 16)
                                     .fill(.appPrimary)

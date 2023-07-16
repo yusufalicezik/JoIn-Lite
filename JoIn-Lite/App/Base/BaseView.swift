@@ -22,23 +22,9 @@ struct BaseView<Content: View>: View {
             content
             switch pageState.wrappedValue {
             case .loading:
-                Text("Loading..").frame(height: 500).background(Color.red).onAppear {
-                    DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
-                        pageState.wrappedValue = .default
-                    }
-                }
-            case .popup(let popupType):
-                switch popupType {
-                case .default:
-                    Text("Popup..")
-                case .action(let leftAction, let rightAction):
-                    Button(action: {
-                        leftAction?()
-                        pageState.wrappedValue = .default
-                    }, label: {
-                        Text("Popup..")
-                    })
-                }
+                LoadingView()
+            case .popup(let uiModel):
+                PopupView(uiModel: uiModel)
             case .default:
                 EmptyView()
             }
@@ -46,13 +32,9 @@ struct BaseView<Content: View>: View {
     }
 }
 
+
 enum PageState {
     case `default`
     case loading
-    case popup(PopupType)
-}
-
-enum PopupType {
-    case `default`
-    case action(leftAction: (() -> Void)? = nil, rightAction: (() -> Void)? = nil)
+    case popup(PopupUIModel)
 }
