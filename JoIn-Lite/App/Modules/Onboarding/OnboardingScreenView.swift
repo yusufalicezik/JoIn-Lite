@@ -29,10 +29,9 @@ struct OnboardingScreenView: View {
                             } label: {
                                 Text("Giriş Yap").fontWeight(.semibold).frame(maxWidth: .infinity).frame(height: 50).background(.appPrimary).cornerRadius(10).padding(.horizontal, 20).foregroundColor(.softBlue).font(.title3).padding(10)
                             }
-
                         }
                         
-                        CustomIndicator(totalIndex: viewModel.onboardingModels.count, selectedIndex: viewModel.tabIndex).animation(.spring(), value: UUID())
+                        CustomIndicator(totalIndex: viewModel.onboardingModels.count, selectedIndex: viewModel.tabIndex).animation(.spring(), value: UUID()).padding(.horizontal)
                     }.padding(.bottom, 100).animation(.easeInOut, value: UUID())
                 }
             }.ignoresSafeArea()

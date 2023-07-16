@@ -18,6 +18,7 @@
 		48A262F32A6334DF00C35D40 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 48A262F22A6334DF00C35D40 /* Preview Assets.xcassets */; };
 		48A263022A6339DF00C35D40 /* SPMLibraries in Frameworks */ = {isa = PBXBuildFile; productRef = 48A263012A6339DF00C35D40 /* SPMLibraries */; };
 		48A263072A633AD300C35D40 /* IQKeyboardManagerSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 48A263062A633AD300C35D40 /* IQKeyboardManagerSwift */; };
+		48F4BD2B2A64362C00644316 /* BaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48F4BD2A2A64362C00644316 /* BaseView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,6 +36,7 @@
 		48A263002A6338FF00C35D40 /* SPMLibraries */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = SPMLibraries; path = Libraries/SPMLibraries; sourceTree = "<group>"; };
 		48A263092A633B2100C35D40 /* Localization */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = Localization; sourceTree = "<group>"; };
 		48A2630B2A633C1400C35D40 /* CoreUtils */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = CoreUtils; sourceTree = "<group>"; };
+		48F4BD2A2A64362C00644316 /* BaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -150,6 +152,7 @@
 			isa = PBXGroup;
 			children = (
 				48A262EB2A6334DE00C35D40 /* JoIn_LiteApp.swift */,
+				48F4BD2C2A643E4400644316 /* Base */,
 				48A262F92A63350B00C35D40 /* Modules */,
 				48A262FA2A63351F00C35D40 /* Packages */,
 				4810E22A2A6362DE00C9E1A0 /* Common */,
@@ -164,6 +167,14 @@
 				48A262EF2A6334DF00C35D40 /* Assets.xcassets */,
 			);
 			path = Resources;
+			sourceTree = "<group>";
+		};
+		48F4BD2C2A643E4400644316 /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				48F4BD2A2A64362C00644316 /* BaseView.swift */,
+			);
+			path = Base;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -251,6 +262,7 @@
 				48A262EC2A6334DE00C35D40 /* JoIn_LiteApp.swift in Sources */,
 				4810E22D2A63632000C9E1A0 /* LoginView.swift in Sources */,
 				4810E2292A63572E00C9E1A0 /* CustomIndicator.swift in Sources */,
+				48F4BD2B2A64362C00644316 /* BaseView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

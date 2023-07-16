@@ -11,7 +11,6 @@ import CoreUtils
 struct CustomIndicator: View {
     let totalIndex: Int
     let selectedIndex: Int
-    var width: CGFloat = Screen.size.width - 64
     
     @Namespace private var animation
     
@@ -19,13 +18,14 @@ struct CustomIndicator: View {
         HStack {
             ForEach(0..<totalIndex, id: \.self) { index in
                 if selectedIndex == index {
-                    Rectangle().fill(.appPrimary).frame(height: 5).clipShape(RoundedRectangle(cornerRadius: 3)).matchedGeometryEffect(id: "IndicatorAnimationId", in: animation)
+                    Rectangle().fill(.gray.opacity(0.3)).frame(height: 5).clipShape(RoundedRectangle(cornerRadius: 3)).overlay {
+                        Rectangle().fill(.appPrimary).frame(height: 5).clipShape(RoundedRectangle(cornerRadius: 3)).matchedGeometryEffect(id: "IndicatorAnimationId", in: animation)
+                    }
                 } else {
                     Rectangle().fill(.gray.opacity(0.3)).frame(height: 5).clipShape(RoundedRectangle(cornerRadius: 3))
                 }
-                
             }
-        }.frame(width: width)
+        }.animation(.spring(), value: UUID())
     }
 }
 
