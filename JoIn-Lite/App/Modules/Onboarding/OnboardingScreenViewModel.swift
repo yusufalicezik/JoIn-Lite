@@ -17,4 +17,9 @@ import Observation
         (header: "Başlayalım!", title: "Neler yapabilirsin?", subtitle: "Sevdiklerinle takipleşebilir, mesajlaşabilir ve her anın duygu ve düşüncesini onlarla paylaşabilirsin."),
         (header: "Hazırsın!", title: "Şimdi Kullanmaya Başla", subtitle: "Hemen şimdi üye olarak başlayabilirsin. Zaten bir hesabın varsa giriş yaparak devam edebilirsin.")
     ]
+    
+    @ObservationIgnored
+    func shouldShowLoginButton() -> Bool {
+        onboardingModels.count - 1 == tabIndex
+    }
 }

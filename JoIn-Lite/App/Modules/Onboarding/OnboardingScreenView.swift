@@ -23,7 +23,7 @@ struct OnboardingScreenView: View {
                     }.tabViewStyle(.page(indexDisplayMode: .never))
                     
                     VStack {
-                        if viewModel.onboardingModels.count - 1 == viewModel.tabIndex {
+                        if viewModel.shouldShowLoginButton() {
                             NavigationLink {
                                 LoginView().navigationBarBackButtonHidden(true)
                             } label: {
@@ -32,7 +32,7 @@ struct OnboardingScreenView: View {
 
                         }
                         
-                        CustomIndicator(totalIndex: 3, selectedIndex: viewModel.tabIndex).animation(.spring(), value: UUID())
+                        CustomIndicator(totalIndex: viewModel.onboardingModels.count, selectedIndex: viewModel.tabIndex).animation(.spring(), value: UUID())
                     }.padding(.bottom, 100).animation(.easeInOut, value: UUID())
                 }
             }.ignoresSafeArea()
