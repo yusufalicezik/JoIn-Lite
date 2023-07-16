@@ -11,31 +11,51 @@ import CoreUtils
 struct AuthTextField: View {
     
     let uiModel: AuthTextFieldUIModel
-    
     @State var shouldShowBorder = false
+    @State var shouldShowPassword = false
     @FocusState var isFocused
     
     var body: some View {
         ZStack {
-            RoundedRectangle(cornerRadius: 16).fill(.enterFieldBG).stroke(shouldShowBorder ? .appPrimary : .clear, lineWidth: 0.5).frame(height: 50).overlay {
-                HStack {
-                    if uiModel.isSecureField {
-                        SecureField(uiModel.placeholder, text: uiModel.$textValue, onCommit: {
-                            shouldShowBorder = false
-                        })
-                        .focused($isFocused)
-                        .foregroundStyle(.black.opacity(0.7))
-                        .font(.footnote)
-                        .frame(height: 50)
-                    } else {
-                        TextField(uiModel.placeholder, text: uiModel.$textValue, onCommit: {
-                            shouldShowBorder = false
-                        })
-                        .focused($isFocused)
-                        .foregroundStyle(.black.opacity(0.7))
-                        .font(.footnote)
-                        .frame(height: 50)
+            RoundedRectangle(cornerRadius: 16).fill(.enterFieldBG).stroke(shouldShowBorder ? .appPrimary : .clear, lineWidth: 0.7).frame(height: 55).overlay {
+                ZStack(alignment: .leading) {
+                    if uiModel.textValue.isEmpty {
+                        Text(uiModel.placeholder).foregroundStyle(.gray.opacity(0.55))
+                            .font(.footnote)
                     }
+                    HStack {
+                        if uiModel.isSecureField {
+                            if !shouldShowPassword {
+                                SecureField(uiModel.placeholder, text: uiModel.$textValue, onCommit: {
+                                    shouldShowBorder = false
+                                })
+                                .modifier(AuthTextFieldModifier(isFocused: $isFocused))
+                            } else {
+                                TextField(uiModel.placeholder, text: uiModel.$textValue, onCommit: {
+                                    shouldShowBorder = false
+                                })
+                                .modifier(AuthTextFieldModifier(isFocused: $isFocused))
+                            }
+                            
+                            Button(action: {
+                                shouldShowPassword.toggle()
+                            }, label: {
+                                Image(systemName: "eye").foregroundColor(.gray.opacity(0.4))
+                            })
+                        } else {
+                            TextField(uiModel.placeholder, text: uiModel.$textValue, onCommit: {
+                                shouldShowBorder = false
+                            })
+                            .modifier(AuthTextFieldModifier(isFocused: $isFocused))
+                            
+                            Button(action: {
+                                uiModel.textValue.removeAll()
+                            }, label: {
+                                Image(systemName: "xmark.circle").foregroundColor(.gray.opacity(0.4))
+                            })
+                        }
+                    }
+                    
                 }.onTapGesture {
                     UIApplication.shared.sendAction(#selector(UIResponder.resignFirstResponder), to: nil, from: nil, for: nil)
                     shouldShowBorder = true
@@ -58,4 +78,16 @@ struct AuthTextFieldUIModel {
     let placeholder: String
     let isSecureField: Bool
     @Binding var textValue: String
+}
+
+struct AuthTextFieldModifier: ViewModifier {
+    var isFocused: FocusState<Bool>.Binding
+    
+    func body(content: Content) -> some View {
+        content
+            .focused(isFocused)
+            .foregroundStyle(.black.opacity(0.7))
+            .font(.footnote)
+            .frame(height: 55)
+    }
 }
