@@ -12,7 +12,7 @@ struct LoginView: View {
     @State var password: String = .empty
     
     @State private var pageState: PageState = .default
-    @EnvironmentObject private var navigationState: NavigationState
+    @Environment(NavigationState.self) private var navigationState
 
     var body: some View {
         BaseView(pageState: $pageState) {

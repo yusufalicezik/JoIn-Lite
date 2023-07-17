@@ -10,8 +10,8 @@ import Observation
 
 struct OnboardingScreenView: View {
     @Bindable private var viewModel = OnboardingScreenViewModel()
-    @EnvironmentObject private var navigationState: NavigationState
-
+    @Environment(NavigationState.self) private var navigationState
+    
     var body: some View {
         ZStack(alignment: .bottom) {
             Color.softBlue///Trick way to prevent top space - remove this line to see why this was added

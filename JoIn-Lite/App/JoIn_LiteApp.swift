@@ -7,11 +7,12 @@
 
 import SwiftUI
 import IQKeyboardManagerSwift
+import Observation
 
 @main
 struct JoIn_LiteApp: App {
     @UIApplicationDelegateAdaptor(AppDelegate.self) var appDelegate
-    @StateObject private var navigationState = NavigationState()
+    @Bindable private var navigationState = NavigationState()
 
     var body: some Scene {
         WindowGroup {
@@ -24,7 +25,7 @@ struct JoIn_LiteApp: App {
                         WelcomeRouter(routes: welcomeRoutes).configure()
                     }
                 }
-            }.environmentObject(navigationState)
+            }.environment(navigationState)
         }
     }
 }
@@ -47,6 +48,6 @@ extension UINavigationController: UIGestureRecognizerDelegate {
     }
 
     public func gestureRecognizerShouldBegin(_ gestureRecognizer: UIGestureRecognizer) -> Bool {
-        return viewControllers.count > 1
+        return viewControllers.count > 2
     }
 }

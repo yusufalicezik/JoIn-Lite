@@ -19,6 +19,6 @@ enum Routes: Hashable {
     }
 }
 
-final class NavigationState: ObservableObject {
-    @Published var routes: [Routes] = []
+@Observable final class NavigationState {
+    var routes: [Routes] = []
 }
