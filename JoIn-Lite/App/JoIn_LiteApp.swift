@@ -11,10 +11,20 @@ import IQKeyboardManagerSwift
 @main
 struct JoIn_LiteApp: App {
     @UIApplicationDelegateAdaptor(AppDelegate.self) var appDelegate
+    @StateObject private var navigationState = NavigationState()
 
     var body: some Scene {
         WindowGroup {
-            OnboardingScreenView()
+            NavigationStack(path: $navigationState.routes) {
+                OnboardingScreenView().navigationDestination(for: Routes.self) { route in
+                    switch route {
+                    case .home:
+                        Text("TODO - Home")
+                    case .welcome(let welcomeRoutes):
+                        WelcomeRouter(routes: welcomeRoutes).configure()
+                    }
+                }
+            }.environmentObject(navigationState)
         }
     }
 }
@@ -27,5 +37,16 @@ class AppDelegate: NSObject, UIApplicationDelegate {
         IQKeyboardManager.shared.shouldResignOnTouchOutside = true
         IQKeyboardManager.shared.previousNextDisplayMode = .alwaysHide
         return true
+    }
+}
+
+extension UINavigationController: UIGestureRecognizerDelegate {
+    override open func viewDidLoad() {
+        super.viewDidLoad()
+        interactivePopGestureRecognizer?.delegate = self
+    }
+
+    public func gestureRecognizerShouldBegin(_ gestureRecognizer: UIGestureRecognizer) -> Bool {
+        return viewControllers.count > 1
     }
 }

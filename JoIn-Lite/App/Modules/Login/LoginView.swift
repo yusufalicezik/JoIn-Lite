@@ -12,6 +12,7 @@ struct LoginView: View {
     @State var password: String = .empty
     
     @State private var pageState: PageState = .default
+    @EnvironmentObject private var navigationState: NavigationState
 
     var body: some View {
         BaseView(pageState: $pageState) {
@@ -39,7 +40,7 @@ struct LoginView: View {
                                 DispatchQueue.main.asyncAfter(deadline: .now() + 4) {
                                     let action = PopupAction(name: "Tamam") {
                                         pageState = .default
-                                        print("Evet clicked")
+                                        navigationState.routes.append(.home)
                                     }
                                     
                                     let action2 = PopupAction(name: "Hayır") {
@@ -86,8 +87,14 @@ struct LoginView: View {
                                 }
                             }.padding(.vertical, 30)
                             
-                            Text("Henüz bir hesabın yok mu? ").foregroundStyle(.gray).font(.caption) + Text("Kayıt Ol").foregroundStyle(.appPrimary).font(.caption).bold()
-                            
+                            HStack(spacing: .zero) {
+                                Text("Henüz bir hesabın yok mu? ").foregroundStyle(.gray).font(.caption)
+                                Button(action: {
+                                    navigationState.routes.append(.welcome(.registerStep1))
+                                }, label: {
+                                    Text("Kayıt Ol").foregroundStyle(.appPrimary).font(.caption).bold()
+                                })
+                            }
                         }.padding(.top, 120)
                     }.padding(.horizontal, 24)
                 }

@@ -10,33 +10,31 @@ import Observation
 
 struct OnboardingScreenView: View {
     @Bindable private var viewModel = OnboardingScreenViewModel()
-    
+    @EnvironmentObject private var navigationState: NavigationState
+
     var body: some View {
-        NavigationView {
+        ZStack(alignment: .bottom) {
+            Color.softBlue///Trick way to prevent top space - remove this line to see why this was added
             ZStack(alignment: .bottom) {
-                Color.softBlue///Trick way to prevent top space - remove this line to see why this was added
-                ZStack(alignment: .bottom) {
-                    TabView(selection: $viewModel.tabIndex) {
-                        ForEach(0..<viewModel.onboardingModels.count, id: \.self) { index in
-                            OnboardingView(model: viewModel.onboardingModels[index]).tag(index)
+                TabView(selection: $viewModel.tabIndex) {
+                    ForEach(0..<viewModel.onboardingModels.count, id: \.self) { index in
+                        OnboardingView(model: viewModel.onboardingModels[index]).tag(index)
+                    }
+                }.tabViewStyle(.page(indexDisplayMode: .never))
+                
+                VStack {
+                    if viewModel.shouldShowLoginButton() {
+                        Button {
+                            navigationState.routes.append(.welcome(.login))
+                        } label: {
+                            Text("Giriş Yap").fontWeight(.semibold).frame(maxWidth: .infinity).frame(height: 50).background(.appPrimary).cornerRadius(10).padding(.horizontal, 20).foregroundColor(.softBlue).font(.title3).padding(10)
                         }
-                    }.tabViewStyle(.page(indexDisplayMode: .never))
+                    }
                     
-                    VStack {
-                        if viewModel.shouldShowLoginButton() {
-                            NavigationLink {
-                                LoginView().navigationBarBackButtonHidden(true)
-                            } label: {
-                                Text("Giriş Yap").fontWeight(.semibold).frame(maxWidth: .infinity).frame(height: 50).background(.appPrimary).cornerRadius(10).padding(.horizontal, 20).foregroundColor(.softBlue).font(.title3).padding(10)
-                            }
-                        }
-                        
-                        CustomIndicator(totalIndex: viewModel.onboardingModels.count, selectedIndex: viewModel.tabIndex).animation(.spring(), value: UUID()).padding(.horizontal)
-                    }.padding(.bottom, 100).animation(.easeInOut, value: UUID())
-                }
-            }.ignoresSafeArea().isolatedColorScheme(.dark)
-            
-        }.ignoresSafeArea()
+                    CustomIndicator(totalIndex: viewModel.onboardingModels.count, selectedIndex: viewModel.tabIndex).animation(.spring(), value: UUID()).padding(.horizontal)
+                }.padding(.bottom, 100).animation(.easeInOut, value: UUID())
+            }
+        }.ignoresSafeArea().isolatedColorScheme(.dark)
     }
 }
 

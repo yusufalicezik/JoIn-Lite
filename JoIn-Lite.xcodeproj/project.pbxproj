@@ -19,6 +19,9 @@
 		48A263022A6339DF00C35D40 /* SPMLibraries in Frameworks */ = {isa = PBXBuildFile; productRef = 48A263012A6339DF00C35D40 /* SPMLibraries */; };
 		48A263072A633AD300C35D40 /* IQKeyboardManagerSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 48A263062A633AD300C35D40 /* IQKeyboardManagerSwift */; };
 		48BB3AF52A64BD2100F6E0A6 /* StatusBarManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48BB3AF42A64BD2100F6E0A6 /* StatusBarManager.swift */; };
+		48BB3AF82A64BF7800F6E0A6 /* RegisterStep1View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48BB3AF72A64BF7800F6E0A6 /* RegisterStep1View.swift */; };
+		48BB3AFA2A64BFCE00F6E0A6 /* Routes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48BB3AF92A64BFCE00F6E0A6 /* Routes.swift */; };
+		48BB3AFD2A64C19C00F6E0A6 /* WelcomeRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48BB3AFC2A64C19C00F6E0A6 /* WelcomeRouter.swift */; };
 		48F4BD2B2A64362C00644316 /* BaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48F4BD2A2A64362C00644316 /* BaseView.swift */; };
 		48F4BD2E2A644AD500644316 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48F4BD2D2A644AD500644316 /* LoadingView.swift */; };
 		48F4BD302A64516300644316 /* PopupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48F4BD2F2A64516300644316 /* PopupView.swift */; };
@@ -40,6 +43,9 @@
 		48A263092A633B2100C35D40 /* Localization */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = Localization; sourceTree = "<group>"; };
 		48A2630B2A633C1400C35D40 /* CoreUtils */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = CoreUtils; sourceTree = "<group>"; };
 		48BB3AF42A64BD2100F6E0A6 /* StatusBarManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusBarManager.swift; sourceTree = "<group>"; };
+		48BB3AF72A64BF7800F6E0A6 /* RegisterStep1View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterStep1View.swift; sourceTree = "<group>"; };
+		48BB3AF92A64BFCE00F6E0A6 /* Routes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Routes.swift; sourceTree = "<group>"; };
+		48BB3AFC2A64C19C00F6E0A6 /* WelcomeRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeRouter.swift; sourceTree = "<group>"; };
 		48F4BD2A2A64362C00644316 /* BaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseView.swift; sourceTree = "<group>"; };
 		48F4BD2D2A644AD500644316 /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
 		48F4BD2F2A64516300644316 /* PopupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopupView.swift; sourceTree = "<group>"; };
@@ -125,6 +131,7 @@
 		48A262F92A63350B00C35D40 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				48BB3AF62A64BF5800F6E0A6 /* Register */,
 				4810E22B2A63631400C9E1A0 /* Login */,
 				4810E2232A6356FC00C9E1A0 /* Onboarding */,
 			);
@@ -160,6 +167,7 @@
 			isa = PBXGroup;
 			children = (
 				48A262EB2A6334DE00C35D40 /* JoIn_LiteApp.swift */,
+				48BB3AFB2A64C18900F6E0A6 /* Route */,
 				48F4BD2C2A643E4400644316 /* Base */,
 				48A262F92A63350B00C35D40 /* Modules */,
 				48A262FA2A63351F00C35D40 /* Packages */,
@@ -175,6 +183,23 @@
 				48A262EF2A6334DF00C35D40 /* Assets.xcassets */,
 			);
 			path = Resources;
+			sourceTree = "<group>";
+		};
+		48BB3AF62A64BF5800F6E0A6 /* Register */ = {
+			isa = PBXGroup;
+			children = (
+				48BB3AF72A64BF7800F6E0A6 /* RegisterStep1View.swift */,
+			);
+			path = Register;
+			sourceTree = "<group>";
+		};
+		48BB3AFB2A64C18900F6E0A6 /* Route */ = {
+			isa = PBXGroup;
+			children = (
+				48BB3AF92A64BFCE00F6E0A6 /* Routes.swift */,
+				48BB3AFC2A64C19C00F6E0A6 /* WelcomeRouter.swift */,
+			);
+			path = Route;
 			sourceTree = "<group>";
 		};
 		48F4BD2C2A643E4400644316 /* Base */ = {
@@ -267,11 +292,14 @@
 				4810E2272A63572700C9E1A0 /* OnboardingView.swift in Sources */,
 				4810E22F2A63638D00C9E1A0 /* OnboardingScreenViewModel.swift in Sources */,
 				4810E2312A636E6A00C9E1A0 /* AuthTextField.swift in Sources */,
+				48BB3AF82A64BF7800F6E0A6 /* RegisterStep1View.swift in Sources */,
 				48F4BD302A64516300644316 /* PopupView.swift in Sources */,
 				4810E2252A63571D00C9E1A0 /* OnboardingScreenView.swift in Sources */,
 				48A262EC2A6334DE00C35D40 /* JoIn_LiteApp.swift in Sources */,
 				48BB3AF52A64BD2100F6E0A6 /* StatusBarManager.swift in Sources */,
+				48BB3AFA2A64BFCE00F6E0A6 /* Routes.swift in Sources */,
 				4810E22D2A63632000C9E1A0 /* LoginView.swift in Sources */,
+				48BB3AFD2A64C19C00F6E0A6 /* WelcomeRouter.swift in Sources */,
 				4810E2292A63572E00C9E1A0 /* CustomIndicator.swift in Sources */,
 				48F4BD2B2A64362C00644316 /* BaseView.swift in Sources */,
 				48F4BD2E2A644AD500644316 /* LoadingView.swift in Sources */,
