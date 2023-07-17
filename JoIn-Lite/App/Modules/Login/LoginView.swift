@@ -12,7 +12,7 @@ struct LoginView: View {
     @State var password: String = .empty
     
     @State private var pageState: PageState = .default
-    
+
     var body: some View {
         BaseView(pageState: $pageState) {
             ZStack {
@@ -23,10 +23,12 @@ struct LoginView: View {
                         Text("Eğer bir hesabın varsa giriş yaparak devam edebilirsin. Henüz bir hesabın bulunmuyorsa kayıt olarak aramıza katılabilirsin.").align(to: .left).font(.footnote).foregroundStyle(.gray.opacity(0.8)).padding(.top, 6)
                         
                         VStack(spacing: .zero) {
-                            AuthTextField(uiModel: .init(placeholder: "E-mail", isSecureField: false, textValue: $email))
-                            AuthTextField(uiModel: .init(placeholder: "Password", isSecureField: true, textValue: $password)).padding(.top)
+                            AuthTextField(uiModel: .init(placeholder: "E-posta", isSecureField: false, textValue: $email))
+                            AuthTextField(uiModel: .init(placeholder: "Şifre", isSecureField: true, textValue: $password)).padding(.top)
                             Button(action: {
-                                //TODO - forgot password
+                                pageState = .popup(.init(title: "Uyarı", subtitle: "Şifreni sıfırlamak için e-postana bir mail gönderdik", type: .default(action: .init(name: "Tamam", action: {
+                                    pageState = .default
+                                }))))
                             }, label: {
                                 Text("Şifreni mi unuttun?").align(to: .right).font(.caption2).padding(.top, 10).padding(.trailing, 6).foregroundStyle(.gray.opacity(0.7))
                             })
@@ -90,10 +92,10 @@ struct LoginView: View {
                     }.padding(.horizontal, 24)
                 }
             }
-        }
+        }.isolatedColorScheme(.light)
     }
 }
 
-//#Preview {
-//    LoginView()
-//}
+#Preview {
+    LoginView()
+}

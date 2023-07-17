@@ -34,9 +34,9 @@ struct OnboardingScreenView: View {
                         CustomIndicator(totalIndex: viewModel.onboardingModels.count, selectedIndex: viewModel.tabIndex).animation(.spring(), value: UUID()).padding(.horizontal)
                     }.padding(.bottom, 100).animation(.easeInOut, value: UUID())
                 }
-            }.ignoresSafeArea()
+            }.ignoresSafeArea().isolatedColorScheme(.dark)
+            
         }.ignoresSafeArea()
-        .preferredColorScheme(.dark)
     }
 }
 

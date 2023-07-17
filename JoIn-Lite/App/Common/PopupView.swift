@@ -55,14 +55,14 @@ struct PopupView: View {
                         }
                     }
                 }
-            }.background(Color.appSecondary).transition(.move(edge: .bottom)).clipShape(RoundedRectangle(cornerRadius: 16)).padding(.horizontal, 35).animation(.easeInOut, value: UUID())
+            }.background(Color.appSecondary).clipShape(RoundedRectangle(cornerRadius: 16)).padding(.horizontal, 35)
         }
     }
 }
 
-#Preview {
-    PopupView(uiModel: .init(title: "title", subtitle: "subtitlesubtitlesubtitlesubtitlesubtitlesubtitlesubtitlesubtitlesubtitlesubtitle", type: .multiple(actions: [PopupAction(name: "name1", action: nil), PopupAction(name: "name2", action: nil)])))
-}
+//#Preview {
+//    PopupView(uiModel: .init(title: "title", subtitle: "subtitlesubtitlesubtitlesubtitlesubtitlesubtitlesubtitlesubtitlesubtitlesubtitle", type: .multiple(actions: [PopupAction(name: "name1", action: nil), PopupAction(name: "name2", action: nil)])))
+//}
 
 
 typealias VoidHandler = (() -> Void)

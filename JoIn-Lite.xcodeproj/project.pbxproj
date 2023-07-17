@@ -18,6 +18,7 @@
 		48A262F32A6334DF00C35D40 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 48A262F22A6334DF00C35D40 /* Preview Assets.xcassets */; };
 		48A263022A6339DF00C35D40 /* SPMLibraries in Frameworks */ = {isa = PBXBuildFile; productRef = 48A263012A6339DF00C35D40 /* SPMLibraries */; };
 		48A263072A633AD300C35D40 /* IQKeyboardManagerSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 48A263062A633AD300C35D40 /* IQKeyboardManagerSwift */; };
+		48BB3AF52A64BD2100F6E0A6 /* StatusBarManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48BB3AF42A64BD2100F6E0A6 /* StatusBarManager.swift */; };
 		48F4BD2B2A64362C00644316 /* BaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48F4BD2A2A64362C00644316 /* BaseView.swift */; };
 		48F4BD2E2A644AD500644316 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48F4BD2D2A644AD500644316 /* LoadingView.swift */; };
 		48F4BD302A64516300644316 /* PopupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48F4BD2F2A64516300644316 /* PopupView.swift */; };
@@ -38,6 +39,7 @@
 		48A263002A6338FF00C35D40 /* SPMLibraries */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = SPMLibraries; path = Libraries/SPMLibraries; sourceTree = "<group>"; };
 		48A263092A633B2100C35D40 /* Localization */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = Localization; sourceTree = "<group>"; };
 		48A2630B2A633C1400C35D40 /* CoreUtils */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = CoreUtils; sourceTree = "<group>"; };
+		48BB3AF42A64BD2100F6E0A6 /* StatusBarManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusBarManager.swift; sourceTree = "<group>"; };
 		48F4BD2A2A64362C00644316 /* BaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseView.swift; sourceTree = "<group>"; };
 		48F4BD2D2A644AD500644316 /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
 		48F4BD2F2A64516300644316 /* PopupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopupView.swift; sourceTree = "<group>"; };
@@ -179,6 +181,7 @@
 			isa = PBXGroup;
 			children = (
 				48F4BD2A2A64362C00644316 /* BaseView.swift */,
+				48BB3AF42A64BD2100F6E0A6 /* StatusBarManager.swift */,
 			);
 			path = Base;
 			sourceTree = "<group>";
@@ -267,6 +270,7 @@
 				48F4BD302A64516300644316 /* PopupView.swift in Sources */,
 				4810E2252A63571D00C9E1A0 /* OnboardingScreenView.swift in Sources */,
 				48A262EC2A6334DE00C35D40 /* JoIn_LiteApp.swift in Sources */,
+				48BB3AF52A64BD2100F6E0A6 /* StatusBarManager.swift in Sources */,
 				4810E22D2A63632000C9E1A0 /* LoginView.swift in Sources */,
 				4810E2292A63572E00C9E1A0 /* CustomIndicator.swift in Sources */,
 				48F4BD2B2A64362C00644316 /* BaseView.swift in Sources */,
