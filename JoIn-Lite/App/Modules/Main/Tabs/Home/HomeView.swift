@@ -16,7 +16,7 @@ struct HomeView: View {
                     StoryViews { clickedItem in
                         print("story tapped.. \(clickedItem)")
                     }
-                }
+                }.padding(.horizontal, 16)
             }
         }
     }

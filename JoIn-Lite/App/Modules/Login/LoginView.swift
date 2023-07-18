@@ -37,7 +37,7 @@ struct LoginView: View {
                             Button(action: {
                                 //Login action
                                 pageState = .loading
-                                DispatchQueue.main.asyncAfter(deadline: .now() + 4) {
+                                DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
                                     let action = PopupAction(name: "Tamam") {
                                         pageState = .default
                                         navigationState.push(to: .main)

@@ -13,13 +13,7 @@ struct MainView: View {
     
     var body: some View {
         TabView(selection: $tabSelection) {
-            ZStack {
-                Color.blue
-                VStack {
-                    Spacer()
-                    Text("Test tab1")
-                }
-            }.tag(JOINTabItem.home.rawValue)
+            HomeView().tag(JOINTabItem.home.rawValue)
                 .addBottomPadding()
             
             ZStack {

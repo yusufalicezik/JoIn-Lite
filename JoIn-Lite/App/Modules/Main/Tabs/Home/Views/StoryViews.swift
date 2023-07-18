@@ -16,8 +16,8 @@ struct StoryViews: View {
                 ForEach(0..<15, id: \.self) { index in
                     StoryItemView().onTapGesture {
                         didItemTapped?(index)
-                    }
-                    Spacer(minLength: 20)
+                    }.padding(.trailing, index == 14 ? .zero : 20)
+                        .padding(.top, 5)
                 }
             }
         }

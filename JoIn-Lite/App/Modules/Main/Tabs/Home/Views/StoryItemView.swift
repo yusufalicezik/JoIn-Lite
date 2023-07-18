@@ -11,12 +11,14 @@ struct StoryItemView: View {
     
     var body: some View {
         VStack {
-            Color.red
-    //            .resizable()
+            Image(.yac)
+                .resizable()
+                .scaledToFit()
                 .frame(width: 65, height: 65)
-                .scaledToFill()
-                .clipShape(RoundedRectangle(cornerRadius: 15))
-                .background(RoundedRectangle(cornerRadius: 15).stroke(Color.appPrimary, style: .init(lineWidth: 2)).frame(width: 65, height: 65))
+                .clipShape(RoundedRectangle(cornerRadius: 16))
+                .overlay {
+                    RoundedRectangle(cornerRadius: 16).stroke(.appPrimary, lineWidth: 1)
+                }
             
             Text("William").font(.caption).foregroundStyle(.black.opacity(0.8))
                 .padding(.top, 1)
