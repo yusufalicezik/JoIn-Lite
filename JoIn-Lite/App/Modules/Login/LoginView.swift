@@ -40,7 +40,7 @@ struct LoginView: View {
                                 DispatchQueue.main.asyncAfter(deadline: .now() + 4) {
                                     let action = PopupAction(name: "Tamam") {
                                         pageState = .default
-                                        navigationState.push(to: .home)
+                                        navigationState.push(to: .main)
                                     }
                                     
                                     let action2 = PopupAction(name: "Hayır") {

@@ -19,12 +19,12 @@ struct JoIn_LiteApp: App {
             NavigationStack(path: $navigationState.routes) {
                 OnboardingScreenView().navigationDestination(for: Routes.self) { route in
                     switch route {
-                    case .home:
-                        Text("TODO - Home")
+                    case .main:
+                        MainView().navigationBarBackButtonHidden(true)
                     case .welcome(let welcomeRoutes):
                         WelcomeRouter(routes: welcomeRoutes).configure().navigationBarBackButtonHidden(true)
                     }
-                }.navigationBarBackButtonHidden(
+                }.navigationBarBackButtonHidden(true)
             }.environment(navigationState)
         }
     }

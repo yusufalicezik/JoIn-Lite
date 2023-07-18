@@ -10,7 +10,7 @@ import Observation
 
 enum Routes: Hashable {
     case welcome(WelcomeRoutes)
-    case home
+    case main
     
     enum WelcomeRoutes: Hashable {
         case onboarding
