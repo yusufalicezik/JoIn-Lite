@@ -13,5 +13,6 @@ struct ListModifier: ViewModifier {
             .listStyle(.plain)
             .listRowSeparator(.hidden)
             .listRowInsets(.init(top: .zero, leading: .zero, bottom: .zero, trailing: .zero))
+            .selectionDisabled(true)
     }
 }

@@ -16,30 +16,12 @@ struct MainView: View {
             HomeView().tag(JOINTabItem.home.rawValue)
                 .addBottomPadding()
             
-            ZStack {
-                Color.blue
-                VStack {
-                    Spacer()
-                    Text("Test tab1")
-                }
-            }.tag(JOINTabItem.favorites.rawValue)
+            Text("Favorites View").tag(JOINTabItem.favorites.rawValue)
                 .addBottomPadding()
             
-            ZStack {
-                Color.blue
-                VStack {
-                    Spacer()
-                    Text("Test tab1")
-                }
-            }.tag(JOINTabItem.search.rawValue)
+            Text("Searcj View").tag(JOINTabItem.search.rawValue)
             
-            ZStack {
-                Color.blue
-                VStack {
-                    Spacer()
-                    Text("Test tab1")
-                }
-            }.tag(JOINTabItem.profile.rawValue)
+            Text("Profile View").tag(JOINTabItem.profile.rawValue)
         }
         .overlay(alignment: .bottom) {
             VStack(spacing: .zero) {

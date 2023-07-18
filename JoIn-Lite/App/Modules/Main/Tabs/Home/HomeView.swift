@@ -17,7 +17,15 @@ struct HomeView: View {
                         print("story tapped.. \(clickedItem)")
                     }
                 }.modifier(ListModifier())
+                
+                ForEach(0..<20, id: \.self) { index in
+                    PostView(imageExist: index % 3 == 0).listRowBackground(Color.clear)
+                }.modifier(ListModifier())
+                    .padding(.top)
+                    .padding(.horizontal, 16)
+                
             }.modifier(ListModifier())
+               
                 
 //            ScrollView {
 //                VStack {
