@@ -24,7 +24,7 @@ struct JoIn_LiteApp: App {
                     case .welcome(let welcomeRoutes):
                         WelcomeRouter(routes: welcomeRoutes).configure().navigationBarBackButtonHidden(true)
                     }
-                }
+                }.navigationBarBackButtonHidden(
             }.environment(navigationState)
         }
     }

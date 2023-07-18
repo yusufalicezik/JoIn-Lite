@@ -54,6 +54,6 @@ struct RegisterStep1View: View {
     }
 }
 
-#Preview {
-    RegisterStep1View().environment(NavigationState())
-}
+//#Preview {
+//    RegisterStep1View().environment(NavigationState())
+//}

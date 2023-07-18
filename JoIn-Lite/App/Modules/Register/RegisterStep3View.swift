@@ -62,6 +62,6 @@ struct RegisterStep3View: View {
     }
 }
 
-#Preview {
-    RegisterStep3View().environment(NavigationState())
-}
+//#Preview {
+//    RegisterStep3View().environment(NavigationState())
+//}
