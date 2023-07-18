@@ -40,6 +40,7 @@ struct RegisterStep3View: View {
                             pageState = .loading
                             DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
                                 pageState = .default
+                                navigationState.popToRoot()
                                 navigationState.push(to: .home)
                             }
                         }, label: {
