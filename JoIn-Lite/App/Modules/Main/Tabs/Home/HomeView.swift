@@ -11,13 +11,25 @@ struct HomeView: View {
     var body: some View {
         ZStack {
             Color.appSecondary.ignoresSafeArea(.all)
-            ScrollView {
-                VStack {
+            List {
+                Section {
                     StoryViews { clickedItem in
                         print("story tapped.. \(clickedItem)")
                     }
-                }.padding(.horizontal, 16)
-            }
+                }.modifier(ListModifier())
+            }.modifier(ListModifier())
+                
+//            ScrollView {
+//                VStack {
+//                    StoryViews { clickedItem in
+//                        print("story tapped.. \(clickedItem)")
+//                    }
+//                    
+//                    List(0..<20) { 
+//                        
+//                    }
+//                }.padding(.horizontal, 16)
+//            }
         }
     }
 }

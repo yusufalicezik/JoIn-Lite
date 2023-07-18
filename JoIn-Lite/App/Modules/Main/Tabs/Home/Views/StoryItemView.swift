@@ -13,7 +13,7 @@ struct StoryItemView: View {
         VStack {
             Image(.yac)
                 .resizable()
-                .scaledToFit()
+                .scaledToFill()
                 .frame(width: 65, height: 65)
                 .clipShape(RoundedRectangle(cornerRadius: 16))
                 .overlay {

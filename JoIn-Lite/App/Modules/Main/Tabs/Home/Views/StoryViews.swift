@@ -16,8 +16,9 @@ struct StoryViews: View {
                 ForEach(0..<15, id: \.self) { index in
                     StoryItemView().onTapGesture {
                         didItemTapped?(index)
-                    }.padding(.trailing, index == 14 ? .zero : 20)
+                    }.padding(.trailing, index == 14 ? 16 : 20) //20 spacing between items, 16 is last item's right edge inset - workaround
                         .padding(.top, 5)
+                        .padding(.leading, index == 0 ? 16 : .zero) //16 is first item's left inset - workaround
                 }
             }
         }
