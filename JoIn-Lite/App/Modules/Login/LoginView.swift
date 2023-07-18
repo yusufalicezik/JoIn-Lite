@@ -24,8 +24,8 @@ struct LoginView: View {
                         Text("Eğer bir hesabın varsa giriş yaparak devam edebilirsin. Henüz bir hesabın bulunmuyorsa kayıt olarak aramıza katılabilirsin.").align(to: .left).font(.footnote).foregroundStyle(.gray.opacity(0.8)).padding(.top, 6)
                         
                         VStack(spacing: .zero) {
-                            AuthTextField(uiModel: .init(placeholder: "E-posta", isSecureField: false, textValue: $email))
-                            AuthTextField(uiModel: .init(placeholder: "Şifre", isSecureField: true, textValue: $password)).padding(.top)
+                            AuthTextField(uiModel: .init(placeholder: "E-posta", isSecureField: false, shouldShowRightAction: true, textValue: $email))
+                            AuthTextField(uiModel: .init(placeholder: "Şifre", isSecureField: true, shouldShowRightAction: true, textValue: $password)).padding(.top)
                             Button(action: {
                                 pageState = .popup(.init(title: "Uyarı", subtitle: "Şifreni sıfırlamak için e-postana bir mail gönderdik", type: .default(action: .init(name: "Tamam", action: {
                                     pageState = .default
@@ -40,7 +40,7 @@ struct LoginView: View {
                                 DispatchQueue.main.asyncAfter(deadline: .now() + 4) {
                                     let action = PopupAction(name: "Tamam") {
                                         pageState = .default
-                                        navigationState.routes.append(.home)
+                                        navigationState.push(to: .home)
                                     }
                                     
                                     let action2 = PopupAction(name: "Hayır") {
@@ -55,14 +55,13 @@ struct LoginView: View {
                                 RoundedRectangle(cornerRadius: 16)
                                     .fill(.appPrimary)
                                     .frame(height: 55)
-                                    .padding(.vertical, 45)
                                     .overlay {
                                         Text("Giriş")
                                             .foregroundStyle(.appSecondary)
                                             .font(.headline)
                                             .bold()
                                     }
-                            })
+                            }).frame(height: 55).padding(.vertical, 45)
                             
                             Divider().overlay {
                                 Text(" Google ya da Facebook ile Giriş Yap ")
@@ -90,13 +89,14 @@ struct LoginView: View {
                             HStack(spacing: .zero) {
                                 Text("Henüz bir hesabın yok mu? ").foregroundStyle(.gray).font(.caption)
                                 Button(action: {
-                                    navigationState.routes.append(.welcome(.registerStep1))
+                                    navigationState.push(to: .welcome(.registerStep1))
                                 }, label: {
                                     Text("Kayıt Ol").foregroundStyle(.appPrimary).font(.caption).bold()
                                 })
                             }
                         }.padding(.top, 120)
                     }.padding(.horizontal, 24)
+                    .padding(.bottom, 10)
                 }
             }
         }.isolatedColorScheme(.light)
@@ -104,5 +104,5 @@ struct LoginView: View {
 }
 
 #Preview {
-    LoginView()
+    LoginView().environment(NavigationState())
 }

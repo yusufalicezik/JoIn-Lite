@@ -1,14 +1,17 @@
 //
-//  RegisterStep1View.swift
+//  RegisterStep3View.swift
 //  JoIn-Lite
 //
-//  Created by Yusuf Ali Cezik on 17.07.2023.
+//  Created by Yusuf Ali Cezik on 18.07.2023.
 //
 
 import SwiftUI
 
-struct RegisterStep1View: View {
-    @State var email: String = .empty
+
+struct RegisterStep3View: View {
+    @State var name: String = .empty
+    @State var surname: String = .empty
+    @State var username: String = .empty
     
     @State private var pageState: PageState = .default
     @Environment(NavigationState.self) private var navigationState
@@ -20,12 +23,16 @@ struct RegisterStep1View: View {
             ZStack {
                 Color.appSecondary.ignoresSafeArea(.all)
                 VStack {
-                    Text("E-Posta").fontWeight(.heavy).font(.title2).foregroundStyle(.appPrimary).align(to: .left).padding(.top, 50)
-                    Text("Aşağıdaki alana giriş yapmak istediğin e-postanı girerek kayıt olabilirsin").align(to: .left).font(.footnote).foregroundStyle(.gray.opacity(0.8)).padding(.top, 6)
+                    Text("Neredeyse bitti!").fontWeight(.heavy).font(.title2).foregroundStyle(.appPrimary).align(to: .left).padding(.top, 50)
+                    Text("Ad, soyad ve kullanıcı adını seçtikten sonra artık hazırsın").align(to: .left).font(.footnote).foregroundStyle(.gray.opacity(0.8)).padding(.top, 6)
                     
                     
-                    VStack(spacing: .zero) {
-                        AuthTextField(uiModel: .init(placeholder: "E-posta", isSecureField: false, textValue: $email))
+                    VStack(spacing: 12) {
+                        HStack {
+                            AuthTextField(uiModel: .init(placeholder: "Ad", isSecureField: false, textValue: $name))
+                            AuthTextField(uiModel: .init(placeholder: "Soyad", isSecureField: false, textValue: $surname))
+                        }
+                        AuthTextField(uiModel: .init(placeholder: "Kullanıcı Adı", isSecureField: false, textValue: $username))
                         
                         Spacer()
                         
@@ -33,14 +40,14 @@ struct RegisterStep1View: View {
                             pageState = .loading
                             DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
                                 pageState = .default
-                                navigationState.push(to: .welcome(.registerStep2))
+                                navigationState.push(to: .home)
                             }
                         }, label: {
                             RoundedRectangle(cornerRadius: 16)
                                 .fill(.appPrimary)
                                 .frame(height: 55)
                                 .overlay {
-                                    Text("Devam Et")
+                                    Text("Kayıt Ol")
                                         .foregroundStyle(.appSecondary)
                                         .font(.headline)
                                         .bold()
@@ -55,5 +62,5 @@ struct RegisterStep1View: View {
 }
 
 #Preview {
-    RegisterStep1View().environment(NavigationState())
+    RegisterStep3View().environment(NavigationState())
 }

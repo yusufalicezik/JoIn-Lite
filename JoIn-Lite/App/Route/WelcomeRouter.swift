@@ -14,11 +14,15 @@ struct WelcomeRouter {
     func configure() -> some View {
         switch routes {
         case .login:
-            LoginView().navigationBarBackButtonHidden(true)
+            LoginView()
         case .onboarding:
             OnboardingScreenView()
         case .registerStep1:
-            RegisterStep1View().navigationBarBackButtonHidden(true)
+            RegisterStep1View()
+        case .registerStep2:
+            RegisterStep2View()
+        case .registerStep3:
+            RegisterStep3View()
         }
     }
 }

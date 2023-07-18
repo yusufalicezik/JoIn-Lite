@@ -1,14 +1,15 @@
 //
-//  RegisterStep1View.swift
+//  RegisterStep2View.swift
 //  JoIn-Lite
 //
-//  Created by Yusuf Ali Cezik on 17.07.2023.
+//  Created by Yusuf Ali Cezik on 18.07.2023.
 //
 
 import SwiftUI
 
-struct RegisterStep1View: View {
-    @State var email: String = .empty
+struct RegisterStep2View: View {
+    @State var password: String = .empty
+    @State var passwordAgain: String = .empty
     
     @State private var pageState: PageState = .default
     @Environment(NavigationState.self) private var navigationState
@@ -20,12 +21,14 @@ struct RegisterStep1View: View {
             ZStack {
                 Color.appSecondary.ignoresSafeArea(.all)
                 VStack {
-                    Text("E-Posta").fontWeight(.heavy).font(.title2).foregroundStyle(.appPrimary).align(to: .left).padding(.top, 50)
-                    Text("Aşağıdaki alana giriş yapmak istediğin e-postanı girerek kayıt olabilirsin").align(to: .left).font(.footnote).foregroundStyle(.gray.opacity(0.8)).padding(.top, 6)
+                    Text("Şifre").fontWeight(.heavy).font(.title2).foregroundStyle(.appPrimary).align(to: .left).padding(.top, 50)
+                    Text("Seçtiğin şifre ile uygulamaya giriş yapacaksın").align(to: .left).font(.footnote).foregroundStyle(.gray.opacity(0.8)).padding(.top, 6)
                     
                     
                     VStack(spacing: .zero) {
-                        AuthTextField(uiModel: .init(placeholder: "E-posta", isSecureField: false, textValue: $email))
+                        AuthTextField(uiModel: .init(placeholder: "Şifre", isSecureField: true, textValue: $password)).padding(.top)
+                        AuthTextField(uiModel: .init(placeholder: "Şifre Tekrar", isSecureField: true, textValue: $passwordAgain)).padding(.top)
+                        
                         
                         Spacer()
                         
@@ -33,7 +36,7 @@ struct RegisterStep1View: View {
                             pageState = .loading
                             DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
                                 pageState = .default
-                                navigationState.push(to: .welcome(.registerStep2))
+                                navigationState.push(to: .welcome(.registerStep3))
                             }
                         }, label: {
                             RoundedRectangle(cornerRadius: 16)
@@ -55,5 +58,5 @@ struct RegisterStep1View: View {
 }
 
 #Preview {
-    RegisterStep1View().environment(NavigationState())
+    RegisterStep2View().environment(NavigationState())
 }

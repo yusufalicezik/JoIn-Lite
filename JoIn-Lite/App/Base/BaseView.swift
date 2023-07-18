@@ -6,20 +6,38 @@
 //
 
 import SwiftUI
+import CoreUtils
 
 struct BaseView<Content: View>: View {
     var pageState: Binding<PageState>
     let content: Content
+    let backIconAction: VoidHandler?
     
-    init(pageState: Binding<PageState>, @ViewBuilder content: () -> Content) {
+    init(pageState: Binding<PageState>, backIconAction: VoidHandler? = nil, @ViewBuilder content: () -> Content) {
         self.content = content()
         self.pageState = pageState
+        self.backIconAction = backIconAction
     }
     
     var body: some View {
         ZStack {
             Color.clear.ignoresSafeArea()
-            content
+            VStack(spacing: .zero) {
+                //Navbar
+                if let backIconAction {
+                    VStack(alignment: .leading, spacing: .zero) {
+                        Color.clear.frame(height: Screen.getStatusBarHeight() + Screen.safeArea.top)
+                        Button(action: {
+                            backIconAction()
+                        }, label: {
+                            Image(systemName: "arrow.left").resizable().frame(width: 20, height: 18).foregroundStyle(.appPrimary)
+                        }).padding(.horizontal, 24)
+                        Spacer(minLength: 10)
+                        Divider()
+                    }.frame(maxWidth: .infinity, alignment: .leading).frame(height: 55).ignoresSafeArea(.all)
+                }
+                content
+            }
             switch pageState.wrappedValue {
             case .loading:
                 LoadingView()

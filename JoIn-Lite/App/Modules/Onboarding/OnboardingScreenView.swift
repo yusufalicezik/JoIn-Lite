@@ -25,7 +25,7 @@ struct OnboardingScreenView: View {
                 VStack {
                     if viewModel.shouldShowLoginButton() {
                         Button {
-                            navigationState.routes.append(.welcome(.login))
+                            navigationState.push(to: .welcome(.login))
                         } label: {
                             Text("Giriş Yap").fontWeight(.semibold).frame(maxWidth: .infinity).frame(height: 50).background(.appPrimary).cornerRadius(10).padding(.horizontal, 20).foregroundColor(.softBlue).font(.title3).padding(10)
                         }

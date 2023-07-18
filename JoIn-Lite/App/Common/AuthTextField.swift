@@ -37,22 +37,26 @@ struct AuthTextField: View {
                                 .modifier(AuthTextFieldModifier(isFocused: $isFocused))
                             }
                             
-                            Button(action: {
-                                shouldShowPassword.toggle()
-                            }, label: {
-                                Image(systemName: "eye").foregroundColor(.gray.opacity(0.4))
-                            })
+                            if uiModel.shouldShowRightAction {
+                                Button(action: {
+                                    shouldShowPassword.toggle()
+                                }, label: {
+                                    Image(systemName: "eye").foregroundColor(.gray.opacity(0.4))
+                                })
+                            }
                         } else {
                             TextField(uiModel.placeholder, text: uiModel.$textValue, onCommit: {
                                 shouldShowBorder = false
                             })
                             .modifier(AuthTextFieldModifier(isFocused: $isFocused))
                             
-                            Button(action: {
-                                uiModel.textValue.removeAll()
-                            }, label: {
-                                Image(systemName: "xmark.circle").foregroundColor(.gray.opacity(0.4))
-                            })
+                            if uiModel.shouldShowRightAction {
+                                Button(action: {
+                                    uiModel.textValue.removeAll()
+                                }, label: {
+                                    Image(systemName: "xmark.circle").foregroundColor(.gray.opacity(0.4))
+                                })
+                            }
                         }
                     }
                     
@@ -77,7 +81,9 @@ struct AuthTextField: View {
 struct AuthTextFieldUIModel {
     let placeholder: String
     let isSecureField: Bool
+    var shouldShowRightAction: Bool = false
     @Binding var textValue: String
+    
 }
 
 struct AuthTextFieldModifier: ViewModifier {

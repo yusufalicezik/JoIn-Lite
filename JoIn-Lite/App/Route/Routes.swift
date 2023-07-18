@@ -16,9 +16,23 @@ enum Routes: Hashable {
         case onboarding
         case login
         case registerStep1
+        case registerStep2
+        case registerStep3
     }
 }
 
 @Observable final class NavigationState {
     var routes: [Routes] = []
+    
+    func push(to route: Routes) {
+        routes.append(route)
+    }
+    
+    func pop() {
+        routes.removeLast()
+    }
+    
+    func popToRoot() {
+        routes.removeAll()
+    }
 }

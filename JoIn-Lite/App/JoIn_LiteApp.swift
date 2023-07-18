@@ -12,7 +12,7 @@ import Observation
 @main
 struct JoIn_LiteApp: App {
     @UIApplicationDelegateAdaptor(AppDelegate.self) var appDelegate
-    @Bindable private var navigationState = NavigationState()
+    @Bindable private var navigationState = NavigationState() ///Normally (in the old version) it should be StateObject. However with the new macro used in @Observable, apple says you can use @State instead of @StateObject  because in order to be able to use @StateObject, NavigationState must conform ObservableObject but we use Observable instead of ObservableObject. Because this is the new version. Therefore navigationState must be @State, not @StateObject. But I realized that @State not works well, when it receives updates, reload whole Content such as OnboardingScreenView. So I changed it to @Bindable and it works. //https://developer.apple.com/documentation/swiftui/migrating-from-the-observable-object-protocol-to-the-observable-macro
 
     var body: some Scene {
         WindowGroup {
@@ -22,7 +22,7 @@ struct JoIn_LiteApp: App {
                     case .home:
                         Text("TODO - Home")
                     case .welcome(let welcomeRoutes):
-                        WelcomeRouter(routes: welcomeRoutes).configure()
+                        WelcomeRouter(routes: welcomeRoutes).configure().navigationBarBackButtonHidden(true)
                     }
                 }
             }.environment(navigationState)
