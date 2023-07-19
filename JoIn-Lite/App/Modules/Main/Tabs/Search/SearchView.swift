@@ -31,12 +31,13 @@ struct SearchView: View {
                     }).opacity(searchText.isEmpty ? 0 : 1)
                 }
             }.animation(.spring(), value: UUID())
-            List(0..<20) { item in
-                UserListItemView(isFollowing: item % 6 == 0).listRowSeparator(.hidden).padding(.top, 15).listRowBackground(Color.clear).onTapGesture(perform: {
-                    print("Go to user profile")
-                    
-                }).modifier(ListModifier())
-            }.modifier(ListModifier())
+            LazyVStack {
+                ForEach(0..<20) { item in
+                    UserListItemView(isFollowing: item % 6 == 0).onTapGesture {
+                        print("Go to user profile")
+                    }.padding(.top, 15)
+                }
+            }
         }.padding(.horizontal, 16)
     }
 }

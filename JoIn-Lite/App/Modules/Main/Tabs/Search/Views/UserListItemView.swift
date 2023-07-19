@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import CoreUtils
 
 struct UserListItemView: View {
     var isFollowing = false
@@ -22,17 +23,15 @@ struct UserListItemView: View {
                     }
                 
                 VStack(alignment: .leading, spacing: .zero) {
-                    Text("William").font(.footnote).fontWeight(.bold)
-                    Text("@Klecon").font(.caption2).fontWeight(.regular).foregroundStyle(.opaqueBlack)
+                    Text("William").font(.footnote).fontWeight(.bold).align(to: .left)
+                    Text("@Klecon").font(.caption2).fontWeight(.regular).foregroundStyle(.opaqueBlack).align(to: .left)
                 }
                 
-                Spacer()
                 
-                Button(action: {
-                    print("tapped followw")
-                }, label: {
-                    Text(isFollowing ? "Takip Ediliyor" : "Takip Et").foregroundStyle(.white).padding(.vertical, 5).padding(.horizontal, 12).background(.appPrimary.opacity(isFollowing ? 0.5 : 1)).font(.caption2).fontWeight(.semibold).clipShape(RoundedRectangle(cornerRadius: 9))
-                })
+                
+                Text(isFollowing ? "Takip Ediliyor" : "Takip Et").foregroundStyle(.white).padding(.vertical, 5).padding(.horizontal, 12).background(.appPrimary.opacity(isFollowing ? 0.5 : 1)).font(.caption2).fontWeight(.semibold).clipShape(RoundedRectangle(cornerRadius: 9)).onTapGesture {
+                    print("tapped follow")
+                }
             }
             Divider().padding(.top, 5)
         }
