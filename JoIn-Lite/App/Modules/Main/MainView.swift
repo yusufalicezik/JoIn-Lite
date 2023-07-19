@@ -10,7 +10,8 @@ import CoreUtils
 
 struct MainView: View {
     @State private var tabSelection = JOINTabItem.home.rawValue
-    
+    @Environment(NavigationState.self) private var navigationState
+
     var body: some View {
         ZStack(alignment: .bottomTrailing) {
             TabView(selection: $tabSelection) {
@@ -34,15 +35,16 @@ struct MainView: View {
             .ignoresSafeArea(.all)
             
             FloatingShareButton {
-                print("TODO..")
+                navigationState.push(to: .share)
             }.padding(.bottom, tabbarHeight + 10)
                 .padding(.trailing, 10)
+                .ignoresSafeArea(.keyboard)
         }
     }
 }
 
 #Preview {
-    MainView()
+    MainView().environment(NavigationState())
 }
 
 fileprivate extension View {
@@ -52,3 +54,4 @@ fileprivate extension View {
             .ignoresSafeArea(edges: [.bottom])
     }
 }
+//SharePostView

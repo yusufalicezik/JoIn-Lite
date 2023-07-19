@@ -11,6 +11,7 @@ import Observation
 enum Routes: Hashable {
     case welcome(WelcomeRoutes)
     case main
+    case share
     
     enum WelcomeRoutes: Hashable {
         case onboarding

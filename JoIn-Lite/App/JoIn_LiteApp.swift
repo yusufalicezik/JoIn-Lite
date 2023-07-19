@@ -23,6 +23,8 @@ struct JoIn_LiteApp: App {
                         MainView().navigationBarBackButtonHidden(true)
                     case .welcome(let welcomeRoutes):
                         WelcomeRouter(routes: welcomeRoutes).configure().navigationBarBackButtonHidden(true)
+                    case .share:
+                        SharePostView().navigationBarBackButtonHidden(true)
                     }
                 }.navigationBarBackButtonHidden(true)
             }.environment(navigationState)
