@@ -52,6 +52,6 @@ extension UINavigationController: UIGestureRecognizerDelegate {
     }
 
     public func gestureRecognizerShouldBegin(_ gestureRecognizer: UIGestureRecognizer) -> Bool {
-        return viewControllers.count > 2
+        return viewControllers.count > 3 //login olmuşsa.. ve onboarding gözükmemişs vs. buna göre logic çıkart.
     }
 }

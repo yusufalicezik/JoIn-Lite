@@ -17,7 +17,9 @@ struct EditProfileView: View {
     @Environment(NavigationState.self) private var navigationState
     
     var body: some View {
-        BaseView(pageState: $pageState) {
+        BaseView(pageState: $pageState, backIconAction: {
+            navigationState.pop()
+        }) {
             VStack {
                 Text("Profilini Tamamla").font(.title2).fontWeight(.medium).padding(.top)
                 
