@@ -9,9 +9,11 @@ import SwiftUI
 
 struct ProfileHeaderView: View {
     @State var isFollowing = true
-    @State var isMe = false
+    @State var isMe = true
     
     @State var imageExist = true
+    
+    @Environment(NavigationState.self) private var navigationState
     
     var body: some View {
         ZStack(alignment: .leading) {
@@ -56,7 +58,7 @@ struct ProfileHeaderView: View {
                 Button(action: {
                     //TODO: follow/unfollow, move these actions to vm
                     if isMe {
-                        
+                        navigationState.push(to: .editProfile)
                     } else {
                         isFollowing.toggle()
                     }
@@ -82,5 +84,5 @@ struct ProfileHeaderView: View {
 }
 
 #Preview {
-    ProfileHeaderView()
+    ProfileHeaderView().environment(NavigationState())
 }

@@ -17,7 +17,7 @@ struct JoIn_LiteApp: App {
     var body: some Scene {
         WindowGroup {
             NavigationStack(path: $navigationState.routes) {
-                OnboardingScreenView().navigationDestination(for: Routes.self) { route in
+                OnboardingScreenView().navigationDestination(for: Route.self) { route in
                     switch route {
                     case .main:
                         MainView().navigationBarBackButtonHidden(true)
@@ -25,6 +25,8 @@ struct JoIn_LiteApp: App {
                         WelcomeRouter(routes: welcomeRoutes).configure().navigationBarBackButtonHidden(true)
                     case .share:
                         SharePostView().navigationBarBackButtonHidden(true)
+                    case .editProfile:
+                        EditProfileView().navigationBarBackButtonHidden(true)
                     }
                 }.navigationBarBackButtonHidden(true)
             }.environment(navigationState)

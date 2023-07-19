@@ -8,10 +8,11 @@
 import Foundation
 import Observation
 
-enum Routes: Hashable {
+enum Route: Hashable {
     case welcome(WelcomeRoutes)
     case main
     case share
+    case editProfile
     
     enum WelcomeRoutes: Hashable {
         case onboarding
@@ -23,9 +24,9 @@ enum Routes: Hashable {
 }
 
 @Observable final class NavigationState {
-    var routes: [Routes] = []
+    var routes: [Route] = []
     
-    func push(to route: Routes) {
+    func push(to route: Route) {
         routes.append(route)
     }
     
@@ -35,5 +36,10 @@ enum Routes: Hashable {
     
     func popToRoot() {
         routes.removeAll()
+    }
+    
+    func pop(to route: Route) {
+        guard let index = routes.firstIndex(of: route) else { return }
+        routes = Array(routes[0...index])
     }
 }

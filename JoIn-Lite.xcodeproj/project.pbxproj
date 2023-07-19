@@ -25,7 +25,7 @@
 		48A263072A633AD300C35D40 /* IQKeyboardManagerSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 48A263062A633AD300C35D40 /* IQKeyboardManagerSwift */; };
 		48BB3AF52A64BD2100F6E0A6 /* StatusBarManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48BB3AF42A64BD2100F6E0A6 /* StatusBarManager.swift */; };
 		48BB3AF82A64BF7800F6E0A6 /* RegisterStep1View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48BB3AF72A64BF7800F6E0A6 /* RegisterStep1View.swift */; };
-		48BB3AFA2A64BFCE00F6E0A6 /* Routes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48BB3AF92A64BFCE00F6E0A6 /* Routes.swift */; };
+		48BB3AFA2A64BFCE00F6E0A6 /* Route.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48BB3AF92A64BFCE00F6E0A6 /* Route.swift */; };
 		48BB3AFD2A64C19C00F6E0A6 /* WelcomeRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48BB3AFC2A64C19C00F6E0A6 /* WelcomeRouter.swift */; };
 		48BB3AFF2A66FACE00F6E0A6 /* RegisterStep2View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48BB3AFE2A66FACE00F6E0A6 /* RegisterStep2View.swift */; };
 		48BB3B012A66FB9000F6E0A6 /* RegisterStep3View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48BB3B002A66FB9000F6E0A6 /* RegisterStep3View.swift */; };
@@ -68,7 +68,7 @@
 		48A2630B2A633C1400C35D40 /* CoreUtils */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = CoreUtils; sourceTree = "<group>"; };
 		48BB3AF42A64BD2100F6E0A6 /* StatusBarManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusBarManager.swift; sourceTree = "<group>"; };
 		48BB3AF72A64BF7800F6E0A6 /* RegisterStep1View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterStep1View.swift; sourceTree = "<group>"; };
-		48BB3AF92A64BFCE00F6E0A6 /* Routes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Routes.swift; sourceTree = "<group>"; };
+		48BB3AF92A64BFCE00F6E0A6 /* Route.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Route.swift; sourceTree = "<group>"; };
 		48BB3AFC2A64C19C00F6E0A6 /* WelcomeRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeRouter.swift; sourceTree = "<group>"; };
 		48BB3AFE2A66FACE00F6E0A6 /* RegisterStep2View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterStep2View.swift; sourceTree = "<group>"; };
 		48BB3B002A66FB9000F6E0A6 /* RegisterStep3View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterStep3View.swift; sourceTree = "<group>"; };
@@ -258,7 +258,7 @@
 		48BB3AFB2A64C18900F6E0A6 /* Route */ = {
 			isa = PBXGroup;
 			children = (
-				48BB3AF92A64BFCE00F6E0A6 /* Routes.swift */,
+				48BB3AF92A64BFCE00F6E0A6 /* Route.swift */,
 				48BB3AFC2A64C19C00F6E0A6 /* WelcomeRouter.swift */,
 			);
 			path = Route;
@@ -452,7 +452,7 @@
 				48BB3B062A67341000F6E0A6 /* JoInTabbar.swift in Sources */,
 				48BB3B132A67467200F6E0A6 /* PostView.swift in Sources */,
 				48BB3AF52A64BD2100F6E0A6 /* StatusBarManager.swift in Sources */,
-				48BB3AFA2A64BFCE00F6E0A6 /* Routes.swift in Sources */,
+				48BB3AFA2A64BFCE00F6E0A6 /* Route.swift in Sources */,
 				48BB3B042A67328400F6E0A6 /* MainView.swift in Sources */,
 				48BB3B0F2A673F0F00F6E0A6 /* StoryItemView.swift in Sources */,
 				4883312E2A68532A0070FC5D /* MultilineTextField.swift in Sources */,

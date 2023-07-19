@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct WelcomeRouter {
-    let routes: Routes.WelcomeRoutes
+    let routes: Route.WelcomeRoutes
 
     @ViewBuilder
     func configure() -> some View {
