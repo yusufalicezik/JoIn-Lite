@@ -34,6 +34,8 @@
 		48BB3B182A68149300F6E0A6 /* FavoritesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48BB3B172A68149300F6E0A6 /* FavoritesView.swift */; };
 		48BB3B1B2A6814F400F6E0A6 /* SearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48BB3B1A2A6814F400F6E0A6 /* SearchView.swift */; };
 		48BB3B1E2A6817F600F6E0A6 /* UserListItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48BB3B1D2A6817F600F6E0A6 /* UserListItemView.swift */; };
+		48BB3B212A68264100F6E0A6 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48BB3B202A68264100F6E0A6 /* ProfileView.swift */; };
+		48BB3B242A68268C00F6E0A6 /* ProfileHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48BB3B232A68268C00F6E0A6 /* ProfileHeaderView.swift */; };
 		48F4BD2B2A64362C00644316 /* BaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48F4BD2A2A64362C00644316 /* BaseView.swift */; };
 		48F4BD2E2A644AD500644316 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48F4BD2D2A644AD500644316 /* LoadingView.swift */; };
 		48F4BD302A64516300644316 /* PopupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48F4BD2F2A64516300644316 /* PopupView.swift */; };
@@ -70,6 +72,8 @@
 		48BB3B172A68149300F6E0A6 /* FavoritesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesView.swift; sourceTree = "<group>"; };
 		48BB3B1A2A6814F400F6E0A6 /* SearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchView.swift; sourceTree = "<group>"; };
 		48BB3B1D2A6817F600F6E0A6 /* UserListItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserListItemView.swift; sourceTree = "<group>"; };
+		48BB3B202A68264100F6E0A6 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
+		48BB3B232A68268C00F6E0A6 /* ProfileHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileHeaderView.swift; sourceTree = "<group>"; };
 		48F4BD2A2A64362C00644316 /* BaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseView.swift; sourceTree = "<group>"; };
 		48F4BD2D2A644AD500644316 /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
 		48F4BD2F2A64516300644316 /* PopupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopupView.swift; sourceTree = "<group>"; };
@@ -243,6 +247,7 @@
 		48BB3B092A673E0700F6E0A6 /* Tabs */ = {
 			isa = PBXGroup;
 			children = (
+				48BB3B1F2A6825A700F6E0A6 /* Profile */,
 				48BB3B192A6814E800F6E0A6 /* Search */,
 				48BB3B162A68148700F6E0A6 /* Favorite */,
 				48BB3B0A2A673E1800F6E0A6 /* Home */,
@@ -290,6 +295,23 @@
 			isa = PBXGroup;
 			children = (
 				48BB3B1D2A6817F600F6E0A6 /* UserListItemView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		48BB3B1F2A6825A700F6E0A6 /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				48BB3B222A68267A00F6E0A6 /* Views */,
+				48BB3B202A68264100F6E0A6 /* ProfileView.swift */,
+			);
+			path = Profile;
+			sourceTree = "<group>";
+		};
+		48BB3B222A68267A00F6E0A6 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				48BB3B232A68268C00F6E0A6 /* ProfileHeaderView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -382,6 +404,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4810E2272A63572700C9E1A0 /* OnboardingView.swift in Sources */,
+				48BB3B212A68264100F6E0A6 /* ProfileView.swift in Sources */,
 				48BB3B012A66FB9000F6E0A6 /* RegisterStep3View.swift in Sources */,
 				4810E22F2A63638D00C9E1A0 /* OnboardingScreenViewModel.swift in Sources */,
 				4810E2312A636E6A00C9E1A0 /* AuthTextField.swift in Sources */,
@@ -391,6 +414,7 @@
 				48BB3AFF2A66FACE00F6E0A6 /* RegisterStep2View.swift in Sources */,
 				4810E2252A63571D00C9E1A0 /* OnboardingScreenView.swift in Sources */,
 				48A262EC2A6334DE00C35D40 /* JoIn_LiteApp.swift in Sources */,
+				48BB3B242A68268C00F6E0A6 /* ProfileHeaderView.swift in Sources */,
 				48BB3B062A67341000F6E0A6 /* JoInTabbar.swift in Sources */,
 				48BB3B132A67467200F6E0A6 /* PostView.swift in Sources */,
 				48BB3AF52A64BD2100F6E0A6 /* StatusBarManager.swift in Sources */,

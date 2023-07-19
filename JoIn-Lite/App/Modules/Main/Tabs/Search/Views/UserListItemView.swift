@@ -37,6 +37,7 @@ struct UserListItemView: View {
             }.contentShape(Rectangle())
             Divider().padding(.top, 5)
         }.onTapGesture {
+            UIApplication.shared.sendAction(#selector(UIResponder.resignFirstResponder), to: nil, from: nil, for: nil)
             didSelectItem?()
         }
     }

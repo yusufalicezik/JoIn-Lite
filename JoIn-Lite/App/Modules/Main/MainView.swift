@@ -21,7 +21,7 @@ struct MainView: View {
             
             SearchView().tag(JOINTabItem.search.rawValue).addBottomPadding()
             
-            Text("Profile View").tag(JOINTabItem.profile.rawValue).addBottomPadding()
+            ProfileView().tag(JOINTabItem.profile.rawValue).addBottomPadding()
         }
         .overlay(alignment: .bottom) {
             VStack(spacing: .zero) {

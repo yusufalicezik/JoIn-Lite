@@ -9,7 +9,7 @@ import SwiftUI
 import CoreUtils
 
 struct SearchView: View {
-    @State var searchText: String = "Klec"
+    @State var searchText: String = .empty
     
     var body: some View {
         VStack {
