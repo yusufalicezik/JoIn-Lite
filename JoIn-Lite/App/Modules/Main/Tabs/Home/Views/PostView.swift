@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import CoreUtils
 
 struct PostView: View {
     //let post: Post
@@ -42,7 +43,7 @@ struct PostView: View {
                     Image(.yac)
                         .resizable()
                         .scaledToFill()
-                        .frame(height: 250)
+                        .frame(height: Screen.size.width * 0.6)
                         .clipped()
                         .clipShape(RoundedRectangle(cornerRadius: 14))
                 }

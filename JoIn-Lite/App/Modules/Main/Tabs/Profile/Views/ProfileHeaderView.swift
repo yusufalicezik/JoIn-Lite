@@ -9,19 +9,27 @@ import SwiftUI
 
 struct ProfileHeaderView: View {
     @State var isFollowing = true
+    @State var isMe = false
+    
+    @State var imageExist = true
     
     var body: some View {
         ZStack(alignment: .leading) {
             Color.softBlue
             VStack(alignment: .leading) {
                 HStack {
-                    Image(.yac)
-                        .resizable()
-                        .scaledToFill()
-                        .frame(width: 75, height: 75)
-                        .clipShape(Circle()).overlay {
-                            Circle().stroke(.black, lineWidth: 0.2)
-                        }
+                    if imageExist {
+                        Image(.yac)
+                            .resizable()
+                            .scaledToFill()
+                            .frame(width: 75, height: 75)
+                            .clipShape(Circle()).overlay {
+                                Circle().stroke(.black, lineWidth: 0.2)
+                            }
+                    } else {
+                        ProfileImageCreator.create(name: "Deweon", surname: "Convay")
+                    }
+
                     
                     
                     HStack {
@@ -30,9 +38,9 @@ struct ProfileHeaderView: View {
                             Text("29").font(.footnote).fontWeight(.heavy)
                         }.frame(maxWidth: .infinity)
                         VStack(alignment: .center, spacing: 3) {
-                            Text("Takip Ediliyor").font(.caption).fontWeight(.medium).foregroundStyle(.gray).lineLimit(2)
+                            Text("Takip Ediliyor").font(.caption).fontWeight(.medium).foregroundStyle(.gray).lineLimit(2).layoutPriority(1)
                             Text("117").font(.footnote).fontWeight(.heavy)
-                        }.frame(maxWidth: .infinity)
+                        }.frame(maxWidth: .infinity).layoutPriority(2)
                         VStack(alignment: .center, spacing: 3) {
                             Text("Takipçi").font(.caption).fontWeight(.medium).foregroundStyle(.gray)
                             Text("8.3k").font(.footnote).fontWeight(.heavy)
@@ -46,11 +54,19 @@ struct ProfileHeaderView: View {
                 Text("Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam").font(.caption2).foregroundStyle(.black.opacity(0.7)).padding(.vertical, 5)
                 
                 Button(action: {
-                    //TODO: follow/unfollow
-                    isFollowing.toggle()
+                    //TODO: follow/unfollow, move these actions to vm
+                    if isMe {
+                        
+                    } else {
+                        isFollowing.toggle()
+                    }
                 }, label: {
                     
-                    if isFollowing {
+                    if isMe {
+                        Text("Profili Düzenle").font(.subheadline).fontWeight(.medium).frame(maxWidth: .infinity).padding(.vertical, 10).overlay {
+                            RoundedRectangle(cornerRadius: 10).stroke(.appPrimary, lineWidth: 1)
+                        }.foregroundStyle(.appPrimary)
+                    } else if isFollowing {
                         Text("Takip Ediliyor").font(.subheadline).fontWeight(.medium).frame(maxWidth: .infinity).padding(.vertical, 10).overlay {
                             RoundedRectangle(cornerRadius: 10).stroke(.appPrimary, lineWidth: 1)
                         }.foregroundStyle(.appPrimary)

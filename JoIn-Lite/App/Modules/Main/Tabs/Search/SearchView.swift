@@ -31,15 +31,26 @@ struct SearchView: View {
                     }).opacity(searchText.isEmpty ? 0 : 1)
                 }
             }.animation(.spring(), value: UUID())
-            List(0..<20) { item in
-                UserListItemView(isFollowing: item % 6 == 0, didSelectItem: {
-                    print("Go to user profile")
-                }).listRowSeparator(.hidden).modifier(ListModifier()).padding(.top, 15)
-            }.modifier(ListModifier())
+
+            if searchText.isEmpty {
+                ZStack {
+                    Color.clear
+                    Text("Takip edebileceğin kişileri ara").font(.title2).foregroundStyle(.gray)
+                        .padding(.bottom, 100)
+                    Spacer()
+                }
+            } else {
+                List(0..<20) { item in
+                    UserListItemView(isFollowing: item % 6 == 0, didSelectItem: {
+                        print("Go to user profile")
+                    }).listRowSeparator(.hidden).modifier(ListModifier()).padding(.top, 15)
+                }.modifier(ListModifier())
+            }
+            
         }.padding(.horizontal, 16)
     }
 }
 
-//#Preview {
-//    SearchView()
-//}
+#Preview {
+    SearchView()
+}

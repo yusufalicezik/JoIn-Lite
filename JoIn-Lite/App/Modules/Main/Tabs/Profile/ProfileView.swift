@@ -12,7 +12,7 @@ struct ProfileView: View {
     var body: some View {
         ZStack {
             Color.softBlue.ignoresSafeArea(.all)
-            ScrollView(.vertical) {
+            ScrollView(.vertical, showsIndicators: false) {
                 LazyVStack(spacing: .zero) {
                     ProfileHeaderView().padding(.top, Screen.safeArea.top).padding(.horizontal, 16).padding(.bottom, 16).background(
                         Color.softBlue.ignoresSafeArea(.all)

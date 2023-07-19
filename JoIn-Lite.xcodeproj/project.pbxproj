@@ -13,6 +13,8 @@
 		4810E22D2A63632000C9E1A0 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4810E22C2A63632000C9E1A0 /* LoginView.swift */; };
 		4810E22F2A63638D00C9E1A0 /* OnboardingScreenViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4810E22E2A63638D00C9E1A0 /* OnboardingScreenViewModel.swift */; };
 		4810E2312A636E6A00C9E1A0 /* AuthTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4810E2302A636E6A00C9E1A0 /* AuthTextField.swift */; };
+		488331242A6839920070FC5D /* ProfileImageCreator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 488331232A6839920070FC5D /* ProfileImageCreator.swift */; };
+		488331272A683C3D0070FC5D /* EditProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 488331262A683C3D0070FC5D /* EditProfileView.swift */; };
 		48A262EC2A6334DE00C35D40 /* JoIn_LiteApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48A262EB2A6334DE00C35D40 /* JoIn_LiteApp.swift */; };
 		48A262F02A6334DF00C35D40 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 48A262EF2A6334DF00C35D40 /* Assets.xcassets */; };
 		48A262F32A6334DF00C35D40 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 48A262F22A6334DF00C35D40 /* Preview Assets.xcassets */; };
@@ -49,6 +51,8 @@
 		4810E22C2A63632000C9E1A0 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		4810E22E2A63638D00C9E1A0 /* OnboardingScreenViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingScreenViewModel.swift; sourceTree = "<group>"; };
 		4810E2302A636E6A00C9E1A0 /* AuthTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthTextField.swift; sourceTree = "<group>"; };
+		488331232A6839920070FC5D /* ProfileImageCreator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileImageCreator.swift; sourceTree = "<group>"; };
+		488331262A683C3D0070FC5D /* EditProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileView.swift; sourceTree = "<group>"; };
 		48A262E82A6334DE00C35D40 /* JoIn-Lite.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "JoIn-Lite.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		48A262EB2A6334DE00C35D40 /* JoIn_LiteApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JoIn_LiteApp.swift; sourceTree = "<group>"; };
 		48A262EF2A6334DF00C35D40 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -121,6 +125,14 @@
 				4810E22C2A63632000C9E1A0 /* LoginView.swift */,
 			);
 			path = Login;
+			sourceTree = "<group>";
+		};
+		488331252A683C320070FC5D /* EditProfile */ = {
+			isa = PBXGroup;
+			children = (
+				488331262A683C3D0070FC5D /* EditProfileView.swift */,
+			);
+			path = EditProfile;
 			sourceTree = "<group>";
 		};
 		48A262DF2A6334DE00C35D40 = {
@@ -302,6 +314,7 @@
 		48BB3B1F2A6825A700F6E0A6 /* Profile */ = {
 			isa = PBXGroup;
 			children = (
+				488331252A683C320070FC5D /* EditProfile */,
 				48BB3B222A68267A00F6E0A6 /* Views */,
 				48BB3B202A68264100F6E0A6 /* ProfileView.swift */,
 			);
@@ -321,6 +334,7 @@
 			children = (
 				48F4BD2A2A64362C00644316 /* BaseView.swift */,
 				48BB3AF42A64BD2100F6E0A6 /* StatusBarManager.swift */,
+				488331232A6839920070FC5D /* ProfileImageCreator.swift */,
 			);
 			path = Base;
 			sourceTree = "<group>";
@@ -403,8 +417,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				488331272A683C3D0070FC5D /* EditProfileView.swift in Sources */,
 				4810E2272A63572700C9E1A0 /* OnboardingView.swift in Sources */,
 				48BB3B212A68264100F6E0A6 /* ProfileView.swift in Sources */,
+				488331242A6839920070FC5D /* ProfileImageCreator.swift in Sources */,
 				48BB3B012A66FB9000F6E0A6 /* RegisterStep3View.swift in Sources */,
 				4810E22F2A63638D00C9E1A0 /* OnboardingScreenViewModel.swift in Sources */,
 				4810E2312A636E6A00C9E1A0 /* AuthTextField.swift in Sources */,
