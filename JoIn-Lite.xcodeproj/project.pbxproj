@@ -31,6 +31,8 @@
 		48BB3B112A67420500F6E0A6 /* StoryViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48BB3B102A67420500F6E0A6 /* StoryViews.swift */; };
 		48BB3B132A67467200F6E0A6 /* PostView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48BB3B122A67467200F6E0A6 /* PostView.swift */; };
 		48BB3B152A67538200F6E0A6 /* ListModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48BB3B142A67538200F6E0A6 /* ListModifier.swift */; };
+		48BB3B182A68149300F6E0A6 /* FavoritesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48BB3B172A68149300F6E0A6 /* FavoritesView.swift */; };
+		48BB3B1B2A6814F400F6E0A6 /* SearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48BB3B1A2A6814F400F6E0A6 /* SearchView.swift */; };
 		48F4BD2B2A64362C00644316 /* BaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48F4BD2A2A64362C00644316 /* BaseView.swift */; };
 		48F4BD2E2A644AD500644316 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48F4BD2D2A644AD500644316 /* LoadingView.swift */; };
 		48F4BD302A64516300644316 /* PopupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48F4BD2F2A64516300644316 /* PopupView.swift */; };
@@ -64,6 +66,8 @@
 		48BB3B102A67420500F6E0A6 /* StoryViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryViews.swift; sourceTree = "<group>"; };
 		48BB3B122A67467200F6E0A6 /* PostView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostView.swift; sourceTree = "<group>"; };
 		48BB3B142A67538200F6E0A6 /* ListModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListModifier.swift; sourceTree = "<group>"; };
+		48BB3B172A68149300F6E0A6 /* FavoritesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesView.swift; sourceTree = "<group>"; };
+		48BB3B1A2A6814F400F6E0A6 /* SearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchView.swift; sourceTree = "<group>"; };
 		48F4BD2A2A64362C00644316 /* BaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseView.swift; sourceTree = "<group>"; };
 		48F4BD2D2A644AD500644316 /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
 		48F4BD2F2A64516300644316 /* PopupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopupView.swift; sourceTree = "<group>"; };
@@ -237,6 +241,8 @@
 		48BB3B092A673E0700F6E0A6 /* Tabs */ = {
 			isa = PBXGroup;
 			children = (
+				48BB3B192A6814E800F6E0A6 /* Search */,
+				48BB3B162A68148700F6E0A6 /* Favorite */,
 				48BB3B0A2A673E1800F6E0A6 /* Home */,
 			);
 			path = Tabs;
@@ -259,6 +265,22 @@
 				48BB3B122A67467200F6E0A6 /* PostView.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		48BB3B162A68148700F6E0A6 /* Favorite */ = {
+			isa = PBXGroup;
+			children = (
+				48BB3B172A68149300F6E0A6 /* FavoritesView.swift */,
+			);
+			path = Favorite;
+			sourceTree = "<group>";
+		};
+		48BB3B192A6814E800F6E0A6 /* Search */ = {
+			isa = PBXGroup;
+			children = (
+				48BB3B1A2A6814F400F6E0A6 /* SearchView.swift */,
+			);
+			path = Search;
 			sourceTree = "<group>";
 		};
 		48F4BD2C2A643E4400644316 /* Base */ = {
@@ -363,11 +385,13 @@
 				48BB3AFA2A64BFCE00F6E0A6 /* Routes.swift in Sources */,
 				48BB3B042A67328400F6E0A6 /* MainView.swift in Sources */,
 				48BB3B0F2A673F0F00F6E0A6 /* StoryItemView.swift in Sources */,
+				48BB3B1B2A6814F400F6E0A6 /* SearchView.swift in Sources */,
 				48BB3B152A67538200F6E0A6 /* ListModifier.swift in Sources */,
 				4810E22D2A63632000C9E1A0 /* LoginView.swift in Sources */,
 				48BB3AFD2A64C19C00F6E0A6 /* WelcomeRouter.swift in Sources */,
 				4810E2292A63572E00C9E1A0 /* CustomIndicator.swift in Sources */,
 				48F4BD2B2A64362C00644316 /* BaseView.swift in Sources */,
+				48BB3B182A68149300F6E0A6 /* FavoritesView.swift in Sources */,
 				48BB3B112A67420500F6E0A6 /* StoryViews.swift in Sources */,
 				48F4BD2E2A644AD500644316 /* LoadingView.swift in Sources */,
 				48BB3B0C2A673E2000F6E0A6 /* HomeView.swift in Sources */,

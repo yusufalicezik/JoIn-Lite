@@ -87,6 +87,6 @@ struct JoInTabbar: View {
     }
 }
 
-#Preview {
-    JoInTabbar(tabSelection: .constant(1))
-}
+//#Preview {
+//    JoInTabbar(tabSelection: .constant(1))
+//}

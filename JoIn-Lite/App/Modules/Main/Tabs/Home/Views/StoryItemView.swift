@@ -26,7 +26,7 @@ struct StoryItemView: View {
             
     }
 }
-
-#Preview {
-    StoryItemView()
-}
+//
+//#Preview {
+//    StoryItemView()
+//}

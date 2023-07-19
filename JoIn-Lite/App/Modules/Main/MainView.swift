@@ -16,7 +16,7 @@ struct MainView: View {
             HomeView().tag(JOINTabItem.home.rawValue)
                 .addBottomPadding()
             
-            Text("Favorites View").tag(JOINTabItem.favorites.rawValue)
+            FavoritesView().tag(JOINTabItem.favorites.rawValue)
                 .addBottomPadding()
             
             Text("Searcj View").tag(JOINTabItem.search.rawValue)
@@ -34,9 +34,9 @@ struct MainView: View {
     }
 }
 
-#Preview {
-    MainView()
-}
+//#Preview {
+//    MainView()
+//}
 
 fileprivate extension View {
     func addBottomPadding() -> some View {
