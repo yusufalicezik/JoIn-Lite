@@ -12,31 +12,38 @@ struct MainView: View {
     @State private var tabSelection = JOINTabItem.home.rawValue
     
     var body: some View {
-        TabView(selection: $tabSelection) {
-            HomeView().tag(JOINTabItem.home.rawValue)
-                .addBottomPadding()
-            
-            FavoritesView().tag(JOINTabItem.favorites.rawValue)
-                .addBottomPadding()
-            
-            SearchView().tag(JOINTabItem.search.rawValue).addBottomPadding()
-            
-            ProfileView().tag(JOINTabItem.profile.rawValue).addBottomPadding()
-        }
-        .overlay(alignment: .bottom) {
-            VStack(spacing: .zero) {
-                Divider().foregroundColor(.red)
-                JoInTabbar(tabSelection: $tabSelection)
-                Color.white.frame(height: Screen.safeArea.bottom)
+        ZStack(alignment: .bottomTrailing) {
+            TabView(selection: $tabSelection) {
+                HomeView().tag(JOINTabItem.home.rawValue)
+                    .addBottomPadding()
+                
+                FavoritesView().tag(JOINTabItem.favorites.rawValue)
+                    .addBottomPadding()
+                
+                SearchView().tag(JOINTabItem.search.rawValue).addBottomPadding()
+                
+                ProfileView().tag(JOINTabItem.profile.rawValue).addBottomPadding()
             }
+            .overlay(alignment: .bottom) {
+                VStack(spacing: .zero) {
+                    Divider().foregroundColor(.red)
+                    JoInTabbar(tabSelection: $tabSelection)
+                    Color.white.frame(height: Screen.safeArea.bottom)
+                }
+            }
+            .ignoresSafeArea(.all)
+            
+            FloatingShareButton {
+                print("TODO..")
+            }.padding(.bottom, tabbarHeight + 10)
+                .padding(.trailing, 10)
         }
-        .ignoresSafeArea(.all)
     }
 }
 
-//#Preview {
-//    MainView()
-//}
+#Preview {
+    MainView()
+}
 
 fileprivate extension View {
     func addBottomPadding() -> some View {

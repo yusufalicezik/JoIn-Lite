@@ -40,7 +40,7 @@ struct ProfileHeaderView: View {
                         VStack(alignment: .center, spacing: 3) {
                             Text("Takip Ediliyor").font(.caption).fontWeight(.medium).foregroundStyle(.gray).lineLimit(2).layoutPriority(1)
                             Text("117").font(.footnote).fontWeight(.heavy)
-                        }.frame(maxWidth: .infinity).layoutPriority(2)
+                        }.frame(maxWidth: .infinity)
                         VStack(alignment: .center, spacing: 3) {
                             Text("Takipçi").font(.caption).fontWeight(.medium).foregroundStyle(.gray)
                             Text("8.3k").font(.footnote).fontWeight(.heavy)
