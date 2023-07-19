@@ -42,7 +42,7 @@ struct PostView: View {
                     Image(.yac)
                         .resizable()
                         .scaledToFill()
-                        .frame(width: .infinity, height: 250)
+                        .frame(height: 250)
                         .clipped()
                         .clipShape(RoundedRectangle(cornerRadius: 14))
                 }
@@ -106,6 +106,6 @@ struct PostView: View {
     }
 }
 
-//#Preview {
-//    PostView()
-//}
+#Preview {
+    PostView()
+}

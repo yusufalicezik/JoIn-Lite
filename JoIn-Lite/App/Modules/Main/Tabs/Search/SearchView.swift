@@ -6,10 +6,38 @@
 //
 
 import SwiftUI
+import CoreUtils
 
 struct SearchView: View {
+    @State var searchText: String = "Klec"
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        VStack {
+            HStack {
+                ZStack(alignment: .leading) {
+                    TextField("Ara", text: $searchText).padding(.horizontal).padding(.vertical, 8).background(
+                        RoundedRectangle(cornerRadius: 16).fill(.softBlue)
+                    )
+                    if searchText.isEmpty {
+                        Text("Ara").padding(.horizontal).foregroundStyle(.gray)
+                    }
+                }
+                
+                if !searchText.isEmpty {
+                    Button(action: {
+                        //TODO.. close the keyboard and send search request
+                    }, label: {
+                        Image(systemName: "magnifyingglass").foregroundStyle(.appPrimary).fontWeight(.semibold)
+                    }).opacity(searchText.isEmpty ? 0 : 1)
+                }
+            }.animation(.spring(), value: UUID())
+            List(0..<20) { item in
+                UserListItemView(isFollowing: item % 6 == 0).listRowSeparator(.hidden).padding(.top, 15).listRowBackground(Color.clear).onTapGesture(perform: {
+                    print("Go to user profile")
+                    
+                }).modifier(ListModifier())
+            }.modifier(ListModifier())
+        }.padding(.horizontal, 16)
     }
 }
 

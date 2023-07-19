@@ -19,9 +19,9 @@ struct MainView: View {
             FavoritesView().tag(JOINTabItem.favorites.rawValue)
                 .addBottomPadding()
             
-            Text("Searcj View").tag(JOINTabItem.search.rawValue)
+            SearchView().tag(JOINTabItem.search.rawValue).addBottomPadding()
             
-            Text("Profile View").tag(JOINTabItem.profile.rawValue)
+            Text("Profile View").tag(JOINTabItem.profile.rawValue).addBottomPadding()
         }
         .overlay(alignment: .bottom) {
             VStack(spacing: .zero) {
