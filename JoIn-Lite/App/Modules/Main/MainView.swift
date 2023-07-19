@@ -36,9 +36,9 @@ struct MainView: View {
             
             FloatingShareButton {
                 navigationState.push(to: .share)
-            }.padding(.bottom, tabbarHeight + 10)
+            }.ignoresSafeArea(.keyboard).padding(.bottom, tabbarHeight + 10)
                 .padding(.trailing, 10)
-                .ignoresSafeArea(.keyboard)
+                
         }
     }
 }
@@ -54,4 +54,3 @@ fileprivate extension View {
             .ignoresSafeArea(edges: [.bottom])
     }
 }
-//SharePostView

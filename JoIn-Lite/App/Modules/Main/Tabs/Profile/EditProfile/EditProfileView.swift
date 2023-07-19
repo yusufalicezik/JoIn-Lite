@@ -43,7 +43,21 @@ struct EditProfileView: View {
                             .font(.headline)
                             .bold()
                     }
-            }).frame(height: 55).padding(.vertical, 45).padding(.horizontal)
+            }).frame(height: 55).padding(.top, 45).padding(.horizontal)
+            
+            Button(action: {
+                //Save action
+            }, label: {
+                RoundedRectangle(cornerRadius: 16)
+                    .stroke(.appPrimary, style: .init(lineWidth: 1))
+                    .frame(height: 55)
+                    .overlay {
+                        Text("Çıkış Yap")
+                            .foregroundStyle(.appPrimary)
+                            .font(.headline)
+                            .bold()
+                    }
+            }).frame(height: 55).padding(.horizontal)
         }
     }
 }
