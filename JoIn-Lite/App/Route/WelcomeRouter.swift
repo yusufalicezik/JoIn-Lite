@@ -25,7 +25,8 @@ struct WelcomeRouter {
             let viewModel = RegisterStep2ViewModel(navigationState: navigationState, userInputModel: userInputModel)
             RegisterStep2View(viewModel: viewModel)
         case .registerStep3(let userInputModel):
-            let viewModel = RegisterStep3ViewModel(navigationState: navigationState, userInputModel: userInputModel)
+            let registerInteractor = RegisterInteractor()
+            let viewModel = RegisterStep3ViewModel(navigationState: navigationState, userInputModel: userInputModel, registerInteractor: registerInteractor)
             RegisterStep3View(viewModel: viewModel)
         }
     }
