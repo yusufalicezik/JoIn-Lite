@@ -18,8 +18,8 @@ enum Route: Hashable {
         case onboarding
         case login
         case registerStep1
-        case registerStep2
-        case registerStep3
+        case registerStep2(RegisterInputModel)
+        case registerStep3(RegisterInputModel)
     }
 }
 

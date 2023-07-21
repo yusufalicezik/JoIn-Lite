@@ -8,14 +8,11 @@
 import SwiftUI
 
 struct RegisterStep1View: View {
-    @State var email: String = .empty
-    
-    @State private var pageState: PageState = .default
-    @Environment(NavigationState.self) private var navigationState
+    @State var viewModel: RegisterStep1ViewModel
     
     var body: some View {
-        BaseView(pageState: $pageState, backIconAction: {
-            navigationState.pop()
+        BaseView(pageState: $viewModel.pageState, backIconAction: {
+            viewModel.goBack()
         }) {
             ZStack {
                 Color.appSecondary.ignoresSafeArea(.all)
@@ -25,16 +22,12 @@ struct RegisterStep1View: View {
                     
                     
                     VStack(spacing: .zero) {
-                        AuthTextField(uiModel: .init(placeholder: "E-posta", isSecureField: false, textValue: $email))
+                        AuthTextField(uiModel: .init(placeholder: "E-posta", isSecureField: false, textValue: $viewModel.email))
                         
                         Spacer()
                         
                         Button(action: {
-                            pageState = .loading
-                            DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
-                                pageState = .default
-                                navigationState.push(to: .welcome(.registerStep2))
-                            }
+                            viewModel.goToStep2()
                         }, label: {
                             RoundedRectangle(cornerRadius: 16)
                                 .fill(.appPrimary)
@@ -48,9 +41,10 @@ struct RegisterStep1View: View {
                         }).frame(height: 55)
                     }.padding(.top, 50)
                 }.padding(.horizontal, 24)
-                .padding(.bottom, 10)
+                    .padding(.bottom, 10)
             }
-        }.isolatedColorScheme(.light).ignoresSafeArea(.keyboard)
+        }.isolatedColorScheme(.light)
+        .ignoresSafeArea(.keyboard)
     }
 }
 

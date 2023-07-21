@@ -22,7 +22,7 @@ struct JoIn_LiteApp: App {
                     case .main:
                         MainView().navigationBarBackButtonHidden(true)
                     case .welcome(let welcomeRoutes):
-                        WelcomeRouter(routes: welcomeRoutes).configure().navigationBarBackButtonHidden(true)
+                        WelcomeRouter(routes: welcomeRoutes, navigationState: navigationState).configure().navigationBarBackButtonHidden(true)
                     case .share:
                         SharePostView().navigationBarBackButtonHidden(true)
                     case .editProfile:

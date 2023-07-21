@@ -36,7 +36,7 @@ struct RegisterStep2View: View {
                             pageState = .loading
                             DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
                                 pageState = .default
-                                navigationState.push(to: .welcome(.registerStep3))
+                                navigationState.push(to: .welcome(.registerStep3(.init())))
                             }
                         }, label: {
                             RoundedRectangle(cornerRadius: 16)

@@ -9,6 +9,7 @@ import SwiftUI
 
 struct WelcomeRouter {
     let routes: Route.WelcomeRoutes
+    let navigationState: NavigationState
 
     @ViewBuilder
     func configure() -> some View {
@@ -18,7 +19,8 @@ struct WelcomeRouter {
         case .onboarding:
             OnboardingScreenView()
         case .registerStep1:
-            RegisterStep1View()
+            let viewModel = RegisterStep1ViewModel(navigationState: navigationState)
+            RegisterStep1View(viewModel: viewModel)
         case .registerStep2:
             RegisterStep2View()
         case .registerStep3:

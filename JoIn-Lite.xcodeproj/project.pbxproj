@@ -13,6 +13,7 @@
 		4810E22D2A63632000C9E1A0 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4810E22C2A63632000C9E1A0 /* LoginView.swift */; };
 		4810E22F2A63638D00C9E1A0 /* OnboardingScreenViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4810E22E2A63638D00C9E1A0 /* OnboardingScreenViewModel.swift */; };
 		4810E2312A636E6A00C9E1A0 /* AuthTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4810E2302A636E6A00C9E1A0 /* AuthTextField.swift */; };
+		486CFB652A6AF8510023413A /* RegisterStep1ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 486CFB642A6AF8510023413A /* RegisterStep1ViewModel.swift */; };
 		488331242A6839920070FC5D /* ProfileImageCreator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 488331232A6839920070FC5D /* ProfileImageCreator.swift */; };
 		488331272A683C3D0070FC5D /* EditProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 488331262A683C3D0070FC5D /* EditProfileView.swift */; };
 		488331292A68421C0070FC5D /* FloatingShareButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 488331282A68421C0070FC5D /* FloatingShareButton.swift */; };
@@ -54,6 +55,7 @@
 		4810E22C2A63632000C9E1A0 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		4810E22E2A63638D00C9E1A0 /* OnboardingScreenViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingScreenViewModel.swift; sourceTree = "<group>"; };
 		4810E2302A636E6A00C9E1A0 /* AuthTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthTextField.swift; sourceTree = "<group>"; };
+		486CFB642A6AF8510023413A /* RegisterStep1ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterStep1ViewModel.swift; sourceTree = "<group>"; };
 		488331232A6839920070FC5D /* ProfileImageCreator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileImageCreator.swift; sourceTree = "<group>"; };
 		488331262A683C3D0070FC5D /* EditProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileView.swift; sourceTree = "<group>"; };
 		488331282A68421C0070FC5D /* FloatingShareButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FloatingShareButton.swift; sourceTree = "<group>"; };
@@ -133,6 +135,36 @@
 				4810E22C2A63632000C9E1A0 /* LoginView.swift */,
 			);
 			path = Login;
+			sourceTree = "<group>";
+		};
+		486CFB632A6AF7F70023413A /* Network */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		486CFB662A6B04560023413A /* Step1 */ = {
+			isa = PBXGroup;
+			children = (
+				48BB3AF72A64BF7800F6E0A6 /* RegisterStep1View.swift */,
+				486CFB642A6AF8510023413A /* RegisterStep1ViewModel.swift */,
+			);
+			path = Step1;
+			sourceTree = "<group>";
+		};
+		486CFB672A6B05260023413A /* Step2 */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Step2;
+			sourceTree = "<group>";
+		};
+		486CFB682A6B052A0023413A /* Step3 */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Step3;
 			sourceTree = "<group>";
 		};
 		488331252A683C320070FC5D /* EditProfile */ = {
@@ -248,7 +280,10 @@
 		48BB3AF62A64BF5800F6E0A6 /* Register */ = {
 			isa = PBXGroup;
 			children = (
-				48BB3AF72A64BF7800F6E0A6 /* RegisterStep1View.swift */,
+				486CFB682A6B052A0023413A /* Step3 */,
+				486CFB672A6B05260023413A /* Step2 */,
+				486CFB662A6B04560023413A /* Step1 */,
+				486CFB632A6AF7F70023413A /* Network */,
 				48BB3AFE2A66FACE00F6E0A6 /* RegisterStep2View.swift */,
 				48BB3B002A66FB9000F6E0A6 /* RegisterStep3View.swift */,
 			);
@@ -443,6 +478,7 @@
 				4810E22F2A63638D00C9E1A0 /* OnboardingScreenViewModel.swift in Sources */,
 				4810E2312A636E6A00C9E1A0 /* AuthTextField.swift in Sources */,
 				48BB3AF82A64BF7800F6E0A6 /* RegisterStep1View.swift in Sources */,
+				486CFB652A6AF8510023413A /* RegisterStep1ViewModel.swift in Sources */,
 				48F4BD302A64516300644316 /* PopupView.swift in Sources */,
 				48BB3B1E2A6817F600F6E0A6 /* UserListItemView.swift in Sources */,
 				48BB3AFF2A66FACE00F6E0A6 /* RegisterStep2View.swift in Sources */,
