@@ -8,6 +8,7 @@
 import Foundation
 import SwiftUI
 import Observation
+import CoreUtils
 
 @Observable final class RegisterStep1ViewModel {
     @ObservationIgnored
@@ -16,24 +17,27 @@ import Observation
     var pageState: PageState = .default
     var email: String = .empty
     
-    init(navigationState: NavigationState? = nil) {
+    @ObservationIgnored
+    private let emailValidator: EmailValidatorInterface
+    
+    init(navigationState: NavigationState? = nil, emailValidator: EmailValidatorInterface = EmailValidator.shared) {
         self.navigationState = navigationState
+        self.emailValidator = emailValidator
     }
 
-    @ObservationIgnored
     func goBack() {
         navigationState?.pop()
     }
     
-    @ObservationIgnored
     func goToStep2() {
         guard shouldNavigateNextStep() else { return }
-        navigationState?.push(to: .welcome(.registerStep2(.init(email: email))))
+        
+        let userInputModel = RegisterInputModel(email: email)
+        navigationState?.push(to: .welcome(.registerStep2(userInputModel)))
     }
     
-    @ObservationIgnored
     private func shouldNavigateNextStep() -> Bool {
-        if isValidEmail(email) {
+        if emailValidator.isValidEmail(email) {
             return true
         }
         
@@ -43,14 +47,6 @@ import Observation
         
         pageState = .popup(.init(title: "Uyarı", subtitle: "Lütfen geçerli bir e-posta girdiğini kontrol et.", type: .default(action: action)))
         return false
-    }
-    
-    @ObservationIgnored
-    private func isValidEmail(_ email: String) -> Bool {
-        let emailRegEx = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,64}"
-
-        let emailPred = NSPredicate(format:"SELF MATCHES %@", emailRegEx)
-        return emailPred.evaluate(with: email)
     }
 }
 

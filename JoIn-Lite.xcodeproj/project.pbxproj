@@ -14,6 +14,7 @@
 		4810E22F2A63638D00C9E1A0 /* OnboardingScreenViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4810E22E2A63638D00C9E1A0 /* OnboardingScreenViewModel.swift */; };
 		4810E2312A636E6A00C9E1A0 /* AuthTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4810E2302A636E6A00C9E1A0 /* AuthTextField.swift */; };
 		486CFB652A6AF8510023413A /* RegisterStep1ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 486CFB642A6AF8510023413A /* RegisterStep1ViewModel.swift */; };
+		486CFB6A2A6B07D20023413A /* RegisterStep2ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 486CFB692A6B07D20023413A /* RegisterStep2ViewModel.swift */; };
 		488331242A6839920070FC5D /* ProfileImageCreator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 488331232A6839920070FC5D /* ProfileImageCreator.swift */; };
 		488331272A683C3D0070FC5D /* EditProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 488331262A683C3D0070FC5D /* EditProfileView.swift */; };
 		488331292A68421C0070FC5D /* FloatingShareButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 488331282A68421C0070FC5D /* FloatingShareButton.swift */; };
@@ -56,6 +57,7 @@
 		4810E22E2A63638D00C9E1A0 /* OnboardingScreenViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingScreenViewModel.swift; sourceTree = "<group>"; };
 		4810E2302A636E6A00C9E1A0 /* AuthTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthTextField.swift; sourceTree = "<group>"; };
 		486CFB642A6AF8510023413A /* RegisterStep1ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterStep1ViewModel.swift; sourceTree = "<group>"; };
+		486CFB692A6B07D20023413A /* RegisterStep2ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterStep2ViewModel.swift; sourceTree = "<group>"; };
 		488331232A6839920070FC5D /* ProfileImageCreator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileImageCreator.swift; sourceTree = "<group>"; };
 		488331262A683C3D0070FC5D /* EditProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileView.swift; sourceTree = "<group>"; };
 		488331282A68421C0070FC5D /* FloatingShareButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FloatingShareButton.swift; sourceTree = "<group>"; };
@@ -156,6 +158,8 @@
 		486CFB672A6B05260023413A /* Step2 */ = {
 			isa = PBXGroup;
 			children = (
+				48BB3AFE2A66FACE00F6E0A6 /* RegisterStep2View.swift */,
+				486CFB692A6B07D20023413A /* RegisterStep2ViewModel.swift */,
 			);
 			path = Step2;
 			sourceTree = "<group>";
@@ -163,6 +167,7 @@
 		486CFB682A6B052A0023413A /* Step3 */ = {
 			isa = PBXGroup;
 			children = (
+				48BB3B002A66FB9000F6E0A6 /* RegisterStep3View.swift */,
 			);
 			path = Step3;
 			sourceTree = "<group>";
@@ -284,8 +289,6 @@
 				486CFB672A6B05260023413A /* Step2 */,
 				486CFB662A6B04560023413A /* Step1 */,
 				486CFB632A6AF7F70023413A /* Network */,
-				48BB3AFE2A66FACE00F6E0A6 /* RegisterStep2View.swift */,
-				48BB3B002A66FB9000F6E0A6 /* RegisterStep3View.swift */,
 			);
 			path = Register;
 			sourceTree = "<group>";
@@ -486,6 +489,7 @@
 				48A262EC2A6334DE00C35D40 /* JoIn_LiteApp.swift in Sources */,
 				48BB3B242A68268C00F6E0A6 /* ProfileHeaderView.swift in Sources */,
 				48BB3B062A67341000F6E0A6 /* JoInTabbar.swift in Sources */,
+				486CFB6A2A6B07D20023413A /* RegisterStep2ViewModel.swift in Sources */,
 				48BB3B132A67467200F6E0A6 /* PostView.swift in Sources */,
 				48BB3AF52A64BD2100F6E0A6 /* StatusBarManager.swift in Sources */,
 				48BB3AFA2A64BFCE00F6E0A6 /* Route.swift in Sources */,

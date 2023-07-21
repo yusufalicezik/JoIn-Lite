@@ -21,9 +21,9 @@ struct WelcomeRouter {
         case .registerStep1:
             let viewModel = RegisterStep1ViewModel(navigationState: navigationState)
             RegisterStep1View(viewModel: viewModel)
-        case .registerStep2:
+        case .registerStep2(let userInputModel):
             RegisterStep2View()
-        case .registerStep3:
+        case .registerStep3(let userInputModel):
             RegisterStep3View()
         }
     }
