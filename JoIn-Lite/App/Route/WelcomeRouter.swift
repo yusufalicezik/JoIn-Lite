@@ -22,9 +22,11 @@ struct WelcomeRouter {
             let viewModel = RegisterStep1ViewModel(navigationState: navigationState)
             RegisterStep1View(viewModel: viewModel)
         case .registerStep2(let userInputModel):
-            RegisterStep2View()
+            let viewModel = RegisterStep2ViewModel(navigationState: navigationState, userInputModel: userInputModel)
+            RegisterStep2View(viewModel: viewModel)
         case .registerStep3(let userInputModel):
-            RegisterStep3View()
+            let viewModel = RegisterStep3ViewModel(navigationState: navigationState, userInputModel: userInputModel)
+            RegisterStep3View(viewModel: viewModel)
         }
     }
 }

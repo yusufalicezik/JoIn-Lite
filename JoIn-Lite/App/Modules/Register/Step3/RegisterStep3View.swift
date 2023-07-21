@@ -9,16 +9,11 @@ import SwiftUI
 
 
 struct RegisterStep3View: View {
-    @State var name: String = .empty
-    @State var surname: String = .empty
-    @State var username: String = .empty
-    
-    @State private var pageState: PageState = .default
-    @Environment(NavigationState.self) private var navigationState
+    @Bindable var viewModel: RegisterStep3ViewModel
     
     var body: some View {
-        BaseView(pageState: $pageState, backIconAction: {
-            navigationState.pop()
+        BaseView(pageState: $viewModel.pageState, backIconAction: {
+            viewModel.goBack()
         }) {
             ZStack {
                 Color.appSecondary.ignoresSafeArea(.all)
@@ -29,20 +24,15 @@ struct RegisterStep3View: View {
                     
                     VStack(spacing: 12) {
                         HStack {
-                            AuthTextField(uiModel: .init(placeholder: "Ad", isSecureField: false, textValue: $name))
-                            AuthTextField(uiModel: .init(placeholder: "Soyad", isSecureField: false, textValue: $surname))
+                            AuthTextField(uiModel: .init(placeholder: "Ad", isSecureField: false, textValue: $viewModel.name))
+                            AuthTextField(uiModel: .init(placeholder: "Soyad", isSecureField: false, textValue: $viewModel.surname))
                         }
-                        AuthTextField(uiModel: .init(placeholder: "Kullanıcı Adı", isSecureField: false, textValue: $username))
+                        AuthTextField(uiModel: .init(placeholder: "Kullanıcı Adı", isSecureField: false, textValue: $viewModel.username))
                         
                         Spacer()
                         
                         Button(action: {
-                            pageState = .loading
-                            DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
-                                pageState = .default
-                                navigationState.popToRoot()
-                                navigationState.push(to: .main)
-                            }
+                            viewModel.register()
                         }, label: {
                             RoundedRectangle(cornerRadius: 16)
                                 .fill(.appPrimary)

@@ -8,15 +8,11 @@
 import SwiftUI
 
 struct RegisterStep2View: View {
-    @State var password: String = .empty
-    @State var passwordAgain: String = .empty
-    
-    @State private var pageState: PageState = .default
-    @Environment(NavigationState.self) private var navigationState
-    
+    @Bindable var viewModel: RegisterStep2ViewModel
+
     var body: some View {
-        BaseView(pageState: $pageState, backIconAction: {
-            navigationState.pop()
+        BaseView(pageState: $viewModel.pageState, backIconAction: {
+            viewModel.goBack()
         }) {
             ZStack {
                 Color.appSecondary.ignoresSafeArea(.all)
@@ -26,18 +22,14 @@ struct RegisterStep2View: View {
                     
                     
                     VStack(spacing: .zero) {
-                        AuthTextField(uiModel: .init(placeholder: "Şifre", isSecureField: true, textValue: $password)).padding(.top)
-                        AuthTextField(uiModel: .init(placeholder: "Şifre Tekrar", isSecureField: true, textValue: $passwordAgain)).padding(.top)
+                        AuthTextField(uiModel: .init(placeholder: "Şifre", isSecureField: true, textValue: $viewModel.password)).padding(.top)
+                        AuthTextField(uiModel: .init(placeholder: "Şifre Tekrar", isSecureField: true, textValue: $viewModel.passwordAgain)).padding(.top)
                         
                         
                         Spacer()
                         
                         Button(action: {
-                            pageState = .loading
-                            DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
-                                pageState = .default
-                                navigationState.push(to: .welcome(.registerStep3(.init())))
-                            }
+                            viewModel.goToStep3()
                         }, label: {
                             RoundedRectangle(cornerRadius: 16)
                                 .fill(.appPrimary)
