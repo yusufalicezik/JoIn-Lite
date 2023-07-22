@@ -53,8 +53,10 @@ struct EditProfileView: View {
                 }).frame(height: 55).padding(.top, 45).padding(.horizontal)
                 
                 Button(action: {
-                    Defaults.remove(forKey: DefaultsKeys.userLoggedIn)
-                    KeychainService.shared.removeAll()
+                    Task(priority: .background) {
+                        Defaults.remove(forKey: DefaultsKeys.userLoggedIn)
+                        KeychainService.shared.removeAll()
+                    }
                     navigationState.pop(to: .welcome(.login))
                 }, label: {
                     RoundedRectangle(cornerRadius: 16)

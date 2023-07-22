@@ -40,12 +40,22 @@ struct JoIn_LiteApp: App {
         if isUserLoggedIn() {
             MainView()
         } else {
-            OnboardingScreenView()
+            if isOnboardingShown() {
+                let loginInteractor = LoginInteractor()
+                let loginViewModel = LoginViewModel(navigationState: navigationState, loginInteractor: loginInteractor)
+                LoginView(viewModel: loginViewModel)
+            } else {
+                OnboardingScreenView()
+            }
         }
     }
     
     private func isUserLoggedIn() -> Bool {
         Defaults.bool(key: DefaultsKeys.userLoggedIn) && (KeychainService.shared.get(key: KeychainKeys.token) != nil)
+    }
+    
+    private func isOnboardingShown() -> Bool {
+        Defaults.bool(key: DefaultsKeys.onboardingShown)
     }
 }
 

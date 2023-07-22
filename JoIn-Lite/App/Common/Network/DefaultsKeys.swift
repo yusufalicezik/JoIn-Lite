@@ -8,7 +8,7 @@
 import Foundation
 
 struct DefaultsKeys {
-    static let userLoginModel = "UserLoginModel"
+    static let onboardingShown = "onboardingShown"
     static let userLoggedIn = "UserLoggedIn"
 }
 

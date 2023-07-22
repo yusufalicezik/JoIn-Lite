@@ -7,6 +7,7 @@
 
 import SwiftUI
 import Observation
+import CoreUtils
 
 struct OnboardingScreenView: View {
     @Bindable private var viewModel = OnboardingScreenViewModel()
@@ -26,6 +27,7 @@ struct OnboardingScreenView: View {
                     if viewModel.shouldShowLoginButton() {
                         Button {
                             navigationState.push(to: .welcome(.login))
+                            Defaults.save(data: true, key: DefaultsKeys.onboardingShown)
                         } label: {
                             Text("Giriş Yap").fontWeight(.semibold).frame(maxWidth: .infinity).frame(height: 50).background(.appPrimary).cornerRadius(10).padding(.horizontal, 20).foregroundColor(.softBlue).font(.title3).padding(10)
                         }
