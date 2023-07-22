@@ -45,7 +45,7 @@ struct JoIn_LiteApp: App {
     }
     
     private func isUserLoggedIn() -> Bool {
-        Defaults.bool(key: DefaultsKeys.userLoggedIn) && (KeychainWrapper.shared.get(key: KeychainKeys.token) != nil)
+        Defaults.bool(key: DefaultsKeys.userLoggedIn) && (KeychainService.shared.get(key: KeychainKeys.token) != nil)
     }
 }
 

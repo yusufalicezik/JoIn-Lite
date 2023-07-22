@@ -16,8 +16,8 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "70"
             endingLineNumber = "70"
-            landmarkName = "UINavigationController"
-            landmarkType = "21">
+            landmarkName = "gestureRecognizerShouldBegin(_:)"
+            landmarkType = "7">
             <Locations>
                <Location
                   uuid = "CAEDB42C-9823-4F76-B997-84B59FBAF569 - 18714999e86d5e21"

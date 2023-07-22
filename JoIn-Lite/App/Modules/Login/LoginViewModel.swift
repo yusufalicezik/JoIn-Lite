@@ -18,7 +18,7 @@ import CoreUtils
     @ObservationIgnored
     private let defaults: DefaultsProtocol.Type ///Since it has only static methods, we do not have to create an object, just need type. defaults.save etc.
     @ObservationIgnored
-    private let keychainWrapper: KeyChainWrapperInterface
+    private let keychainService: KeychainServiceInterface
     @ObservationIgnored
     private let emailValidator: EmailValidatorInterface
     
@@ -30,13 +30,13 @@ import CoreUtils
         navigationState: NavigationState,
         loginInteractor: LoginInteractorProtocol,
         defaults: DefaultsProtocol.Type = Defaults.self,
-        keychainWrapper: KeyChainWrapperInterface = KeychainWrapper.shared,
+        keychainService: KeychainServiceInterface = KeychainService.shared,
         emailValidator: EmailValidatorInterface = EmailValidator.shared
     ) {
         self.navigationState = navigationState
         self.loginInteractor = loginInteractor
         self.defaults = defaults
-        self.keychainWrapper = keychainWrapper
+        self.keychainService = keychainService
         self.emailValidator = emailValidator
     }
     
@@ -92,7 +92,7 @@ extension LoginViewModel {
         case .success(let response):
             CurrentUser.shared.user = response.user
             defaults.save(data: true, key: DefaultsKeys.userLoggedIn)
-            keychainWrapper.save(response.token, key: KeychainKeys.token)
+            keychainService.save(response.token, key: KeychainKeys.token)
             
             pageState = .default
             navigateToHome()
