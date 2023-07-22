@@ -8,6 +8,7 @@
 import SwiftUI
 import IQKeyboardManagerSwift
 import Observation
+import CoreUtils
 
 @main
 struct JoIn_LiteApp: App {
@@ -17,7 +18,8 @@ struct JoIn_LiteApp: App {
     var body: some Scene {
         WindowGroup {
             NavigationStack(path: $navigationState.routes) {
-                OnboardingScreenView().navigationDestination(for: Route.self) { route in
+                appContentView()
+                    .navigationDestination(for: Route.self) { route in
                     switch route {
                     case .main:
                         MainView().navigationBarBackButtonHidden(true)
@@ -31,6 +33,19 @@ struct JoIn_LiteApp: App {
                 }.navigationBarBackButtonHidden(true)
             }.environment(navigationState)
         }
+    }
+    
+    @ViewBuilder
+    private func appContentView() -> some View {
+        if isUserLoggedIn() {
+            MainView()
+        } else {
+            OnboardingScreenView()
+        }
+    }
+    
+    private func isUserLoggedIn() -> Bool {
+        Defaults.bool(key: DefaultsKeys.userLoggedIn) && (KeychainWrapper.shared.get(key: KeychainKeys.token) != nil)
     }
 }
 
