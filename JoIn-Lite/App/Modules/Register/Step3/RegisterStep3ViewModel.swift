@@ -58,10 +58,8 @@ import Observation
         pageState = .popup(.init(title: "Uyarı", subtitle: message, type: .default(action: action)))
     }
 
-    private func navigateToHome() {
-        pageState = .default
-        navigationState.popToRoot()
-        navigationState.push(to: .main)
+    private func navigateToLogin() {
+        navigationState.pop(to: .welcome(.login))
     }
 }
 
@@ -76,11 +74,13 @@ extension RegisterStep3ViewModel {
     }
     
     private func handleRegisterResult(result: RegisterUserResult) {
+        pageState = .default
+
         switch result {
         case .failure(let error):
             showErrorPopup(message: error.localizedDescription)
         case .success:
-            navigateToHome()
+            navigateToLogin()
         }
     }
     

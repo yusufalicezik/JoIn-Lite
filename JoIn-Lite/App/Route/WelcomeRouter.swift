@@ -15,7 +15,9 @@ struct WelcomeRouter {
     func configure() -> some View {
         switch routes {
         case .login:
-            LoginView()
+            let loginInteractor = LoginInteractor()
+            let viewModel = LoginViewModel(navigationState: navigationState, loginInteractor: loginInteractor)
+            LoginView(viewModel: viewModel)
         case .onboarding:
             OnboardingScreenView()
         case .registerStep1:

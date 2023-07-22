@@ -32,6 +32,7 @@ struct RegisterInteractor: RegisterInteractorProtocol {
 
 enum AuthEndpointItem: Endpoint {
     case register(RegisterUserRequestModel)
+    case login(LoginRequestModel)
 
     var baseURL: String {
         "http://127.0.0.1:3000"
@@ -41,12 +42,14 @@ enum AuthEndpointItem: Endpoint {
         switch self {
         case .register:
             "/users"
+        case .login:
+            "/users/login"
         }
     }
     
     var method: HTTPMethod {
         switch self {
-        case .register:
+        case .register, .login:
             .post
         }
     }
@@ -55,10 +58,21 @@ enum AuthEndpointItem: Endpoint {
         switch self {
         case .register(let requestModel):
             requestModel
+        case .login(let requestModel):
+            requestModel
         }
     }
     
     var headers: [URLQueryItem] {
         [URLQueryItem(name: "Content-Type", value: "application/json")]
+    }
+}
+
+protocol SafeAPIEndpoint: Endpoint {}
+
+extension SafeAPIEndpoint {
+    var headers: [URLQueryItem] {
+        //TODO: add token
+        []
     }
 }

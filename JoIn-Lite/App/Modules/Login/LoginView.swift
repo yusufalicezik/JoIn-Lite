@@ -8,14 +8,10 @@
 import SwiftUI
 
 struct LoginView: View {
-    @State var email: String = .empty
-    @State var password: String = .empty
-    
-    @State private var pageState: PageState = .default
-    @Environment(NavigationState.self) private var navigationState
+    @Bindable var viewModel: LoginViewModel
 
     var body: some View {
-        BaseView(pageState: $pageState) {
+        BaseView(pageState: $viewModel.pageState) {
             ZStack {
                 Color.appSecondary.ignoresSafeArea(.all)
                 ScrollView(.vertical, showsIndicators: false) {
@@ -24,33 +20,16 @@ struct LoginView: View {
                         Text("Eğer bir hesabın varsa giriş yaparak devam edebilirsin. Henüz bir hesabın bulunmuyorsa kayıt olarak aramıza katılabilirsin.").align(to: .left).font(.footnote).foregroundStyle(.gray.opacity(0.8)).padding(.top, 6)
                         
                         VStack(spacing: .zero) {
-                            AuthTextField(uiModel: .init(placeholder: "E-posta", isSecureField: false, shouldShowRightAction: true, textValue: $email))
-                            AuthTextField(uiModel: .init(placeholder: "Şifre", isSecureField: true, shouldShowRightAction: true, textValue: $password)).padding(.top)
+                            AuthTextField(uiModel: .init(placeholder: "E-posta", isSecureField: false, shouldShowRightAction: true, textValue: $viewModel.email))
+                            AuthTextField(uiModel: .init(placeholder: "Şifre", isSecureField: true, shouldShowRightAction: true, textValue: $viewModel.password)).padding(.top)
                             Button(action: {
-                                pageState = .popup(.init(title: "Uyarı", subtitle: "Şifreni sıfırlamak için e-postana bir mail gönderdik", type: .default(action: .init(name: "Tamam", action: {
-                                    pageState = .default
-                                }))))
+                                //TODO: - Forgot Password action
                             }, label: {
                                 Text("Şifreni mi unuttun?").align(to: .right).font(.caption2).padding(.top, 10).padding(.trailing, 6).foregroundStyle(.gray.opacity(0.7))
                             })
                             
                             Button(action: {
-                                //Login action
-                                pageState = .loading
-                                DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
-                                    let action = PopupAction(name: "Tamam") {
-                                        pageState = .default
-                                        navigationState.push(to: .main)
-                                    }
-                                    
-                                    let action2 = PopupAction(name: "Hayır") {
-                                        pageState = .default
-                                        print("Hayır clicked")
-                                    }
-                                    
-                                    let popupUIModel = PopupUIModel(title: "Uyarı", subtitle: "E-mail ya da şifreniz yanlış. Lütfen bilgilerinizi kontrol ederek tekrar giriş yapmayı deneyiniz. Şifrenizi hatırlamıyorsanız şifremi unuttum diyerek parolanızı sıfırlayabilirsiniz.", type: .multiple(actions: [action, action2]))
-                                    pageState = .popup(popupUIModel)
-                                }
+                                viewModel.login()
                             }, label: {
                                 RoundedRectangle(cornerRadius: 16)
                                     .fill(.appPrimary)
@@ -89,7 +68,7 @@ struct LoginView: View {
                             HStack(spacing: .zero) {
                                 Text("Henüz bir hesabın yok mu? ").foregroundStyle(.gray).font(.caption)
                                 Button(action: {
-                                    navigationState.push(to: .welcome(.registerStep1))
+                                    viewModel.navigateToRegister()
                                 }, label: {
                                     Text("Kayıt Ol").foregroundStyle(.appPrimary).font(.caption).bold()
                                 })

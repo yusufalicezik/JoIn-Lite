@@ -14,6 +14,7 @@ public protocol KeyChainWrapperInterface {
 }
 
 public final class KeychainWrapper: KeyChainWrapperInterface {
+    public static let shared = KeychainWrapper()
     
     public func save(_ data: String, key: String) {
         KeychainService.saveOrUpdate(key: key, data: data)
