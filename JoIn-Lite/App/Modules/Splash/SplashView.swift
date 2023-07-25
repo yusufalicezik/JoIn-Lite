@@ -10,9 +10,16 @@ import CoreUtils
 
 struct SplashView: View {
     @Environment(NavigationState.self) private var navigationState
+    @State var pageState: PageState = .default
 
     var body: some View {
-        Text("Onboarding").onAppear {
+        BaseView(pageState: $pageState) {
+            EmptyView()
+        }.onAppear {
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+                self.pageState = .loading
+            }
+            
             DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
                 self.navigateToApp()
             }
@@ -41,5 +48,5 @@ struct SplashView: View {
 }
 
 #Preview {
-    SplashView()
+    SplashView().environment(NavigationState())
 }
