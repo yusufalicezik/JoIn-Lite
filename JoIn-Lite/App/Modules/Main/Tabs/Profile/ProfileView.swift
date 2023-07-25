@@ -25,7 +25,19 @@ struct ProfileView: View {
                     }
                 }
             }.ignoresSafeArea(edges: [.top]).modifier(ListModifier())
+        }.onAppear {
+            baseUrl()
         }
+    }
+    
+    func baseUrl() {
+        #if DEBUG
+        print("debug")
+        #elseif RELEASE
+        print("release")
+        #else
+        print("other")
+        #endif
     }
 }
 

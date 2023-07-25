@@ -8,6 +8,7 @@
 import YACNetwork
 import CoreUtils
 import Foundation
+import Environment
 
 typealias RegisterUserResult = Result<EmptyResponseModel, NetworkError>
 
@@ -35,7 +36,7 @@ enum AuthEndpointItem: Endpoint {
     case login(LoginRequestModel)
 
     var baseURL: String {
-        "https://join-6fcde0605741.herokuapp.com"
+        BASE_SERVICE_URL
     }
     
     var endpointPath: String {

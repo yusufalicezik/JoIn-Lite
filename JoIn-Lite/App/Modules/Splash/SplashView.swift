@@ -47,6 +47,6 @@ struct SplashView: View {
     }
 }
 
-#Preview {
-    SplashView().environment(NavigationState())
-}
+//#Preview {
+//    SplashView().environment(NavigationState())
+//}

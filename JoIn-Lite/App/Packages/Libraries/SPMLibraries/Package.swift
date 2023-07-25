@@ -36,13 +36,17 @@ let package = Package(
             name: "CoreUtils",
             path: localPackagesPath + "/CoreUtils"
         ),
+        .package(
+            name: "Environment",
+            path: localPackagesPath + "/Environment"
+        ),
     ],
     targets: [
         // Targets are the basic building blocks of a package, defining a module or a test suite.
         // Targets can depend on other targets in this package and products from dependencies.
         .target(
             name: "SPMLibraries",
-            dependencies: ["YACNetwork", "Kingfisher", "Localization", "CoreUtils"]
+            dependencies: ["YACNetwork", "Kingfisher", "Localization", "CoreUtils", "Environment"]
         ),
         .testTarget(
             name: "SPMLibrariesTests",

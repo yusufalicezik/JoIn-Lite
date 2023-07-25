@@ -78,6 +78,7 @@ extension LoginViewModel {
         }
     }
     
+    @MainActor
     private func handleLoginResult(result: LoginResult) {
         switch result {
         case .failure(let error):

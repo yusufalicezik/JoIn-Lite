@@ -66,10 +66,11 @@ extension RegisterStep3ViewModel {
         pageState = .loading
         Task(priority: .userInitiated) {
             let result = await registerInteractor.registerUser(request: registerUserRequest())
-            handleRegisterResult(result: result)
+            await handleRegisterResult(result: result)
         }
     }
     
+    @MainActor
     private func handleRegisterResult(result: RegisterUserResult) {
         pageState = .default
 
