@@ -9,12 +9,10 @@ import Foundation
 import SwiftUI
 import Observation
 
-@Observable final class RegisterStep3ViewModel {
+final class RegisterStep3ViewModel: ObservableObject {
     let navigationState: NavigationState
-    @ObservationIgnored
     let registerInteractor: RegisterInteractorProtocol
     
-    @ObservationIgnored
     var userInputModel: RegisterInputModel
     
     var pageState: PageState = .default

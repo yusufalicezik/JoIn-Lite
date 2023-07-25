@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct RegisterStep2View: View {
-    @Bindable var viewModel: RegisterStep2ViewModel
+    @StateObject var viewModel: RegisterStep2ViewModel
 
     var body: some View {
         BaseView(pageState: $viewModel.pageState, backIconAction: {

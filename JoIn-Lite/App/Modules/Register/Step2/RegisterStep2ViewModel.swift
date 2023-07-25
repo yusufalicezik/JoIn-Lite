@@ -7,13 +7,9 @@
 
 import Foundation
 import SwiftUI
-import Observation
 
-@Observable final class RegisterStep2ViewModel {
-    @ObservationIgnored
-    let navigationState: NavigationState
-    
-    @ObservationIgnored
+final class RegisterStep2ViewModel: ObservableObject {
+    let navigationState: NavigationState    
     var userInputModel: RegisterInputModel
     
     var pageState: PageState = .default

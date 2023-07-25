@@ -7,17 +7,14 @@
 
 import Foundation
 import SwiftUI
-import Observation
 import CoreUtils
 
-@Observable final class RegisterStep1ViewModel {
-    @ObservationIgnored
+final class RegisterStep1ViewModel: ObservableObject {
     var navigationState: NavigationState?
     
     var pageState: PageState = .default
     var email: String = .empty
     
-    @ObservationIgnored
     private let emailValidator: EmailValidatorInterface
     
     init(navigationState: NavigationState? = nil, emailValidator: EmailValidatorInterface = EmailValidator.shared) {
