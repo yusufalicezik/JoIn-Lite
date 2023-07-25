@@ -107,6 +107,6 @@ struct PostView: View {
     }
 }
 
-#Preview {
-    PostView()
-}
+//#Preview {
+//    PostView()
+//}

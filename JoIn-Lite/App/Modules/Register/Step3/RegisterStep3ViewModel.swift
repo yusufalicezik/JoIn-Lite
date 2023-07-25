@@ -10,7 +10,6 @@ import SwiftUI
 import Observation
 
 @Observable final class RegisterStep3ViewModel {
-    @ObservationIgnored
     let navigationState: NavigationState
     @ObservationIgnored
     let registerInteractor: RegisterInteractorProtocol

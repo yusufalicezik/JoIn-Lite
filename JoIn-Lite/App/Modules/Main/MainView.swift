@@ -43,9 +43,9 @@ struct MainView: View {
     }
 }
 
-#Preview {
-    MainView().environment(NavigationState())
-}
+//#Preview {
+//    MainView().environment(NavigationState())
+//}
 
 fileprivate extension View {
     func addBottomPadding() -> some View {

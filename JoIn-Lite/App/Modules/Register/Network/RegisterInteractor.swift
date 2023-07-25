@@ -35,7 +35,7 @@ enum AuthEndpointItem: Endpoint {
     case login(LoginRequestModel)
 
     var baseURL: String {
-        "http://127.0.0.1:3000"
+        "https://join-6fcde0605741.herokuapp.com"
     }
     
     var endpointPath: String {

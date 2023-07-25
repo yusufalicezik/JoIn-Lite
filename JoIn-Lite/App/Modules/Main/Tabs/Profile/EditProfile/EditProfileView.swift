@@ -53,11 +53,13 @@ struct EditProfileView: View {
                 }).frame(height: 55).padding(.top, 45).padding(.horizontal)
                 
                 Button(action: {
-                    Task(priority: .background) {
-                        Defaults.remove(forKey: DefaultsKeys.userLoggedIn)
-                        KeychainService.shared.removeAll()
+                    let popToLoginSuccess = navigationState.pop(to: .welcome(.login))
+                    if !popToLoginSuccess {
+                        navigationState.popToRoot()
+                        navigationState.push(to: .welcome(.login))
                     }
-                    navigationState.pop(to: .welcome(.login))
+                    Defaults.remove(forKey: DefaultsKeys.userLoggedIn)
+                    KeychainService.shared.removeAll()
                 }, label: {
                     RoundedRectangle(cornerRadius: 16)
                         .stroke(.appPrimary, style: .init(lineWidth: 1))
@@ -74,6 +76,6 @@ struct EditProfileView: View {
     }
 }
 
-#Preview {
-    EditProfileView()
-}
+//#Preview {
+//    EditProfileView()
+//}

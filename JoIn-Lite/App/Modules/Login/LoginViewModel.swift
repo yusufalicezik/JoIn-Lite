@@ -7,24 +7,18 @@
 
 import Foundation
 import SwiftUI
-import Observation
 import CoreUtils
 
-@Observable final class LoginViewModel {
-    @ObservationIgnored
+final class LoginViewModel: ObservableObject {
     private let navigationState: NavigationState
-    @ObservationIgnored
     private let loginInteractor: LoginInteractorProtocol
-    @ObservationIgnored
     private let defaults: DefaultsProtocol.Type ///Since it has only static methods, we do not have to create an object, just need type. defaults.save etc.
-    @ObservationIgnored
     private let keychainService: KeychainServiceInterface
-    @ObservationIgnored
     private let emailValidator: EmailValidatorInterface
     
-    var pageState: PageState = .default
-    var email: String = .empty
-    var password: String = .empty
+    @Published var pageState: PageState = .default
+    @Published var email: String = .empty
+    @Published var password: String = .empty
     
     init(
         navigationState: NavigationState,

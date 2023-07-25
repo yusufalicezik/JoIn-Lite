@@ -66,7 +66,7 @@ struct SharePostView: View {
     }
 }
 
-#Preview {
-    SharePostView().environment(NavigationState())
-}
-
+//#Preview {
+//    SharePostView().environment(NavigationState())
+//}
+//

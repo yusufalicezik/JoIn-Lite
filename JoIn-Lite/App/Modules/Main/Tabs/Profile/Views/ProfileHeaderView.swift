@@ -83,6 +83,6 @@ struct ProfileHeaderView: View {
     }
 }
 
-#Preview {
-    ProfileHeaderView().environment(NavigationState())
-}
+//#Preview {
+//    ProfileHeaderView().environment(NavigationState())
+//}

@@ -8,7 +8,8 @@
 import SwiftUI
 
 struct LoginView: View {
-    @Bindable var viewModel: LoginViewModel
+    @StateObject
+    var viewModel: LoginViewModel
 
     var body: some View {
         BaseView(pageState: $viewModel.pageState) {
@@ -79,6 +80,10 @@ struct LoginView: View {
                 }
             }
         }.isolatedColorScheme(.light)
+            .onAppear {
+                viewModel.email.removeAll()
+                viewModel.password.removeAll()
+            }
     }
 }
 

@@ -14,13 +14,28 @@
             filePath = "JoIn-Lite/App/JoIn_LiteApp.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "80"
-            endingLineNumber = "80"
+            startingLineNumber = "57"
+            endingLineNumber = "57"
             landmarkName = "gestureRecognizerShouldBegin(_:)"
             landmarkType = "7">
             <Locations>
                <Location
-                  uuid = "CAEDB42C-9823-4F76-B997-84B59FBAF569 - 18714999e86d5e21"
+                  uuid = "CAEDB42C-9823-4F76-B997-84B59FBAF569 - 138ad216bb8526d9"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "JoIn_Lite.JoIn_LiteApp.isOnboardingShown() -&gt; Swift.Bool"
+                  moduleName = "JoIn-Lite"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/yusufalicezik/Desktop/JoIn-Lite/JoIn-Lite/App/JoIn_LiteApp.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "58"
+                  endingLineNumber = "58"
+                  offsetFromSymbolStart = "28">
+               </Location>
+               <Location
+                  uuid = "CAEDB42C-9823-4F76-B997-84B59FBAF569 - 18714999e86d5ee7"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
@@ -30,53 +45,8 @@
                   urlString = "file:///Users/yusufalicezik/Desktop/JoIn-Lite/JoIn-Lite/App/JoIn_LiteApp.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "55"
-                  endingLineNumber = "55"
-                  offsetFromSymbolStart = "76">
-               </Location>
-               <Location
-                  uuid = "CAEDB42C-9823-4F76-B997-84B59FBAF569 - 18714999e86d5e21"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "__C.UINavigationController.gestureRecognizerShouldBegin(__C.UIGestureRecognizer) -&gt; Swift.Bool"
-                  moduleName = "JoIn-Lite"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/yusufalicezik/Desktop/JoIn-Lite/JoIn-Lite/App/JoIn_LiteApp.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "55"
-                  endingLineNumber = "55"
-                  offsetFromSymbolStart = "580">
-               </Location>
-               <Location
-                  uuid = "CAEDB42C-9823-4F76-B997-84B59FBAF569 - 8e463cdf4c7f272"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (__C.UIViewController) -&gt; Swift.Bool in __C.UINavigationController.gestureRecognizerShouldBegin(__C.UIGestureRecognizer) -&gt; Swift.Bool"
-                  moduleName = "JoIn-Lite"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/yusufalicezik/Desktop/JoIn-Lite/JoIn-Lite/App/JoIn_LiteApp.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "55"
-                  endingLineNumber = "55"
-                  offsetFromSymbolStart = "32">
-               </Location>
-               <Location
-                  uuid = "CAEDB42C-9823-4F76-B997-84B59FBAF569 - 18714999e86d5e21"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "__C.UINavigationController.gestureRecognizerShouldBegin(__C.UIGestureRecognizer) -&gt; Swift.Bool"
-                  moduleName = "JoIn-Lite"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/yusufalicezik/Desktop/JoIn-Lite/JoIn-Lite/App/JoIn_LiteApp.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "55"
-                  endingLineNumber = "55"
+                  startingLineNumber = "57"
+                  endingLineNumber = "57"
                   offsetFromSymbolStart = "100">
                </Location>
             </Locations>
@@ -255,6 +225,38 @@
             endingLineNumber = "23"
             landmarkName = "buildUrl(dependingOn:)"
             landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "A6A43774-C177-4728-AF87-915330D41E4D - f380f9948283d686"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "YACNetwork.RequestBuilder.buildUrl&lt;&#x3c4;_0_0 where &#x3c4;_0_0: YACNetwork.Endpoint&gt;(dependingOn: &#x3c4;_0_0) throws -&gt; Foundation.URL"
+                  moduleName = "JoIn-Lite"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/yusufalicezik/Library/Developer/Xcode/DerivedData/JoIn-Lite-bojhtjvjqvozlxajdcxbkvkqjuhi/SourcePackages/checkouts/YACNetwork/Sources/YACNetwork/Core/RequestBuilder.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "25"
+                  endingLineNumber = "25"
+                  offsetFromSymbolStart = "336">
+               </Location>
+               <Location
+                  uuid = "A6A43774-C177-4728-AF87-915330D41E4D - f380f9948283d686"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "YACNetwork.RequestBuilder.buildUrl&lt;&#x3c4;_0_0 where &#x3c4;_0_0: YACNetwork.Endpoint&gt;(dependingOn: &#x3c4;_0_0) throws -&gt; Foundation.URL"
+                  moduleName = "JoIn-Lite"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/yusufalicezik/Library/Developer/Xcode/DerivedData/JoIn-Lite-bojhtjvjqvozlxajdcxbkvkqjuhi/SourcePackages/checkouts/YACNetwork/Sources/YACNetwork/Core/RequestBuilder.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "25"
+                  endingLineNumber = "25"
+                  offsetFromSymbolStart = "396">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -271,6 +273,38 @@
             endingLineNumber = "26"
             landmarkName = "buildUrl(dependingOn:)"
             landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "80D24E2C-79B3-4F1E-8EA4-2C48C0030014 - f380f9948283d6a7"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "YACNetwork.RequestBuilder.buildUrl&lt;&#x3c4;_0_0 where &#x3c4;_0_0: YACNetwork.Endpoint&gt;(dependingOn: &#x3c4;_0_0) throws -&gt; Foundation.URL"
+                  moduleName = "JoIn-Lite"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/yusufalicezik/Library/Developer/Xcode/DerivedData/JoIn-Lite-bojhtjvjqvozlxajdcxbkvkqjuhi/SourcePackages/checkouts/YACNetwork/Sources/YACNetwork/Core/RequestBuilder.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "26"
+                  endingLineNumber = "26"
+                  offsetFromSymbolStart = "632">
+               </Location>
+               <Location
+                  uuid = "80D24E2C-79B3-4F1E-8EA4-2C48C0030014 - f380f9948283d6a7"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "YACNetwork.RequestBuilder.buildUrl&lt;&#x3c4;_0_0 where &#x3c4;_0_0: YACNetwork.Endpoint&gt;(dependingOn: &#x3c4;_0_0) throws -&gt; Foundation.URL"
+                  moduleName = "JoIn-Lite"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/yusufalicezik/Library/Developer/Xcode/DerivedData/JoIn-Lite-bojhtjvjqvozlxajdcxbkvkqjuhi/SourcePackages/checkouts/YACNetwork/Sources/YACNetwork/Core/RequestBuilder.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "26"
+                  endingLineNumber = "26"
+                  offsetFromSymbolStart = "692">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -287,6 +321,38 @@
             endingLineNumber = "29"
             landmarkName = "buildUrl(dependingOn:)"
             landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "6180B89C-1B47-4776-8D49-A9EBA43576D7 - f380f9948283d602"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "YACNetwork.RequestBuilder.buildUrl&lt;&#x3c4;_0_0 where &#x3c4;_0_0: YACNetwork.Endpoint&gt;(dependingOn: &#x3c4;_0_0) throws -&gt; Foundation.URL"
+                  moduleName = "JoIn-Lite"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/yusufalicezik/Library/Developer/Xcode/DerivedData/JoIn-Lite-bojhtjvjqvozlxajdcxbkvkqjuhi/SourcePackages/checkouts/YACNetwork/Sources/YACNetwork/Core/RequestBuilder.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "29"
+                  endingLineNumber = "29"
+                  offsetFromSymbolStart = "496">
+               </Location>
+               <Location
+                  uuid = "6180B89C-1B47-4776-8D49-A9EBA43576D7 - f380f9948283d602"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "YACNetwork.RequestBuilder.buildUrl&lt;&#x3c4;_0_0 where &#x3c4;_0_0: YACNetwork.Endpoint&gt;(dependingOn: &#x3c4;_0_0) throws -&gt; Foundation.URL"
+                  moduleName = "JoIn-Lite"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/yusufalicezik/Library/Developer/Xcode/DerivedData/JoIn-Lite-bojhtjvjqvozlxajdcxbkvkqjuhi/SourcePackages/checkouts/YACNetwork/Sources/YACNetwork/Core/RequestBuilder.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "29"
+                  endingLineNumber = "29"
+                  offsetFromSymbolStart = "556">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -303,6 +369,38 @@
             endingLineNumber = "52"
             landmarkName = "buildURLRequest(urlWithoutQueryItems:dependingOn:)"
             landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "E07F203D-C426-48F9-A849-1F327C38F6F6 - d0a2bd87682777a5"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "YACNetwork.RequestBuilder.buildURLRequest&lt;&#x3c4;_0_0 where &#x3c4;_0_0: YACNetwork.Endpoint&gt;(urlWithoutQueryItems: Foundation.URL, dependingOn: &#x3c4;_0_0) throws -&gt; Foundation.URLRequest"
+                  moduleName = "JoIn-Lite"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/yusufalicezik/Library/Developer/Xcode/DerivedData/JoIn-Lite-bojhtjvjqvozlxajdcxbkvkqjuhi/SourcePackages/checkouts/YACNetwork/Sources/YACNetwork/Core/RequestBuilder.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "52"
+                  endingLineNumber = "52"
+                  offsetFromSymbolStart = "1720">
+               </Location>
+               <Location
+                  uuid = "E07F203D-C426-48F9-A849-1F327C38F6F6 - d0a2bd87682777a5"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "YACNetwork.RequestBuilder.buildURLRequest&lt;&#x3c4;_0_0 where &#x3c4;_0_0: YACNetwork.Endpoint&gt;(urlWithoutQueryItems: Foundation.URL, dependingOn: &#x3c4;_0_0) throws -&gt; Foundation.URLRequest"
+                  moduleName = "JoIn-Lite"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/yusufalicezik/Library/Developer/Xcode/DerivedData/JoIn-Lite-bojhtjvjqvozlxajdcxbkvkqjuhi/SourcePackages/checkouts/YACNetwork/Sources/YACNetwork/Core/RequestBuilder.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "52"
+                  endingLineNumber = "52"
+                  offsetFromSymbolStart = "2000">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -733,6 +831,293 @@
                   startingLineNumber = "131"
                   endingLineNumber = "131"
                   offsetFromSymbolStart = "4116">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "A8A77308-4644-4A86-B69A-3D8ECCB5832F"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "JoIn-Lite/App/Modules/Main/Tabs/Profile/EditProfile/EditProfileView.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "56"
+            endingLineNumber = "56"
+            landmarkName = "body"
+            landmarkType = "24">
+            <Locations>
+               <Location
+                  uuid = "A8A77308-4644-4A86-B69A-3D8ECCB5832F - d01d7da21aa603b8"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #5 () -&gt; () in closure #1 () -&gt; SwiftUI.TupleView&lt;(&lt;&lt;opaque return type of SwiftUI.View.padding(SwiftUI.Edge.Set, Swift.Optional&lt;CoreGraphics.CGFloat&gt;) -&gt; some&gt;&gt;.0, &lt;&lt;opaque return type of SwiftUI.View.onTapGesture(count: Swift.Int, perform: () -&gt; ()) -&gt; some&gt;&gt;.0, &lt;&lt;opaque return type of SwiftUI.View.padding(SwiftUI.Edge.Set, Swift.Optional&lt;CoreGraphics.CGFloat&gt;) -&gt; some&gt;&gt;.0, SwiftUI.Spacer, &lt;&lt;opaque return type of SwiftUI.View.padding(SwiftUI.Edge.Set, Swift.Optional&lt;CoreGraphics.CGFloat&gt;) -&gt; some&gt;&gt;.0, &lt;&lt;opaque return type of SwiftUI.View.padding(SwiftUI.Edge.Set, Swift.Optional&lt;CoreGraphics.CGFloat&gt;) -&gt; some&gt;&gt;.0)&gt; in closure #2 () -&gt; SwiftUI.VStack&lt;SwiftUI.TupleView&lt;(&lt;&lt;opaque return type of SwiftUI.View.padding(SwiftUI.Edge.Set, Swift.Optional&lt;CoreGraphics.CGFloat&gt;) -&gt; some&gt;&gt;.0, &lt;&lt;opaque return type of SwiftUI.View.onTapGesture(count: Swift.Int, perform: () -&gt; ()) -&gt; some&gt;&gt;.0, &lt;&lt;opaque return type of SwiftUI.View.padding(SwiftUI.Edge.Set, Swift.Optional&lt;CoreGraphics.CGFloat&gt;) -&gt; some&gt;&gt;.0, SwiftUI.Spacer, &lt;&lt;opaque return type of SwiftUI.View.padding(SwiftUI.Edge.Set, Swift.Optional&lt;CoreGraphics.CGFloat&gt;) -&gt; some&gt;&gt;.0, &lt;&lt;opaque return type of SwiftUI.View.padding(SwiftUI.Edge.Set, Swift.Optional&lt;CoreGraphics.CGFloat&gt;) -&gt; some&gt;&gt;.0)&gt;&gt; in JoIn_Lite.EditProfileView.body.getter : some"
+                  moduleName = "JoIn-Lite"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/yusufalicezik/Desktop/JoIn-Lite/JoIn-Lite/App/Modules/Main/Tabs/Profile/EditProfile/EditProfileView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "56"
+                  endingLineNumber = "56"
+                  offsetFromSymbolStart = "108">
+               </Location>
+               <Location
+                  uuid = "A8A77308-4644-4A86-B69A-3D8ECCB5832F - d01d7da21aa603b8"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #5 () -&gt; () in closure #1 () -&gt; SwiftUI.TupleView&lt;(&lt;&lt;opaque return type of SwiftUI.View.padding(SwiftUI.Edge.Set, Swift.Optional&lt;CoreGraphics.CGFloat&gt;) -&gt; some&gt;&gt;.0, &lt;&lt;opaque return type of SwiftUI.View.onTapGesture(count: Swift.Int, perform: () -&gt; ()) -&gt; some&gt;&gt;.0, &lt;&lt;opaque return type of SwiftUI.View.padding(SwiftUI.Edge.Set, Swift.Optional&lt;CoreGraphics.CGFloat&gt;) -&gt; some&gt;&gt;.0, SwiftUI.Spacer, &lt;&lt;opaque return type of SwiftUI.View.padding(SwiftUI.Edge.Set, Swift.Optional&lt;CoreGraphics.CGFloat&gt;) -&gt; some&gt;&gt;.0, &lt;&lt;opaque return type of SwiftUI.View.padding(SwiftUI.Edge.Set, Swift.Optional&lt;CoreGraphics.CGFloat&gt;) -&gt; some&gt;&gt;.0)&gt; in closure #2 () -&gt; SwiftUI.VStack&lt;SwiftUI.TupleView&lt;(&lt;&lt;opaque return type of SwiftUI.View.padding(SwiftUI.Edge.Set, Swift.Optional&lt;CoreGraphics.CGFloat&gt;) -&gt; some&gt;&gt;.0, &lt;&lt;opaque return type of SwiftUI.View.onTapGesture(count: Swift.Int, perform: () -&gt; ()) -&gt; some&gt;&gt;.0, &lt;&lt;opaque return type of SwiftUI.View.padding(SwiftUI.Edge.Set, Swift.Optional&lt;CoreGraphics.CGFloat&gt;) -&gt; some&gt;&gt;.0, SwiftUI.Spacer, &lt;&lt;opaque return type of SwiftUI.View.padding(SwiftUI.Edge.Set, Swift.Optional&lt;CoreGraphics.CGFloat&gt;) -&gt; some&gt;&gt;.0, &lt;&lt;opaque return type of SwiftUI.View.padding(SwiftUI.Edge.Set, Swift.Optional&lt;CoreGraphics.CGFloat&gt;) -&gt; some&gt;&gt;.0)&gt;&gt; in JoIn_Lite.EditProfileView.body.getter : some"
+                  moduleName = "JoIn-Lite"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/yusufalicezik/Desktop/JoIn-Lite/JoIn-Lite/App/Modules/Main/Tabs/Profile/EditProfile/EditProfileView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "56"
+                  endingLineNumber = "56"
+                  offsetFromSymbolStart = "120">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "EB76A91A-3F02-4C26-9B8B-54E370DE2C4D"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "JoIn-Lite/App/Route/Route.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "43"
+            endingLineNumber = "43"
+            landmarkName = "pop(to:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "EB76A91A-3F02-4C26-9B8B-54E370DE2C4D - 9608d7ec1db5a4a"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "JoIn_Lite.NavigationState.pop(to: JoIn_Lite.Route) -&gt; ()"
+                  moduleName = "JoIn-Lite"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/yusufalicezik/Desktop/JoIn-Lite/JoIn-Lite/App/Route/Route.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "42"
+                  endingLineNumber = "42"
+                  offsetFromSymbolStart = "124">
+               </Location>
+               <Location
+                  uuid = "EB76A91A-3F02-4C26-9B8B-54E370DE2C4D - 9608d7ec1db5a4a"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "JoIn_Lite.NavigationState.pop(to: JoIn_Lite.Route) -&gt; ()"
+                  moduleName = "JoIn-Lite"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/yusufalicezik/Desktop/JoIn-Lite/JoIn-Lite/App/Route/Route.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "42"
+                  endingLineNumber = "42"
+                  offsetFromSymbolStart = "724">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "5E062880-C7C6-4784-AF0F-DC891483839A"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "JoIn-Lite/App/Route/Route.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "44"
+            endingLineNumber = "44"
+            landmarkName = "pop(to:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "AB32CF8C-E7E6-4A16-B3BA-C66148EB5C9F"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "JoIn-Lite/App/JoIn_LiteApp.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "27"
+            endingLineNumber = "27"
+            landmarkName = "body"
+            landmarkType = "24">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "72CC8BB6-03E7-41E0-AB5A-F850C546B866"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "JoIn-Lite/App/Route/WelcomeRouter.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "20"
+            endingLineNumber = "20"
+            landmarkName = "configure()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "23216CAF-FCFE-402B-8C84-5485D8345C4D"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "JoIn-Lite/App/Modules/Splash/SplashView.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "24"
+            endingLineNumber = "24"
+            landmarkName = "navigateToApp()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "41765CC2-F501-4149-A8E2-CB3802D2B532"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "JoIn-Lite/App/Modules/Splash/SplashView.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "27"
+            endingLineNumber = "27"
+            landmarkName = "navigateToApp()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "2F233CF3-A511-48DD-99ED-02447E8F2FA5"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "JoIn-Lite/App/Modules/Splash/SplashView.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "29"
+            endingLineNumber = "29"
+            landmarkName = "navigateToApp()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "E1C630CE-5FEA-4030-8E39-D3BA3E0451C9"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "JoIn-Lite/App/JoIn_LiteApp.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "25"
+            endingLineNumber = "25"
+            landmarkName = "body"
+            landmarkType = "24">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "64C96890-8269-445D-8AB2-F37BB834C3B9"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "JoIn-Lite/App/JoIn_LiteApp.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "29"
+            endingLineNumber = "29"
+            landmarkName = "body"
+            landmarkType = "24">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "C69FB131-77E0-4C17-A534-A47CFA3431D0"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "JoIn-Lite/App/JoIn_LiteApp.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "32"
+            endingLineNumber = "32"
+            landmarkName = "body"
+            landmarkType = "24">
+            <Locations>
+               <Location
+                  uuid = "C69FB131-77E0-4C17-A534-A47CFA3431D0 - d78837b851e9ec76"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 () -&gt; &lt;&lt;opaque return type of SwiftUI.View.navigationBarBackButtonHidden(Swift.Bool) -&gt; some&gt;&gt;.0 in closure #1 () -&gt; &lt;&lt;opaque return type of SwiftUI.View.environment&lt;&#x3c4;_0_0 where &#x3c4;_1_0: AnyObject, &#x3c4;_1_0: Observation.Observable&gt;(Swift.Optional&lt;&#x3c4;_1_0&gt;) -&gt; some&gt;&gt;.0 in JoIn_Lite.JoIn_LiteApp.body.getter : some"
+                  moduleName = "JoIn-Lite"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/yusufalicezik/Desktop/JoIn-Lite/JoIn-Lite/App/JoIn_LiteApp.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "33"
+                  endingLineNumber = "33"
+                  offsetFromSymbolStart = "732">
+               </Location>
+               <Location
+                  uuid = "C69FB131-77E0-4C17-A534-A47CFA3431D0 - 8c2735ffd2161346"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (JoIn_Lite.Route) -&gt; SwiftUI._ConditionalContent&lt;SwiftUI._ConditionalContent&lt;&lt;&lt;opaque return type of SwiftUI.View.navigationBarBackButtonHidden(Swift.Bool) -&gt; some&gt;&gt;.0, &lt;&lt;opaque return type of SwiftUI.View.navigationBarBackButtonHidden(Swift.Bool) -&gt; some&gt;&gt;.0&gt;, SwiftUI._ConditionalContent&lt;&lt;&lt;opaque return type of SwiftUI.View.navigationBarBackButtonHidden(Swift.Bool) -&gt; some&gt;&gt;.0, &lt;&lt;opaque return type of SwiftUI.View.navigationBarBackButtonHidden(Swift.Bool) -&gt; some&gt;&gt;.0&gt;&gt; in closure #1 () -&gt; &lt;&lt;opaque return type of SwiftUI.View.navigationBarBackButtonHidden(Swift.Bool) -&gt; some&gt;&gt;.0 in closure #1 () -&gt; &lt;&lt;opaque return type of SwiftUI.View.environment&lt;&#x3c4;_0_0 where &#x3c4;_1_0: AnyObject, &#x3c4;_1_0: Observation.Observable&gt;(Swift.Optional&lt;&#x3c4;_1_0&gt;) -&gt; some&gt;&gt;.0 in JoIn_Lite.JoIn_LiteApp.body.getter : some"
+                  moduleName = "JoIn-Lite"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/yusufalicezik/Desktop/JoIn-Lite/JoIn-Lite/App/JoIn_LiteApp.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "33"
+                  endingLineNumber = "33"
+                  offsetFromSymbolStart = "3848">
+               </Location>
+               <Location
+                  uuid = "C69FB131-77E0-4C17-A534-A47CFA3431D0 - d78837b851e9ec76"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 () -&gt; &lt;&lt;opaque return type of SwiftUI.View.navigationBarBackButtonHidden(Swift.Bool) -&gt; some&gt;&gt;.0 in closure #1 () -&gt; &lt;&lt;opaque return type of SwiftUI.View.environment&lt;&#x3c4;_0_0 where &#x3c4;_1_0: AnyObject, &#x3c4;_1_0: Observation.Observable&gt;(Swift.Optional&lt;&#x3c4;_1_0&gt;) -&gt; some&gt;&gt;.0 in JoIn_Lite.JoIn_LiteApp.body.getter : some"
+                  moduleName = "JoIn-Lite"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/yusufalicezik/Desktop/JoIn-Lite/JoIn-Lite/App/JoIn_LiteApp.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "33"
+                  endingLineNumber = "33"
+                  offsetFromSymbolStart = "996">
                </Location>
             </Locations>
          </BreakpointContent>

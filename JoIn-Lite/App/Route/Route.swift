@@ -38,8 +38,10 @@ enum Route: Hashable {
         routes.removeAll()
     }
     
-    func pop(to route: Route) {
-        guard let index = routes.firstIndex(of: route) else { return }
+    @discardableResult
+    func pop(to route: Route) -> Bool {
+        guard let index = routes.firstIndex(of: route) else { return false }
         routes = Array(routes[0...index])
+        return true
     }
 }
