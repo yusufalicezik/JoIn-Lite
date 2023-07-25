@@ -15,10 +15,10 @@ final class RegisterStep3ViewModel: ObservableObject {
     
     var userInputModel: RegisterInputModel
     
-    var pageState: PageState = .default
-    var name: String = .empty
-    var surname: String = .empty
-    var username: String = .empty
+    @Published var pageState: PageState = .default
+    @Published var name: String = .empty
+    @Published var surname: String = .empty
+    @Published var username: String = .empty
 
     init(navigationState: NavigationState, userInputModel: RegisterInputModel, registerInteractor: RegisterInteractorProtocol) {
         self.navigationState = navigationState

@@ -12,8 +12,8 @@ import CoreUtils
 final class RegisterStep1ViewModel: ObservableObject {
     var navigationState: NavigationState?
     
-    var pageState: PageState = .default
-    var email: String = .empty
+    @Published var pageState: PageState = .default
+    @Published var email: String = .empty
     
     private let emailValidator: EmailValidatorInterface
     

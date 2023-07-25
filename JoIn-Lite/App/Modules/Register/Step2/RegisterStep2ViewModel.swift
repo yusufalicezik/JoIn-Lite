@@ -12,9 +12,9 @@ final class RegisterStep2ViewModel: ObservableObject {
     let navigationState: NavigationState    
     var userInputModel: RegisterInputModel
     
-    var pageState: PageState = .default
-    var password: String = .empty
-    var passwordAgain: String = .empty
+    @Published var pageState: PageState = .default
+    @Published var password: String = .empty
+    @Published var passwordAgain: String = .empty
 
     init(navigationState: NavigationState, userInputModel: RegisterInputModel) {
         self.navigationState = navigationState
