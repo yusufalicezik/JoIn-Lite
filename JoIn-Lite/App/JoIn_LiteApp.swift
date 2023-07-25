@@ -9,6 +9,7 @@ import SwiftUI
 import IQKeyboardManagerSwift
 import Observation
 import CoreUtils
+import Environment
 
 @main
 struct JoIn_LiteApp: App {
@@ -43,6 +44,9 @@ class AppDelegate: NSObject, UIApplicationDelegate {
         IQKeyboardManager.shared.shouldShowToolbarPlaceholder = false
         IQKeyboardManager.shared.shouldResignOnTouchOutside = true
         IQKeyboardManager.shared.previousNextDisplayMode = .alwaysHide
+        
+        YACSettingsBundleHelper.shared.setup(with: .dev)
+        
         return true
     }
 }

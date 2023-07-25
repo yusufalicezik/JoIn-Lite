@@ -13,6 +13,7 @@
 		4810E22D2A63632000C9E1A0 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4810E22C2A63632000C9E1A0 /* LoginView.swift */; };
 		4810E22F2A63638D00C9E1A0 /* OnboardingScreenViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4810E22E2A63638D00C9E1A0 /* OnboardingScreenViewModel.swift */; };
 		4810E2312A636E6A00C9E1A0 /* AuthTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4810E2302A636E6A00C9E1A0 /* AuthTextField.swift */; };
+		484820212A7087AC0043949C /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 484820202A7087AC0043949C /* Settings.bundle */; };
 		486CFB652A6AF8510023413A /* RegisterStep1ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 486CFB642A6AF8510023413A /* RegisterStep1ViewModel.swift */; };
 		486CFB6A2A6B07D20023413A /* RegisterStep2ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 486CFB692A6B07D20023413A /* RegisterStep2ViewModel.swift */; };
 		486CFB6C2A6B0C8F0023413A /* RegisterStep3ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 486CFB6B2A6B0C8F0023413A /* RegisterStep3ViewModel.swift */; };
@@ -31,7 +32,6 @@
 		488331292A68421C0070FC5D /* FloatingShareButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 488331282A68421C0070FC5D /* FloatingShareButton.swift */; };
 		4883312C2A6845350070FC5D /* SharePostView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4883312B2A6845350070FC5D /* SharePostView.swift */; };
 		4883312E2A68532A0070FC5D /* MultilineTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4883312D2A68532A0070FC5D /* MultilineTextField.swift */; };
-		489399DF2A70793C00C1D551 /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 489399DE2A70793C00C1D551 /* Settings.bundle */; };
 		48A262EC2A6334DE00C35D40 /* JoIn_LiteApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48A262EB2A6334DE00C35D40 /* JoIn_LiteApp.swift */; };
 		48A262F02A6334DF00C35D40 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 48A262EF2A6334DF00C35D40 /* Assets.xcassets */; };
 		48A262F32A6334DF00C35D40 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 48A262F22A6334DF00C35D40 /* Preview Assets.xcassets */; };
@@ -68,6 +68,7 @@
 		4810E22C2A63632000C9E1A0 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		4810E22E2A63638D00C9E1A0 /* OnboardingScreenViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingScreenViewModel.swift; sourceTree = "<group>"; };
 		4810E2302A636E6A00C9E1A0 /* AuthTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthTextField.swift; sourceTree = "<group>"; };
+		484820202A7087AC0043949C /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
 		486CFB642A6AF8510023413A /* RegisterStep1ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterStep1ViewModel.swift; sourceTree = "<group>"; };
 		486CFB692A6B07D20023413A /* RegisterStep2ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterStep2ViewModel.swift; sourceTree = "<group>"; };
 		486CFB6B2A6B0C8F0023413A /* RegisterStep3ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterStep3ViewModel.swift; sourceTree = "<group>"; };
@@ -88,7 +89,6 @@
 		4883312D2A68532A0070FC5D /* MultilineTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultilineTextField.swift; sourceTree = "<group>"; };
 		489399DB2A70751500C1D551 /* JoIn-Lite copy-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "JoIn-Lite copy-Info.plist"; path = "/Users/yusufalicezik/Desktop/JoIn-Lite/JoIn-Lite copy-Info.plist"; sourceTree = "<absolute>"; };
 		489399DC2A70782600C1D551 /* Environment */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = Environment; sourceTree = "<group>"; };
-		489399DE2A70793C00C1D551 /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
 		48A262E82A6334DE00C35D40 /* JoIn-Lite.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "JoIn-Lite.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		48A262EB2A6334DE00C35D40 /* JoIn_LiteApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JoIn_LiteApp.swift; sourceTree = "<group>"; };
 		48A262EF2A6334DF00C35D40 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -145,7 +145,6 @@
 		4810E22A2A6362DE00C9E1A0 /* Common */ = {
 			isa = PBXGroup;
 			children = (
-				489399DD2A7078EC00C1D551 /* Environment */,
 				486CFB7B2A6BE49A0023413A /* Network */,
 				4810E2282A63572E00C9E1A0 /* CustomIndicator.swift */,
 				4810E2302A636E6A00C9E1A0 /* AuthTextField.swift */,
@@ -257,17 +256,10 @@
 			path = Share;
 			sourceTree = "<group>";
 		};
-		489399DD2A7078EC00C1D551 /* Environment */ = {
-			isa = PBXGroup;
-			children = (
-				489399DE2A70793C00C1D551 /* Settings.bundle */,
-			);
-			path = Environment;
-			sourceTree = "<group>";
-		};
 		48A262DF2A6334DE00C35D40 = {
 			isa = PBXGroup;
 			children = (
+				484820202A7087AC0043949C /* Settings.bundle */,
 				48A262EA2A6334DE00C35D40 /* JoIn-Lite */,
 				48A262E92A6334DE00C35D40 /* Products */,
 				48A262FD2A6336D900C35D40 /* Frameworks */,
@@ -484,6 +476,7 @@
 				48A262E42A6334DE00C35D40 /* Sources */,
 				48A262E52A6334DE00C35D40 /* Frameworks */,
 				48A262E62A6334DE00C35D40 /* Resources */,
+				4848201F2A7086260043949C /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -541,12 +534,32 @@
 			buildActionMask = 2147483647;
 			files = (
 				48A262F32A6334DF00C35D40 /* Preview Assets.xcassets in Resources */,
-				489399DF2A70793C00C1D551 /* Settings.bundle in Resources */,
+				484820212A7087AC0043949C /* Settings.bundle in Resources */,
 				48A262F02A6334DF00C35D40 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		4848201F2A7086260043949C /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Type a script or drag a script file from your workspace to insert its pathBUILD_APP_DIR=${BUILT_PRODUCTS_DIR}/${PRODUCT_NAME}.app\nBUILD_APP_DIR=${BUILT_PRODUCTS_DIR}/${PRODUCT_NAME}.app\n\nif [ \"$CONFIGURATION\" == \"Release\" ]; then\nrm -Rf $BUILD_APP_DIR/Settings.bundle\nfi\n\n";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		48A262E42A6334DE00C35D40 /* Sources */ = {

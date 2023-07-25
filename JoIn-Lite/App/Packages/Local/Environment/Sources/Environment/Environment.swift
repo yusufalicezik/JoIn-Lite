@@ -9,15 +9,20 @@ public enum Environment: String {
 }
 
 public class YACSettingsBundleHelper {
-    static let shared = YACSettingsBundleHelper()
+    public static let shared = YACSettingsBundleHelper()
+    private(set) public var currentEnvironment: Environment = .prod
     private init() {}
     
-    public var currentEnvironment: Environment {
-        if let env = UserDefaults.standard.string(forKey: "currentEnvironment") {
-            return Environment(rawValue: env.lowercased()) ?? Environment.prod
+
+    public func setup(with environment: Environment? = nil) {
+        if let environment {
+            currentEnvironment = environment
+            return
         }
         
-        return Environment.prod
+        if let env = UserDefaults.standard.string(forKey: "currentEnvironment") {
+            currentEnvironment = Environment(rawValue: env.lowercased()) ?? Environment.prod
+        }
     }
 }
 
