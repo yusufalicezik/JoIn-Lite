@@ -43,13 +43,13 @@ struct SharePostView: View {
                 Divider()
                 HStack {
                     Button {
-                        self.viewModel.imagePickerPresented.toggle()
+                        self.viewModel.imagePickerPresented = (.photoLibrary, true)
                     } label: {
                         Image(systemName: "photo").foregroundStyle(.appPrimary)
                     }
                     
                     Button {
-                        
+                        self.viewModel.imagePickerPresented = (.camera, true)
                     } label: {
                         Image(systemName: "camera.fill").foregroundStyle(.appPrimary)
                     }
@@ -109,8 +109,8 @@ struct SharePostView: View {
                 MultilineTextField(text: $viewModel.text)
                 
             }
-        }.sheet(isPresented: $viewModel.imagePickerPresented, content: {
-            ImagePicker(image: $viewModel.image)
+        }.sheet(isPresented: $viewModel.imagePickerPresented.1, content: {
+            ImagePicker(image: $viewModel.image, sourceType: viewModel.imagePickerPresented.0)
         })
         .onAppear {
             IQKeyboardManager.shared.enable = false
@@ -121,7 +121,7 @@ struct SharePostView: View {
     }
 }
 
-#Preview {
-    SharePostView(viewModel: SharePostViewModel(navigationState: NavigationState(), interactor: SharePostInteractor()))
-}
+//#Preview {
+//    SharePostView(viewModel: SharePostViewModel(navigationState: NavigationState(), interactor: SharePostInteractor()))
+//}
 

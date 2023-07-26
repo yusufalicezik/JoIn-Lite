@@ -13,7 +13,7 @@ import Environment
 final class SharePostViewModel: ObservableObject {
     @Published var text: String = .empty
     @Published var image: UIImage? = nil
-    @Published var imagePickerPresented = false
+    @Published var imagePickerPresented = (UIImagePickerController.SourceType.photoLibrary, false)
     @Published var pageState: PageState = .default
     
     private let navigationState: NavigationState

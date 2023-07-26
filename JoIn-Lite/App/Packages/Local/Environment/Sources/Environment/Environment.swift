@@ -10,7 +10,7 @@ public enum Environment: String {
 
 public class YACSettingsBundleHelper {
     public static let shared = YACSettingsBundleHelper()
-    private(set) public var currentEnvironment: Environment = .prod
+    private(set) public var currentEnvironment: Environment = .dev
     private init() {}
     
 
