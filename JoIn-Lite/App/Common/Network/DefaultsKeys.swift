@@ -10,6 +10,7 @@ import Foundation
 struct DefaultsKeys {
     static let onboardingShown = "onboardingShown"
     static let userLoggedIn = "UserLoggedIn"
+    static let user = "User"
 }
 
 struct KeychainKeys {

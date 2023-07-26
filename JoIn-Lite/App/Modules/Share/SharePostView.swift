@@ -95,7 +95,7 @@ struct SharePostView: View {
                     let combined = pressGesture.sequenced(before: dragGesture)
                     
                     
-                    image.resizable().scaledToFill().frame(width: 90).frame(height: 90).clipShape(RoundedRectangle(cornerRadius: 45))
+                    Image(uiImage: image).resizable().scaledToFill().frame(width: 90).frame(height: 90).clipShape(RoundedRectangle(cornerRadius: 45))
                         .overlay(
                             RoundedRectangle(cornerRadius: 45).fill(offset.height < -75 ? .red.opacity(0.5) : .clear).frame(width: 90, height: 90)
                         )

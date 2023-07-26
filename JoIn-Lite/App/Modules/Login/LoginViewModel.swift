@@ -85,12 +85,13 @@ extension LoginViewModel {
             pageState = .default
             showErrorPopup(message: error.localizedDescription)
         case .success(let response):
-            CurrentUser.shared.user = response.user
-            defaults.save(data: true, key: DefaultsKeys.userLoggedIn)
-            keychainService.save(response.token, key: KeychainKeys.token)
-            
-            pageState = .default
-            navigateToHome()
+            if CurrentUser.shared.setUser(user: response.user) {
+                defaults.save(data: true, key: DefaultsKeys.userLoggedIn)
+                keychainService.save(response.token, key: KeychainKeys.token)
+                
+                pageState = .default
+                navigateToHome()
+            }
         }
     }
 }
