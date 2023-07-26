@@ -14,6 +14,10 @@
 		4810E22F2A63638D00C9E1A0 /* OnboardingScreenViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4810E22E2A63638D00C9E1A0 /* OnboardingScreenViewModel.swift */; };
 		4810E2312A636E6A00C9E1A0 /* AuthTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4810E2302A636E6A00C9E1A0 /* AuthTextField.swift */; };
 		484820212A7087AC0043949C /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 484820202A7087AC0043949C /* Settings.bundle */; };
+		484820242A711AC60043949C /* PostResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 484820232A711AC60043949C /* PostResponse.swift */; };
+		484820262A711B1F0043949C /* SharePostViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 484820252A711B1F0043949C /* SharePostViewModel.swift */; };
+		484820282A711C160043949C /* SharePostInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 484820272A711C160043949C /* SharePostInteractor.swift */; };
+		4848202A2A711E460043949C /* SharePostRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 484820292A711E460043949C /* SharePostRequest.swift */; };
 		486CFB652A6AF8510023413A /* RegisterStep1ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 486CFB642A6AF8510023413A /* RegisterStep1ViewModel.swift */; };
 		486CFB6A2A6B07D20023413A /* RegisterStep2ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 486CFB692A6B07D20023413A /* RegisterStep2ViewModel.swift */; };
 		486CFB6C2A6B0C8F0023413A /* RegisterStep3ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 486CFB6B2A6B0C8F0023413A /* RegisterStep3ViewModel.swift */; };
@@ -69,6 +73,10 @@
 		4810E22E2A63638D00C9E1A0 /* OnboardingScreenViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingScreenViewModel.swift; sourceTree = "<group>"; };
 		4810E2302A636E6A00C9E1A0 /* AuthTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthTextField.swift; sourceTree = "<group>"; };
 		484820202A7087AC0043949C /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
+		484820232A711AC60043949C /* PostResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostResponse.swift; sourceTree = "<group>"; };
+		484820252A711B1F0043949C /* SharePostViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharePostViewModel.swift; sourceTree = "<group>"; };
+		484820272A711C160043949C /* SharePostInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharePostInteractor.swift; sourceTree = "<group>"; };
+		484820292A711E460043949C /* SharePostRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharePostRequest.swift; sourceTree = "<group>"; };
 		486CFB642A6AF8510023413A /* RegisterStep1ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterStep1ViewModel.swift; sourceTree = "<group>"; };
 		486CFB692A6B07D20023413A /* RegisterStep2ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterStep2ViewModel.swift; sourceTree = "<group>"; };
 		486CFB6B2A6B0C8F0023413A /* RegisterStep3ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterStep3ViewModel.swift; sourceTree = "<group>"; };
@@ -169,6 +177,16 @@
 			path = Login;
 			sourceTree = "<group>";
 		};
+		484820222A711AA50043949C /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				484820232A711AC60043949C /* PostResponse.swift */,
+				484820272A711C160043949C /* SharePostInteractor.swift */,
+				484820292A711E460043949C /* SharePostRequest.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
 		486CFB632A6AF7F70023413A /* Network */ = {
 			isa = PBXGroup;
 			children = (
@@ -251,7 +269,9 @@
 		4883312A2A6845270070FC5D /* Share */ = {
 			isa = PBXGroup;
 			children = (
+				484820222A711AA50043949C /* Network */,
 				4883312B2A6845350070FC5D /* SharePostView.swift */,
+				484820252A711B1F0043949C /* SharePostViewModel.swift */,
 			);
 			path = Share;
 			sourceTree = "<group>";
@@ -592,12 +612,15 @@
 				48BB3B062A67341000F6E0A6 /* JoInTabbar.swift in Sources */,
 				486CFB6A2A6B07D20023413A /* RegisterStep2ViewModel.swift in Sources */,
 				486CFB752A6BE1E80023413A /* LoginResponseModel.swift in Sources */,
+				484820282A711C160043949C /* SharePostInteractor.swift in Sources */,
 				486CFB812A6BED260023413A /* CurrentUser.swift in Sources */,
 				48BB3B132A67467200F6E0A6 /* PostView.swift in Sources */,
 				48BB3AF52A64BD2100F6E0A6 /* StatusBarManager.swift in Sources */,
 				48BB3AFA2A64BFCE00F6E0A6 /* Route.swift in Sources */,
+				4848202A2A711E460043949C /* SharePostRequest.swift in Sources */,
 				48BB3B042A67328400F6E0A6 /* MainView.swift in Sources */,
 				48BB3B0F2A673F0F00F6E0A6 /* StoryItemView.swift in Sources */,
+				484820242A711AC60043949C /* PostResponse.swift in Sources */,
 				4883312E2A68532A0070FC5D /* MultilineTextField.swift in Sources */,
 				48BB3B1B2A6814F400F6E0A6 /* SearchView.swift in Sources */,
 				486CFB732A6BE1E00023413A /* LoginRequestModel.swift in Sources */,
@@ -605,6 +628,7 @@
 				48BB3B152A67538200F6E0A6 /* ListModifier.swift in Sources */,
 				4810E22D2A63632000C9E1A0 /* LoginView.swift in Sources */,
 				48BB3AFD2A64C19C00F6E0A6 /* WelcomeRouter.swift in Sources */,
+				484820262A711B1F0043949C /* SharePostViewModel.swift in Sources */,
 				4810E2292A63572E00C9E1A0 /* CustomIndicator.swift in Sources */,
 				48F4BD2B2A64362C00644316 /* BaseView.swift in Sources */,
 				488331292A68421C0070FC5D /* FloatingShareButton.swift in Sources */,

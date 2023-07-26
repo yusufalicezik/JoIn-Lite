@@ -72,8 +72,15 @@ enum AuthEndpointItem: Endpoint {
 protocol SafeAPIEndpoint: Endpoint {}
 
 extension SafeAPIEndpoint {
+    private var authToken: String {
+        KeychainService.shared.get(key: KeychainKeys.token) ?? .empty
+    }
+    
     var headers: [URLQueryItem] {
-        //TODO: add token
-        []
+        [
+            URLQueryItem(name: "Content-Type", value: "application/json"),
+            URLQueryItem(name: "Accept", value: "application/json"),
+            URLQueryItem(name: "Authorization", value: "Bearer \(authToken)")
+        ]
     }
 }

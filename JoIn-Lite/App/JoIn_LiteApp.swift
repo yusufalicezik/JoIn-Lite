@@ -27,7 +27,9 @@ struct JoIn_LiteApp: App {
                     case .welcome(let welcomeRoutes):
                         WelcomeRouter(routes: welcomeRoutes, navigationState: navigationState).configure().navigationBarBackButtonHidden(true)
                     case .share:
-                        SharePostView().navigationBarBackButtonHidden(true)
+                        let interactor = SharePostInteractor()
+                        let viewModel = SharePostViewModel(navigationState: navigationState, interactor: interactor)
+                        SharePostView(viewModel: viewModel).navigationBarBackButtonHidden(true)
                     case .editProfile:
                         EditProfileView().navigationBarBackButtonHidden(true)
                     }
@@ -46,7 +48,6 @@ class AppDelegate: NSObject, UIApplicationDelegate {
         IQKeyboardManager.shared.previousNextDisplayMode = .alwaysHide
         
         YACSettingsBundleHelper.shared.setup(with: .dev)
-        
         return true
     }
 }

@@ -9,17 +9,14 @@ import SwiftUI
 import IQKeyboardManagerSwift
 
 struct SharePostView: View {
-    @State var text: String = .empty
-    
-    @State private var pageState: PageState = .default
-    @Environment(NavigationState.self) private var navigationState
+    @StateObject var viewModel: SharePostViewModel
     
     var body: some View {
-        BaseView(pageState: $pageState) {
+        BaseView(pageState: $viewModel.pageState) {
             VStack {
                 HStack {
                     Button {
-                        navigationState.pop()
+                        viewModel.goBack()
                     } label: {
                         Text("Vazgeç").foregroundStyle(.opaqueBlack)
                     }.padding(.horizontal)
@@ -28,11 +25,7 @@ struct SharePostView: View {
                     
                     Button {
                         UIApplication.shared.sendAction(#selector(UIResponder.resignFirstResponder), to: nil, from: nil, for: nil)
-                        pageState = .loading
-                        DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
-                            self.pageState = .default
-                            navigationState.pop()
-                        }
+                        viewModel.sharePost()
                     } label: {
                         Text("Paylaş").padding(.horizontal).padding(.vertical, 5).background(RoundedRectangle(cornerRadius: 5).fill(.appPrimary)).foregroundStyle(.white)
                     }.padding(.horizontal)
@@ -55,7 +48,7 @@ struct SharePostView: View {
                     Spacer()
                 }.padding(.horizontal, 6)
                 Divider()
-                MultilineTextField(text: $text)
+                MultilineTextField(text: $viewModel.text)
             }
         }.onAppear {
             IQKeyboardManager.shared.enable = false
