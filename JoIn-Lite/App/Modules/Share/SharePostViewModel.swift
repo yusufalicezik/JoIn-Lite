@@ -9,6 +9,8 @@ import SwiftUI
 
 final class SharePostViewModel: ObservableObject {
     @Published var text: String = .empty
+    @Published var image: Image? = nil
+    @Published var imagePickerPresented = false
     @Published var pageState: PageState = .default
     
     private let navigationState: NavigationState
