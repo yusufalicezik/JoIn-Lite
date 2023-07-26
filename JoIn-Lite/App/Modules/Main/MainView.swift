@@ -11,34 +11,43 @@ import CoreUtils
 struct MainView: View {
     @State private var tabSelection = JOINTabItem.home.rawValue
     @Environment(NavigationState.self) private var navigationState
+    @State var pageState: PageState = .default
+    
+    private var homeViewModel: HomeViewModel {
+        let interactor = HomeInteractor()
+        let viewModel = HomeViewModel(navigationState: navigationState, interactor: interactor, pageState: $pageState)
+        return viewModel
+    }
 
     var body: some View {
-        ZStack(alignment: .bottomTrailing) {
-            TabView(selection: $tabSelection) {
-                HomeView().tag(JOINTabItem.home.rawValue)
-                    .addBottomPadding()
-                
-                FavoritesView().tag(JOINTabItem.favorites.rawValue)
-                    .addBottomPadding()
-                
-                SearchView().tag(JOINTabItem.search.rawValue).addBottomPadding()
-                
-                ProfileView().tag(JOINTabItem.profile.rawValue).addBottomPadding()
-            }
-            .overlay(alignment: .bottom) {
-                VStack(spacing: .zero) {
-                    Divider().foregroundColor(.red)
-                    JoInTabbar(tabSelection: $tabSelection)
-                    Color.white.frame(height: Screen.safeArea.bottom)
+        BaseView(pageState: $pageState) {
+            ZStack(alignment: .bottomTrailing) {
+                TabView(selection: $tabSelection) {
+                    HomeView(viewModel: homeViewModel).tag(JOINTabItem.home.rawValue)
+                        .addBottomPadding()
+                    
+                    FavoritesView().tag(JOINTabItem.favorites.rawValue)
+                        .addBottomPadding()
+                    
+                    SearchView().tag(JOINTabItem.search.rawValue).addBottomPadding()
+                    
+                    ProfileView().tag(JOINTabItem.profile.rawValue).addBottomPadding()
                 }
-            }
-            .ignoresSafeArea(.all)
-            
-            FloatingShareButton {
-                navigationState.push(to: .share)
-            }.ignoresSafeArea(.keyboard).padding(.bottom, tabbarHeight + 10)
-                .padding(.trailing, 10)
+                .overlay(alignment: .bottom) {
+                    VStack(spacing: .zero) {
+                        Divider().foregroundColor(.red)
+                        JoInTabbar(tabSelection: $tabSelection)
+                        Color.white.frame(height: Screen.safeArea.bottom)
+                    }
+                }
+                .ignoresSafeArea(.all)
                 
+                FloatingShareButton {
+                    navigationState.push(to: .share)
+                }.ignoresSafeArea(.keyboard).padding(.bottom, tabbarHeight + 10)
+                    .padding(.trailing, 10)
+                    
+            }
         }
     }
 }

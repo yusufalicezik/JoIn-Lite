@@ -7,12 +7,20 @@
 
 import SwiftUI
 import CoreUtils
+import Kingfisher
+import Environment
 
 struct PostView: View {
-    //let post: Post
-    var imageExist: Bool = true //Todo, will be removed
-    var isLiked: Bool = true //TODO, will be removed
+    let post: PostResponse
     var likeCount = 1
+    
+    var isLiked: Bool {
+        false
+    }
+    
+    var imageExist: Bool {
+        post.image == "true"
+    }
     
     var body: some View {
         VStack {
@@ -26,8 +34,8 @@ struct PostView: View {
                     }
                 
                 VStack(alignment: .leading, spacing: .zero) {
-                    Text("William").font(.footnote).fontWeight(.heavy)
-                    Text("New York").font(.caption).fontWeight(.regular)
+                    Text(post.user).font(.footnote).fontWeight(.heavy)
+                    Text("@\(post.username)").font(.caption).fontWeight(.regular)
                 }
                 
                 Spacer()
@@ -40,7 +48,7 @@ struct PostView: View {
             VStack(alignment: .leading) {
 
                 if imageExist {
-                    Image(.yac)
+                    KFImage(URL(string: "\(BASE_SERVICE_URL)/tweets/\(post.id)/image"))
                         .resizable()
                         .scaledToFill()
                         .frame(height: Screen.size.width * 0.6)
@@ -48,7 +56,7 @@ struct PostView: View {
                         .clipShape(RoundedRectangle(cornerRadius: 14))
                 }
             
-                Text("Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi").font(imageExist ? .footnote : .subheadline).fontWeight(.light).padding(.leading, 3)
+                Text(post.text).font(imageExist ? .footnote : .subheadline).fontWeight(.light).padding(.leading, 3)
                     .padding(.top, 5)
                 
                 

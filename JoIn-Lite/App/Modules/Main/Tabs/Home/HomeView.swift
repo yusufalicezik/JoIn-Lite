@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct HomeView: View {
+    @StateObject var viewModel: HomeViewModel
+    
     var body: some View {
         ZStack {
             Color.appSecondary.ignoresSafeArea(.all)
@@ -18,13 +20,18 @@ struct HomeView: View {
                     }
                 }.modifier(ListModifier())
                 
-                ForEach(0..<20, id: \.self) { index in
-                    PostView(imageExist: index % 3 == 0).listRowBackground(Color.clear)
+                ForEach(viewModel.posts) { post in
+                    PostView(post: post).listRowBackground(Color.clear)
                 }.modifier(ListModifier())
                     .padding(.top)
                     .padding(.horizontal, 16)
                 
             }.modifier(ListModifier())
+                .onAppear {
+                    viewModel.viewOnAppear()
+                }
+        }.onReceive(NotificationCenter.default.publisher(for: NSNotification.sharePost)) { _ in
+            viewModel.fetchPosts(shouldShowLoading: false)
         }
     }
 }

@@ -13,7 +13,7 @@ struct FavoritesView: View {
             Color.appSecondary.ignoresSafeArea(.all)
             List {
                 ForEach(0..<20, id: \.self) { index in
-                    PostView(imageExist: index % 5 == 0).listRowBackground(Color.clear)
+//                    PostView(post: ).listRowBackground(Color.clear)
                 }.modifier(ListModifier())
                     .padding(.top)
                     .padding(.horizontal, 16)

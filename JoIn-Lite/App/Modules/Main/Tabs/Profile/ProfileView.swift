@@ -19,7 +19,7 @@ struct ProfileView: View {
                     )
                     Divider()
                     ForEach(0..<20) { item in
-                        PostView(imageExist: item % 3 == 0, isLiked: item % 7 == 0, likeCount: item).padding(.top, 8).padding(.horizontal, 0)
+//                        PostView(imageExist: item % 3 == 0, isLiked: item % 7 == 0, likeCount: item).padding(.top, 8).padding(.horizontal, 0)
                         
                         Rectangle().fill(.appSecondary).frame(height: 8)
                     }

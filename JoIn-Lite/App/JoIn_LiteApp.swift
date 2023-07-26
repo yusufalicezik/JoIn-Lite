@@ -47,7 +47,7 @@ class AppDelegate: NSObject, UIApplicationDelegate {
         IQKeyboardManager.shared.shouldResignOnTouchOutside = true
         IQKeyboardManager.shared.previousNextDisplayMode = .alwaysHide
         
-        YACSettingsBundleHelper.shared.setup(with: .dev)
+        YACSettingsBundleHelper.shared.setup(with: .prod)
         return true
     }
 }

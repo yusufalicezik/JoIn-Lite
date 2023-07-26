@@ -37,6 +37,10 @@ final class SharePostViewModel: ObservableObject {
         
         pageState = .popup(.init(title: "Uyarı", subtitle: message, type: .default(action: action)))
     }
+    
+    private func sendSharePostNotification() {
+        NotificationCenter.default.post(name: NSNotification.sharePost, object: nil)
+    }
 }
 
 // MARK: - Network
@@ -44,7 +48,7 @@ extension SharePostViewModel {
     func sharePost() {
         guard let user = CurrentUser.shared.getUser(), !text.isEmpty else { return }
         pageState = .loading
-        let request = SharePostRequest(text: text, username: user.username, userId: user._id, user: user.name)
+        let request = SharePostRequest(text: text, username: user.username, userId: user._id, user: user.name + " " + user.surname)
         Task(priority: .userInitiated) {
             let result = await interactor.share(request: request)
             await handleSharePostResult(result: result)
@@ -60,9 +64,11 @@ extension SharePostViewModel {
             if let image {
                 let id = response._id
                 imageUploader.uploadImage(baseUrl: BASE_SERVICE_URL, "upload", fileName: "image1", image: image, urlPath: "/uploadTweetImage/\(id)") { [weak self] in
+                    self?.sendSharePostNotification()
                     self?.navigationState.pop()
                 }
             } else {
+                sendSharePostNotification()
                 navigationState.pop()
             }
         }
