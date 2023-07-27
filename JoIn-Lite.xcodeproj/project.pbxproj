@@ -22,6 +22,10 @@
 		484820322A7144150043949C /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 484820312A7144150043949C /* HomeViewModel.swift */; };
 		484820352A7144B70043949C /* HomeInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 484820342A7144B70043949C /* HomeInteractor.swift */; };
 		484820372A714BB30043949C /* Extension+NSNotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 484820362A714BB30043949C /* Extension+NSNotification.swift */; };
+		4848203A2A72C8480043949C /* ProfileInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 484820392A72C8480043949C /* ProfileInteractor.swift */; };
+		4848203C2A72C8E00043949C /* ProfileResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4848203B2A72C8E00043949C /* ProfileResponseModel.swift */; };
+		4848203E2A72C9C00043949C /* ProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4848203D2A72C9C00043949C /* ProfileViewModel.swift */; };
+		484820402A72CB540043949C /* ProfileHeaderViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4848203F2A72CB540043949C /* ProfileHeaderViewModel.swift */; };
 		486CFB652A6AF8510023413A /* RegisterStep1ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 486CFB642A6AF8510023413A /* RegisterStep1ViewModel.swift */; };
 		486CFB6A2A6B07D20023413A /* RegisterStep2ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 486CFB692A6B07D20023413A /* RegisterStep2ViewModel.swift */; };
 		486CFB6C2A6B0C8F0023413A /* RegisterStep3ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 486CFB6B2A6B0C8F0023413A /* RegisterStep3ViewModel.swift */; };
@@ -85,6 +89,10 @@
 		484820312A7144150043949C /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		484820342A7144B70043949C /* HomeInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeInteractor.swift; sourceTree = "<group>"; };
 		484820362A714BB30043949C /* Extension+NSNotification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+NSNotification.swift"; sourceTree = "<group>"; };
+		484820392A72C8480043949C /* ProfileInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileInteractor.swift; sourceTree = "<group>"; };
+		4848203B2A72C8E00043949C /* ProfileResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileResponseModel.swift; sourceTree = "<group>"; };
+		4848203D2A72C9C00043949C /* ProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewModel.swift; sourceTree = "<group>"; };
+		4848203F2A72CB540043949C /* ProfileHeaderViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileHeaderViewModel.swift; sourceTree = "<group>"; };
 		486CFB642A6AF8510023413A /* RegisterStep1ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterStep1ViewModel.swift; sourceTree = "<group>"; };
 		486CFB692A6B07D20023413A /* RegisterStep2ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterStep2ViewModel.swift; sourceTree = "<group>"; };
 		486CFB6B2A6B0C8F0023413A /* RegisterStep3ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterStep3ViewModel.swift; sourceTree = "<group>"; };
@@ -201,6 +209,15 @@
 			isa = PBXGroup;
 			children = (
 				484820342A7144B70043949C /* HomeInteractor.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		484820382A72C8360043949C /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				484820392A72C8480043949C /* ProfileInteractor.swift */,
+				4848203B2A72C8E00043949C /* ProfileResponseModel.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -481,9 +498,11 @@
 		48BB3B1F2A6825A700F6E0A6 /* Profile */ = {
 			isa = PBXGroup;
 			children = (
+				484820382A72C8360043949C /* Network */,
 				488331252A683C320070FC5D /* EditProfile */,
 				48BB3B222A68267A00F6E0A6 /* Views */,
 				48BB3B202A68264100F6E0A6 /* ProfileView.swift */,
+				4848203D2A72C9C00043949C /* ProfileViewModel.swift */,
 			);
 			path = Profile;
 			sourceTree = "<group>";
@@ -492,6 +511,7 @@
 			isa = PBXGroup;
 			children = (
 				48BB3B232A68268C00F6E0A6 /* ProfileHeaderView.swift */,
+				4848203F2A72CB540043949C /* ProfileHeaderViewModel.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -628,6 +648,7 @@
 				486CFB842A6C23910023413A /* SplashView.swift in Sources */,
 				48A262EC2A6334DE00C35D40 /* JoIn_LiteApp.swift in Sources */,
 				486CFB6C2A6B0C8F0023413A /* RegisterStep3ViewModel.swift in Sources */,
+				4848203C2A72C8E00043949C /* ProfileResponseModel.swift in Sources */,
 				48BB3B242A68268C00F6E0A6 /* ProfileHeaderView.swift in Sources */,
 				486CFB7D2A6BE50B0023413A /* LoginViewModel.swift in Sources */,
 				486CFB7F2A6BE92D0023413A /* DefaultsKeys.swift in Sources */,
@@ -638,12 +659,14 @@
 				486CFB812A6BED260023413A /* CurrentUser.swift in Sources */,
 				48BB3B132A67467200F6E0A6 /* PostView.swift in Sources */,
 				48BB3AF52A64BD2100F6E0A6 /* StatusBarManager.swift in Sources */,
+				484820402A72CB540043949C /* ProfileHeaderViewModel.swift in Sources */,
 				48BB3AFA2A64BFCE00F6E0A6 /* Route.swift in Sources */,
 				4848202A2A711E460043949C /* SharePostRequest.swift in Sources */,
 				48BB3B042A67328400F6E0A6 /* MainView.swift in Sources */,
 				48BB3B0F2A673F0F00F6E0A6 /* StoryItemView.swift in Sources */,
 				484820242A711AC60043949C /* PostResponse.swift in Sources */,
 				4883312E2A68532A0070FC5D /* MultilineTextField.swift in Sources */,
+				4848203E2A72C9C00043949C /* ProfileViewModel.swift in Sources */,
 				48BB3B1B2A6814F400F6E0A6 /* SearchView.swift in Sources */,
 				484820372A714BB30043949C /* Extension+NSNotification.swift in Sources */,
 				486CFB732A6BE1E00023413A /* LoginRequestModel.swift in Sources */,
@@ -653,6 +676,7 @@
 				48BB3AFD2A64C19C00F6E0A6 /* WelcomeRouter.swift in Sources */,
 				484820262A711B1F0043949C /* SharePostViewModel.swift in Sources */,
 				4810E2292A63572E00C9E1A0 /* CustomIndicator.swift in Sources */,
+				4848203A2A72C8480043949C /* ProfileInteractor.swift in Sources */,
 				48F4BD2B2A64362C00644316 /* BaseView.swift in Sources */,
 				488331292A68421C0070FC5D /* FloatingShareButton.swift in Sources */,
 				484820322A7144150043949C /* HomeViewModel.swift in Sources */,

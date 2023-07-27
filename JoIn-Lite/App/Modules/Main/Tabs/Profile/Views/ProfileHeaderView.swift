@@ -6,21 +6,18 @@
 //
 
 import SwiftUI
+import Kingfisher
 
 struct ProfileHeaderView: View {
-    @State var isFollowing = true
-    @State var isMe = true
-    
-    @State var imageExist = true
-    
-    @Environment(NavigationState.self) private var navigationState
+    var viewModel: ProfileHeaderViewModel
+    var headerActionTapped: ((ProfileHeaderViewModel.HeaderAction) -> Void)?
     
     var body: some View {
         ZStack(alignment: .leading) {
             Color.softBlue
             VStack(alignment: .leading) {
                 HStack {
-                    if imageExist {
+                    if viewModel.imageExist {
                         Image(.yac)
                             .resizable()
                             .scaledToFill()
@@ -29,46 +26,47 @@ struct ProfileHeaderView: View {
                                 Circle().stroke(.black, lineWidth: 0.2)
                             }
                     } else {
-                        ProfileImageCreator.create(name: "Deweon", surname: "Convay")
+                        ProfileImageCreator.create(name: viewModel.profileInfo.name, surname: viewModel.profileInfo.surname)
                     }
 
-                    
-                    
                     HStack {
                         VStack(alignment: .center, spacing: 3) {
-                            Text("Post").font(.caption).fontWeight(.medium).foregroundStyle(.gray)
-                            Text("29").font(.footnote).fontWeight(.heavy)
+                            Text("Post").font(.caption).fontWeight(.medium).foregroundStyle(.gray) //TODO
+                            Text("\(viewModel.postCount)").font(.footnote).fontWeight(.heavy)
                         }.frame(maxWidth: .infinity)
                         VStack(alignment: .center, spacing: 3) {
-                            Text("Takip Ediliyor").font(.caption).fontWeight(.medium).foregroundStyle(.gray).lineLimit(2).layoutPriority(1)
-                            Text("117").font(.footnote).fontWeight(.heavy)
+                            Text("Takip").font(.caption).fontWeight(.medium).foregroundStyle(.gray).lineLimit(2).layoutPriority(1)
+                            Text("\(viewModel.profileInfo.followings?.count ?? .zero)").font(.footnote).fontWeight(.heavy)
                         }.frame(maxWidth: .infinity)
                         VStack(alignment: .center, spacing: 3) {
                             Text("Takipçi").font(.caption).fontWeight(.medium).foregroundStyle(.gray)
-                            Text("8.3k").font(.footnote).fontWeight(.heavy)
+                            Text("\(viewModel.profileInfo.followers?.count ?? .zero)").font(.footnote).fontWeight(.heavy)
                         }.frame(maxWidth: .infinity)
                     }.padding(.trailing, 16)
                 }
                 
-                Text("Devon Conway").font(.headline).padding(.top, 10)
-                Text("@Klecon").foregroundStyle(.gray).font(.caption)
+                Text(viewModel.profileInfo.name + " " + viewModel.profileInfo.surname).font(.headline).padding(.top, 10)
+                Text("@\(viewModel.profileInfo.username)").foregroundStyle(.gray).font(.caption)
                 
-                Text("Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam").font(.caption2).foregroundStyle(.black.opacity(0.7)).padding(.vertical, 5)
+                if let bio = viewModel.profileInfo.bio {
+                    Text(bio).font(.caption2).foregroundStyle(.black.opacity(0.7)).padding(.vertical, 5)
+                }
                 
                 Button(action: {
                     //TODO: follow/unfollow, move these actions to vm
-                    if isMe {
-                        navigationState.push(to: .editProfile)
-                    } else {
-                        isFollowing.toggle()
-                    }
+//                    if isMe {
+//                        navigationState.push(to: .editProfile)
+//                    } else {
+//                        isFollowing.toggle()
+//                    }
+                    headerActionTapped?(viewModel.headerType)
                 }, label: {
                     
-                    if isMe {
+                    if viewModel.isMe {
                         Text("Profili Düzenle").font(.subheadline).fontWeight(.medium).frame(maxWidth: .infinity).padding(.vertical, 10).overlay {
                             RoundedRectangle(cornerRadius: 10).stroke(.appPrimary, lineWidth: 1)
                         }.foregroundStyle(.appPrimary)
-                    } else if isFollowing {
+                    } else if viewModel.isFollowing {
                         Text("Takip Ediliyor").font(.subheadline).fontWeight(.medium).frame(maxWidth: .infinity).padding(.vertical, 10).overlay {
                             RoundedRectangle(cornerRadius: 10).stroke(.appPrimary, lineWidth: 1)
                         }.foregroundStyle(.appPrimary)

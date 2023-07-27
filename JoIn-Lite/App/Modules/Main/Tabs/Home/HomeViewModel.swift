@@ -7,7 +7,6 @@
 
 import Foundation
 import SwiftUI
-import Observation
 
 final class HomeViewModel: ObservableObject {
     let navigationState: NavigationState

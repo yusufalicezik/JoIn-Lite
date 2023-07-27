@@ -18,6 +18,12 @@ struct MainView: View {
         let viewModel = HomeViewModel(navigationState: navigationState, interactor: interactor, pageState: $pageState)
         return viewModel
     }
+    
+    private var profileViewModel: ProfileViewModel {
+        let interactor = ProfileInteractor()
+        let viewModel = ProfileViewModel(navigationState: navigationState, interactor: interactor, pageState: $pageState, userId: (CurrentUser.shared.getUser()?._id) ?? .empty)
+        return viewModel
+    }
 
     var body: some View {
         BaseView(pageState: $pageState) {
@@ -31,7 +37,7 @@ struct MainView: View {
                     
                     SearchView().tag(JOINTabItem.search.rawValue).addBottomPadding()
                     
-                    ProfileView().tag(JOINTabItem.profile.rawValue).addBottomPadding()
+                    ProfileView(viewModel: profileViewModel).tag(JOINTabItem.profile.rawValue).addBottomPadding()
                 }
                 .overlay(alignment: .bottom) {
                     VStack(spacing: .zero) {
