@@ -28,7 +28,7 @@ final class ProfileViewModel: ObservableObject {
         self.navigationState = navigationState
         self.interactor = interactor
         self.pageState = pageState
-        self.userId = "64c14fd815852b21e85cdb23"
+        self.userId = userId
     }
     
     private func showErrorPopup(message: String) {

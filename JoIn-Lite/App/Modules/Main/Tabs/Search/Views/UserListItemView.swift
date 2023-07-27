@@ -9,23 +9,31 @@ import SwiftUI
 import CoreUtils
 
 struct UserListItemView: View {
-    var isFollowing = false
+    var user: UserResponse
     var didSelectItem: VoidHandler?
+    
+    var isFollowing: Bool {
+        ((CurrentUser.shared.currentUser?.followings) ?? []).contains(user._id)
+    }
     
     var body: some View {
         VStack {
             HStack {
-                Image(.yac)
-                    .resizable()
-                    .scaledToFill()
-                    .frame(width: 40, height: 40)
-                    .clipShape(Circle()).overlay {
-                        Circle().stroke(.black, lineWidth: 0.2)
-                    }
+                if user.avatarExist ?? false {
+                    Image(.yac)
+                        .resizable()
+                        .scaledToFill()
+                        .frame(width: 40, height: 40)
+                        .clipShape(Circle()).overlay {
+                            Circle().stroke(.black, lineWidth: 0.2)
+                        }
+                } else {
+                    ProfileImageCreator.create(name: user.name, surname: user.surname, width: 40, height: 40)
+                }
                 
                 VStack(alignment: .leading, spacing: .zero) {
-                    Text("William").font(.footnote).fontWeight(.bold).align(to: .left)
-                    Text("@Klecon").font(.caption2).fontWeight(.regular).foregroundStyle(.opaqueBlack).align(to: .left)
+                    Text(user.name + " " + user.surname).font(.footnote).fontWeight(.bold).align(to: .left)
+                    Text("@\(user.username)").font(.caption2).fontWeight(.regular).foregroundStyle(.opaqueBlack).align(to: .left)
                 }
                 
                 

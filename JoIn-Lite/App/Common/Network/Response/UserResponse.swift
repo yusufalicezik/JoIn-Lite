@@ -7,7 +7,11 @@
 
 import Foundation
 
-struct UserResponse: Codable {
+struct UserResponse: Codable, Identifiable {
+    var id: String {
+        _id
+    }
+    
     let _id: String
     let name: String
     let surname: String
@@ -15,4 +19,8 @@ struct UserResponse: Codable {
     let email: String
     let followers: [String]?
     let followings: [String]?
+    let avatar: String?
+    let avatarExist: Bool?
+    let bio: String?
+    let website: String?
 }

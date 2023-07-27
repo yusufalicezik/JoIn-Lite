@@ -26,6 +26,8 @@
 		4848203C2A72C8E00043949C /* ProfileResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4848203B2A72C8E00043949C /* ProfileResponseModel.swift */; };
 		4848203E2A72C9C00043949C /* ProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4848203D2A72C9C00043949C /* ProfileViewModel.swift */; };
 		484820402A72CB540043949C /* ProfileHeaderViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4848203F2A72CB540043949C /* ProfileHeaderViewModel.swift */; };
+		484820422A72EFED0043949C /* SearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 484820412A72EFED0043949C /* SearchViewModel.swift */; };
+		484820452A72F0050043949C /* SearchInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 484820442A72F0050043949C /* SearchInteractor.swift */; };
 		486CFB652A6AF8510023413A /* RegisterStep1ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 486CFB642A6AF8510023413A /* RegisterStep1ViewModel.swift */; };
 		486CFB6A2A6B07D20023413A /* RegisterStep2ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 486CFB692A6B07D20023413A /* RegisterStep2ViewModel.swift */; };
 		486CFB6C2A6B0C8F0023413A /* RegisterStep3ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 486CFB6B2A6B0C8F0023413A /* RegisterStep3ViewModel.swift */; };
@@ -93,6 +95,8 @@
 		4848203B2A72C8E00043949C /* ProfileResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileResponseModel.swift; sourceTree = "<group>"; };
 		4848203D2A72C9C00043949C /* ProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewModel.swift; sourceTree = "<group>"; };
 		4848203F2A72CB540043949C /* ProfileHeaderViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileHeaderViewModel.swift; sourceTree = "<group>"; };
+		484820412A72EFED0043949C /* SearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewModel.swift; sourceTree = "<group>"; };
+		484820442A72F0050043949C /* SearchInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchInteractor.swift; sourceTree = "<group>"; };
 		486CFB642A6AF8510023413A /* RegisterStep1ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterStep1ViewModel.swift; sourceTree = "<group>"; };
 		486CFB692A6B07D20023413A /* RegisterStep2ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterStep2ViewModel.swift; sourceTree = "<group>"; };
 		486CFB6B2A6B0C8F0023413A /* RegisterStep3ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterStep3ViewModel.swift; sourceTree = "<group>"; };
@@ -218,6 +222,14 @@
 			children = (
 				484820392A72C8480043949C /* ProfileInteractor.swift */,
 				4848203B2A72C8E00043949C /* ProfileResponseModel.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		484820432A72EFF10043949C /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				484820442A72F0050043949C /* SearchInteractor.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -481,8 +493,10 @@
 		48BB3B192A6814E800F6E0A6 /* Search */ = {
 			isa = PBXGroup;
 			children = (
+				484820432A72EFF10043949C /* Network */,
 				48BB3B1C2A6817DB00F6E0A6 /* Views */,
 				48BB3B1A2A6814F400F6E0A6 /* SearchView.swift */,
+				484820412A72EFED0043949C /* SearchViewModel.swift */,
 			);
 			path = Search;
 			sourceTree = "<group>";
@@ -680,10 +694,12 @@
 				48F4BD2B2A64362C00644316 /* BaseView.swift in Sources */,
 				488331292A68421C0070FC5D /* FloatingShareButton.swift in Sources */,
 				484820322A7144150043949C /* HomeViewModel.swift in Sources */,
+				484820452A72F0050043949C /* SearchInteractor.swift in Sources */,
 				48BB3B182A68149300F6E0A6 /* FavoritesView.swift in Sources */,
 				48BB3B112A67420500F6E0A6 /* StoryViews.swift in Sources */,
 				48F4BD2E2A644AD500644316 /* LoadingView.swift in Sources */,
 				48BB3B0C2A673E2000F6E0A6 /* HomeView.swift in Sources */,
+				484820422A72EFED0043949C /* SearchViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

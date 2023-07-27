@@ -24,6 +24,13 @@ struct MainView: View {
         let viewModel = ProfileViewModel(navigationState: navigationState, interactor: interactor, pageState: $pageState, userId: (CurrentUser.shared.getUser()?._id) ?? .empty)
         return viewModel
     }
+    
+    private var searchViewModel: SearchViewModel {
+        let interactor = SearchInteractor()
+        let viewModel = SearchViewModel(navigationState: navigationState, interactor: interactor, pageState: $pageState)
+        return viewModel
+    }
+
 
     var body: some View {
         BaseView(pageState: $pageState) {
@@ -35,7 +42,7 @@ struct MainView: View {
                     FavoritesView().tag(JOINTabItem.favorites.rawValue)
                         .addBottomPadding()
                     
-                    SearchView().tag(JOINTabItem.search.rawValue).addBottomPadding()
+                    SearchView(viewModel: searchViewModel).tag(JOINTabItem.search.rawValue).addBottomPadding()
                     
                     ProfileView(viewModel: profileViewModel).tag(JOINTabItem.profile.rawValue).addBottomPadding()
                 }
