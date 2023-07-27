@@ -11,10 +11,14 @@ import Foundation
 import Environment
 
 typealias ProfileInfoResult = Result<ProfileResponseModel, NetworkError>
+typealias UserInfoResult = Result<UserResponse, NetworkError>
+typealias FollowInfoResult = Result<EmptyResponseModel, NetworkError>
 
 protocol ProfileInteractorProtocol {
     func fetchProfile(userId: String) async -> ProfileInfoResult
     func fetchPosts(userId: String) async -> PostsResult
+    func fetchUser(userId: String) async -> UserInfoResult //In order to fetch current user again, so we can update following state
+    func followUser(userId: String, isFollow: Bool) async -> FollowInfoResult
 }
 
 struct ProfileInteractor: ProfileInteractorProtocol {
@@ -37,11 +41,28 @@ struct ProfileInteractor: ProfileInteractorProtocol {
             requestable: ProfileEndpointItem.posts(userId)
         )
     }
+    
+    func fetchUser(userId: String) async -> UserInfoResult {
+        return await networkManager.request(
+            responseType: UserResponse.self,
+            requestable: ProfileEndpointItem.user(userId)
+        )
+    }
+    
+    func followUser(userId: String, isFollow: Bool) async -> FollowInfoResult {
+        return await networkManager.request(
+            responseType: EmptyResponseModel.self,
+            requestable: isFollow ? ProfileEndpointItem.follow(userId) : ProfileEndpointItem.unfollow(userId)
+        )
+    }
 }
 
 enum ProfileEndpointItem: SafeAPIEndpoint {
     case profile(String)
     case posts(String)
+    case follow(String)
+    case unfollow(String)
+    case user(String)
 
     var baseURL: String {
         BASE_SERVICE_URL
@@ -53,6 +74,12 @@ enum ProfileEndpointItem: SafeAPIEndpoint {
             return "/users/\(userId)"
         case .posts(let userId):
             return "/tweets/\(userId)"
+        case .follow(let userId):
+            return "/users/\(userId)/follow"
+        case .unfollow(let userId):
+            return "/users/\(userId)/unfollow"
+        case .user(let userId):
+            return "/users/\(userId)"
         }
     }
     
@@ -61,6 +88,10 @@ enum ProfileEndpointItem: SafeAPIEndpoint {
         case .profile:
             return .get
         case .posts:
+            return .get
+        case .follow, .unfollow:
+            return .put
+        case .user:
             return .get
         }
     }

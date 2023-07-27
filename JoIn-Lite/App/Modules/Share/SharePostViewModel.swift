@@ -46,7 +46,7 @@ final class SharePostViewModel: ObservableObject {
 // MARK: - Network
 extension SharePostViewModel {
     func sharePost() {
-        guard let user = CurrentUser.shared.getUser(), !text.isEmpty else { return }
+        guard let user = CurrentUser.shared.currentUser, !text.isEmpty else { return }
         pageState = .loading
         let request = SharePostRequest(text: text, username: user.username, userId: user._id, user: user.name + " " + user.surname)
         Task(priority: .userInitiated) {

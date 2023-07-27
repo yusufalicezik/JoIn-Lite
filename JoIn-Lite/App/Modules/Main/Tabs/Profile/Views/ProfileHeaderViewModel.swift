@@ -22,21 +22,21 @@ final class ProfileHeaderViewModel: ObservableObject {
     }
     
     var isMe: Bool {
-        profileInfo._id == CurrentUser.shared.getUser()?._id
+        profileInfo._id == CurrentUser.shared.currentUser?._id
     }
     
     var isFollowing: Bool {
-        ((CurrentUser.shared.getUser()?.following) ?? []).contains(profileInfo._id)
+        ((CurrentUser.shared.currentUser?.followings) ?? []).contains(profileInfo._id)
     }
     
     var headerType: HeaderAction {
         if isMe {
             return .editProfile
         } else if isFollowing {
-            return .follow
+            return .unfollow
         }
         
-        return .unfollow
+        return .follow
     }
     
     enum HeaderAction {

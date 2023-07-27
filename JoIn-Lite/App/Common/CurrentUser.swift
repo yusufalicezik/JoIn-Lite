@@ -11,17 +11,21 @@ import CoreUtils
 struct CurrentUser {
     static var shared = CurrentUser()
     
-    func setUser(user: UserResponse) -> Bool {
+    var currentUser: UserResponse?
+    
+    mutating func setUser(user: UserResponse) -> Bool {
         if let data = try? JSONEncoder().encode(user) {
             Defaults.save(data: data, key: DefaultsKeys.user)
+            self.currentUser = user
             return true
         }
         
         return false
     }
     
-    func getUser() -> UserResponse? {
+    mutating func getUser() -> UserResponse? {
         if let data = Defaults.data(key: DefaultsKeys.user), let savedUser = try? JSONDecoder().decode(UserResponse.self, from: data) {
+            currentUser = savedUser
             return savedUser
         }
         

@@ -28,7 +28,7 @@ final class ProfileViewModel: ObservableObject {
         self.navigationState = navigationState
         self.interactor = interactor
         self.pageState = pageState
-        self.userId = userId
+        self.userId = "64c14fd815852b21e85cdb23"
     }
     
     private func showErrorPopup(message: String) {
@@ -56,6 +56,30 @@ final class ProfileViewModel: ObservableObject {
         initialDataFetched = false
         viewOnAppear()
     }
+    
+    func headerActionTapped(type: ProfileHeaderViewModel.HeaderAction) {
+        switch type {
+        case .editProfile:
+            navigationState.push(to: .editProfile)
+        case .follow:
+            updateFollowState(isFollow: true)
+        case .unfollow:
+            updateFollowState(isFollow: false)
+        }
+    }
+    
+    private func updateFollowState(isFollow: Bool) {
+        guard let currentUserId = CurrentUser.shared.getUser()?._id else { return }
+        pageState.wrappedValue = .loading
+
+        Task {
+            let followOrUnfollowResult = await interactor.followUser(userId: userId, isFollow: isFollow)
+            async let userInfoResult = interactor.fetchUser(userId: currentUserId)
+            async let profileInfoResult = interactor.fetchProfile(userId: userId)
+
+            await handleFollowResults((userInfoResult, followOrUnfollowResult, profileInfoResult))
+        }
+    }
 }
 
 // MARK: - Network
@@ -71,6 +95,20 @@ extension ProfileViewModel {
             self.posts = postsResponse
         default:
             showErrorPopup(message: "Profil Yüklenemedi")
+        }
+    }
+    
+    @MainActor
+    func handleFollowResults(_ results: (UserInfoResult, FollowInfoResult, ProfileInfoResult)) {
+        pageState.wrappedValue = .default
+        
+        switch results {
+        case (.success(let userInfoResult), .success, .success(let profileResponse)):
+            if CurrentUser.shared.setUser(user: userInfoResult) {
+                self.profileInfo = profileResponse
+            }
+        default:
+            showErrorPopup(message: "İşlem Tamamlanamadı")
         }
     }
 }

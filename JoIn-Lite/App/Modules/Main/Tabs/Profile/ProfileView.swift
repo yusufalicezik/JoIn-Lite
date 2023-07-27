@@ -18,7 +18,7 @@ struct ProfileView: View {
                 LazyVStack(spacing: .zero) {
                     if let headerViewModel = viewModel.headerViewModel {
                         ProfileHeaderView(viewModel: headerViewModel, headerActionTapped: { actionType in
-                            //TODO
+                            viewModel.headerActionTapped(type: actionType)
                         }).padding(.top, Screen.safeArea.top).padding(.horizontal, 16).padding(.bottom, 16).background(
                             Color.softBlue.ignoresSafeArea(.all)
                         )

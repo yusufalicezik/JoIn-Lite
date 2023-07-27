@@ -18,7 +18,7 @@ struct ProfileHeaderView: View {
             VStack(alignment: .leading) {
                 HStack {
                     if viewModel.imageExist {
-                        Image(.yac)
+                        Image(.yac) //TODO..
                             .resizable()
                             .scaledToFill()
                             .frame(width: 75, height: 75)
@@ -53,12 +53,6 @@ struct ProfileHeaderView: View {
                 }
                 
                 Button(action: {
-                    //TODO: follow/unfollow, move these actions to vm
-//                    if isMe {
-//                        navigationState.push(to: .editProfile)
-//                    } else {
-//                        isFollowing.toggle()
-//                    }
                     headerActionTapped?(viewModel.headerType)
                 }, label: {
                     
