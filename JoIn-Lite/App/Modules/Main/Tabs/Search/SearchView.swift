@@ -41,11 +41,15 @@ struct SearchView: View {
                     Spacer()
                 }
             } else {
-                List(viewModel.users) { user in
-                    UserListItemView(user: user, didSelectItem: {
-                        print("Go to user profile")
-                    }).listRowSeparator(.hidden).modifier(ListModifier()).padding(.top, 15)
-                }.modifier(ListModifier())
+                if viewModel.shouldReloadItems || !viewModel.shouldReloadItems { //force reload item - workaround
+                    List(viewModel.users) { user in
+                        UserListItemView(user: user, didSelectItem: {
+                            print("Go to user profile")
+                        }, didFollowTapped: { isFollow in
+                            viewModel.updateFollowState(isFollow: isFollow, userId: user._id)
+                        }).listRowSeparator(.hidden).modifier(ListModifier()).padding(.top, 15)
+                    }.modifier(ListModifier())
+                }
             }
             
         }.padding(.horizontal, 16)

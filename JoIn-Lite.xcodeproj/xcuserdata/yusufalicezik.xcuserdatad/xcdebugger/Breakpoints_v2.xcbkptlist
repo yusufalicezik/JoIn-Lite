@@ -1035,150 +1035,6 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "9498596F-C55C-462A-8EC8-BFCF6E74BB4A"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "../../Library/Developer/Xcode/DerivedData/JoIn-Lite-bojhtjvjqvozlxajdcxbkvkqjuhi/SourcePackages/checkouts/YACNetwork/Sources/YACNetwork/Core/NetworkManager.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "98"
-            endingLineNumber = "98"
-            landmarkName = "processRequest(using:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "DCFE85F4-0603-48F5-8D77-9C1FD6793832"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "../../Library/Developer/Xcode/DerivedData/JoIn-Lite-bojhtjvjqvozlxajdcxbkvkqjuhi/SourcePackages/checkouts/YACNetwork/Sources/YACNetwork/Core/NetworkManager.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "106"
-            endingLineNumber = "106"
-            landmarkName = "processRequest(using:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "38A1FC51-5E0A-4DD4-ADC7-A07836DC33C2"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "../../Library/Developer/Xcode/DerivedData/JoIn-Lite-bojhtjvjqvozlxajdcxbkvkqjuhi/SourcePackages/checkouts/YACNetwork/Sources/YACNetwork/Core/NetworkManager.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "108"
-            endingLineNumber = "108"
-            landmarkName = "processRequest(using:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "FFFC9D87-2862-4509-BE7E-99ABF9B905D5"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "../../Library/Developer/Xcode/DerivedData/JoIn-Lite-bojhtjvjqvozlxajdcxbkvkqjuhi/SourcePackages/checkouts/YACNetwork/Sources/YACNetwork/Core/NetworkManager.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "111"
-            endingLineNumber = "111"
-            landmarkName = "processRequest(using:)"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "FFFC9D87-2862-4509-BE7E-99ABF9B905D5 - b413d332c105e96e"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "(3) suspend resume partial function for YACNetwork.NetworkManager.processRequest&lt;&#x3c4;_0_0 where &#x3c4;_0_0: Swift.Decodable&gt;(using: Foundation.URLRequest) async -&gt; Swift.Result&lt;&#x3c4;_0_0, YACNetwork.NetworkError&gt;"
-                  moduleName = "JoIn-Lite"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/yusufalicezik/Library/Developer/Xcode/DerivedData/JoIn-Lite-bojhtjvjqvozlxajdcxbkvkqjuhi/SourcePackages/checkouts/YACNetwork/Sources/YACNetwork/Core/NetworkManager.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "111"
-                  endingLineNumber = "111"
-                  offsetFromSymbolStart = "1960">
-               </Location>
-               <Location
-                  uuid = "FFFC9D87-2862-4509-BE7E-99ABF9B905D5 - 8d70237381940a71"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "(4) suspend resume partial function for YACNetwork.NetworkManager.processRequest&lt;&#x3c4;_0_0 where &#x3c4;_0_0: Swift.Decodable&gt;(using: Foundation.URLRequest) async -&gt; Swift.Result&lt;&#x3c4;_0_0, YACNetwork.NetworkError&gt;"
-                  moduleName = "JoIn-Lite"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/yusufalicezik/Library/Developer/Xcode/DerivedData/JoIn-Lite-bojhtjvjqvozlxajdcxbkvkqjuhi/SourcePackages/checkouts/YACNetwork/Sources/YACNetwork/Core/NetworkManager.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "111"
-                  endingLineNumber = "111"
-                  offsetFromSymbolStart = "604">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "8A7DDFD4-747E-4B17-AA0B-8916671C731F"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "../../Library/Developer/Xcode/DerivedData/JoIn-Lite-bojhtjvjqvozlxajdcxbkvkqjuhi/SourcePackages/checkouts/YACNetwork/Sources/YACNetwork/Core/NetworkManager.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "114"
-            endingLineNumber = "114"
-            landmarkName = "processRequest(using:)"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "8A7DDFD4-747E-4B17-AA0B-8916671C731F - b413d332c105e983"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "(3) suspend resume partial function for YACNetwork.NetworkManager.processRequest&lt;&#x3c4;_0_0 where &#x3c4;_0_0: Swift.Decodable&gt;(using: Foundation.URLRequest) async -&gt; Swift.Result&lt;&#x3c4;_0_0, YACNetwork.NetworkError&gt;"
-                  moduleName = "JoIn-Lite"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/yusufalicezik/Library/Developer/Xcode/DerivedData/JoIn-Lite-bojhtjvjqvozlxajdcxbkvkqjuhi/SourcePackages/checkouts/YACNetwork/Sources/YACNetwork/Core/NetworkManager.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "114"
-                  endingLineNumber = "114"
-                  offsetFromSymbolStart = "2212">
-               </Location>
-               <Location
-                  uuid = "8A7DDFD4-747E-4B17-AA0B-8916671C731F - 8d70237381940a9c"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "(4) suspend resume partial function for YACNetwork.NetworkManager.processRequest&lt;&#x3c4;_0_0 where &#x3c4;_0_0: Swift.Decodable&gt;(using: Foundation.URLRequest) async -&gt; Swift.Result&lt;&#x3c4;_0_0, YACNetwork.NetworkError&gt;"
-                  moduleName = "JoIn-Lite"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/yusufalicezik/Library/Developer/Xcode/DerivedData/JoIn-Lite-bojhtjvjqvozlxajdcxbkvkqjuhi/SourcePackages/checkouts/YACNetwork/Sources/YACNetwork/Core/NetworkManager.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "114"
-                  endingLineNumber = "114"
-                  offsetFromSymbolStart = "856">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
             uuid = "08B98BC3-E327-465A-A2AB-3AC39232A649"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
@@ -1222,86 +1078,6 @@
                   offsetFromSymbolStart = "4900">
                </Location>
             </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "147B1459-727F-4414-B8EC-8ADCE8A98274"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "../../Library/Developer/Xcode/DerivedData/JoIn-Lite-bojhtjvjqvozlxajdcxbkvkqjuhi/SourcePackages/checkouts/YACNetwork/Sources/YACNetwork/Core/NetworkManager.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "100"
-            endingLineNumber = "100"
-            landmarkName = "processRequest(using:)"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "147B1459-727F-4414-B8EC-8ADCE8A98274 - b413d332c105e7d1"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "(3) suspend resume partial function for YACNetwork.NetworkManager.processRequest&lt;&#x3c4;_0_0 where &#x3c4;_0_0: Swift.Decodable&gt;(using: Foundation.URLRequest) async -&gt; Swift.Result&lt;&#x3c4;_0_0, YACNetwork.NetworkError&gt;"
-                  moduleName = "JoIn-Lite"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/yusufalicezik/Library/Developer/Xcode/DerivedData/JoIn-Lite-bojhtjvjqvozlxajdcxbkvkqjuhi/SourcePackages/checkouts/YACNetwork/Sources/YACNetwork/Core/NetworkManager.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "100"
-                  endingLineNumber = "100"
-                  offsetFromSymbolStart = "648">
-               </Location>
-               <Location
-                  uuid = "147B1459-727F-4414-B8EC-8ADCE8A98274 - b413d332c105e7d1"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "(3) suspend resume partial function for YACNetwork.NetworkManager.processRequest&lt;&#x3c4;_0_0 where &#x3c4;_0_0: Swift.Decodable&gt;(using: Foundation.URLRequest) async -&gt; Swift.Result&lt;&#x3c4;_0_0, YACNetwork.NetworkError&gt;"
-                  moduleName = "JoIn-Lite"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/yusufalicezik/Library/Developer/Xcode/DerivedData/JoIn-Lite-bojhtjvjqvozlxajdcxbkvkqjuhi/SourcePackages/checkouts/YACNetwork/Sources/YACNetwork/Core/NetworkManager.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "100"
-                  endingLineNumber = "100"
-                  offsetFromSymbolStart = "812">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "BBCBE21C-CC2F-4803-A1A1-9FCCB039E60F"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "../../Library/Developer/Xcode/DerivedData/JoIn-Lite-bojhtjvjqvozlxajdcxbkvkqjuhi/SourcePackages/checkouts/YACNetwork/Sources/YACNetwork/Core/NetworkManager.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "101"
-            endingLineNumber = "101"
-            landmarkName = "processRequest(using:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "EF57C99E-F83A-4FB3-BE84-31C58F6EFDB8"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "../../Library/Developer/Xcode/DerivedData/JoIn-Lite-bojhtjvjqvozlxajdcxbkvkqjuhi/SourcePackages/checkouts/YACNetwork/Sources/YACNetwork/Core/NetworkManager.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "104"
-            endingLineNumber = "104"
-            landmarkName = "processRequest(using:)"
-            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -1355,64 +1131,17 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "A3C93B67-F0A3-4505-8BD5-3FC8EBF7C576"
+            uuid = "84056FBD-B132-41A9-B4B9-75DE0FF7F8E8"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "../../Library/Developer/Xcode/DerivedData/JoIn-Lite-bojhtjvjqvozlxajdcxbkvkqjuhi/SourcePackages/checkouts/YACNetwork/Sources/YACNetwork/Core/NetworkManager.swift"
+            filePath = "JoIn-Lite/App/Modules/Main/Tabs/Search/Views/UserListItemView.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "79"
-            endingLineNumber = "79"
-            landmarkName = "processUrl(url:requestable:)"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "A3C93B67-F0A3-4505-8BD5-3FC8EBF7C576 - da75e73975f6cb87"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "(1) suspend resume partial function for YACNetwork.NetworkManager.processUrl&lt;&#x3c4;_0_0, &#x3c4;_0_1 where &#x3c4;_0_0: YACNetwork.Endpoint, &#x3c4;_0_1: Swift.Decodable&gt;(url: Foundation.URL, requestable: &#x3c4;_0_0) async -&gt; Swift.Result&lt;&#x3c4;_0_1, YACNetwork.NetworkError&gt;"
-                  moduleName = "JoIn-Lite"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/yusufalicezik/Library/Developer/Xcode/DerivedData/JoIn-Lite-bojhtjvjqvozlxajdcxbkvkqjuhi/SourcePackages/checkouts/YACNetwork/Sources/YACNetwork/Core/NetworkManager.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "79"
-                  endingLineNumber = "79"
-                  offsetFromSymbolStart = "796">
-               </Location>
-               <Location
-                  uuid = "A3C93B67-F0A3-4505-8BD5-3FC8EBF7C576 - 477679af81919373"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "(2) await resume partial function for YACNetwork.NetworkManager.processUrl&lt;&#x3c4;_0_0, &#x3c4;_0_1 where &#x3c4;_0_0: YACNetwork.Endpoint, &#x3c4;_0_1: Swift.Decodable&gt;(url: Foundation.URL, requestable: &#x3c4;_0_0) async -&gt; Swift.Result&lt;&#x3c4;_0_1, YACNetwork.NetworkError&gt;"
-                  moduleName = "JoIn-Lite"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/yusufalicezik/Library/Developer/Xcode/DerivedData/JoIn-Lite-bojhtjvjqvozlxajdcxbkvkqjuhi/SourcePackages/checkouts/YACNetwork/Sources/YACNetwork/Core/NetworkManager.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "79"
-                  endingLineNumber = "79"
-                  offsetFromSymbolStart = "48">
-               </Location>
-               <Location
-                  uuid = "A3C93B67-F0A3-4505-8BD5-3FC8EBF7C576 - b39f9c47be079789"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "(3) suspend resume partial function for YACNetwork.NetworkManager.processUrl&lt;&#x3c4;_0_0, &#x3c4;_0_1 where &#x3c4;_0_0: YACNetwork.Endpoint, &#x3c4;_0_1: Swift.Decodable&gt;(url: Foundation.URL, requestable: &#x3c4;_0_0) async -&gt; Swift.Result&lt;&#x3c4;_0_1, YACNetwork.NetworkError&gt;"
-                  moduleName = "JoIn-Lite"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/yusufalicezik/Library/Developer/Xcode/DerivedData/JoIn-Lite-bojhtjvjqvozlxajdcxbkvkqjuhi/SourcePackages/checkouts/YACNetwork/Sources/YACNetwork/Core/NetworkManager.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "79"
-                  endingLineNumber = "79"
-                  offsetFromSymbolStart = "84">
-               </Location>
-            </Locations>
+            startingLineNumber = "17"
+            endingLineNumber = "17"
+            landmarkName = "isFollowing"
+            landmarkType = "24">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

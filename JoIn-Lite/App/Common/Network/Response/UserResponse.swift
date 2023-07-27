@@ -18,7 +18,7 @@ struct UserResponse: Codable, Identifiable {
     let username: String
     let email: String
     let followers: [String]?
-    let followings: [String]?
+    var followings: [String]?
     let avatar: String?
     let avatarExist: Bool?
     let bio: String?

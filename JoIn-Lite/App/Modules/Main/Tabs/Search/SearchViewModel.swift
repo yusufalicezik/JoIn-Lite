@@ -16,6 +16,7 @@ final class SearchViewModel: ObservableObject {
     var pageState: Binding<PageState>
     @Published var users: [UserResponse] = []
     @Published var searchText: String = .empty
+    @Published var shouldReloadItems = false
     
     init(navigationState: NavigationState, interactor: SearchInteractorProtocol, pageState: Binding<PageState>) {
         self.navigationState = navigationState
@@ -46,17 +47,14 @@ final class SearchViewModel: ObservableObject {
         }
     }
     
-    private func updateFollowState(isFollow: Bool) {
-//        guard let currentUserId = CurrentUser.shared.getUser()?._id else { return }
-//        pageState.wrappedValue = .loading
-//
-//        Task {
-//            let followOrUnfollowResult = await interactor.followUser(userId: userId, isFollow: isFollow)
-//            async let userInfoResult = interactor.fetchUser(userId: currentUserId)
-//            async let profileInfoResult = interactor.fetchProfile(userId: userId)
-//
-//            await handleFollowResults((userInfoResult, followOrUnfollowResult, profileInfoResult))
-//        }
+    func updateFollowState(isFollow: Bool, userId: String) {
+        pageState.wrappedValue = .loading
+
+        Task {
+            let followOrUnfollowResult = await self.interactor.followUser(userId: userId, isFollow: isFollow)
+
+            await handleFollowResults(result: followOrUnfollowResult, isFollow: isFollow, userId: userId)
+        }
     }
     
     @MainActor
@@ -68,6 +66,24 @@ final class SearchViewModel: ObservableObject {
             showErrorPopup(message: "Arama başarısız oldu, \(error.localizedDescription)")
         case .success(let users):
             self.users = users
+        }
+    }
+    
+    @MainActor
+    func handleFollowResults(result: FollowInfoResult, isFollow: Bool, userId: String) {
+        pageState.wrappedValue = .default
+
+        switch result {
+        case .failure(let error):
+            showErrorPopup(message: "İşlem tamamlanamadı, \(error.localizedDescription)")
+        case .success:
+            if isFollow {
+                CurrentUser.shared.currentUser?.followings?.append(userId)
+            } else {
+                CurrentUser.shared.currentUser?.followings?.removeAll(where: { $0 == userId })
+
+            }
+            shouldReloadItems.toggle()
         }
     }
 }
