@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import CoreUtils
 
 struct RegisterStep1View: View {
     @StateObject var viewModel: RegisterStep1ViewModel
@@ -49,5 +50,5 @@ struct RegisterStep1View: View {
 }
 
 //#Preview {
-//    RegisterStep1View().environment(NavigationState())
+//    RegisterStep1View(viewModel: RegisterStep1ViewModel(navigationState: nil, emailValidator: EmailValidator.shared)).environment(NavigationState())
 //}

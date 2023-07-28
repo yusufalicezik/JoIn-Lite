@@ -32,6 +32,10 @@ struct JoIn_LiteApp: App {
                         SharePostView(viewModel: viewModel).navigationBarBackButtonHidden(true)
                     case .editProfile:
                         EditProfileView().navigationBarBackButtonHidden(true)
+                    case .profile(let userId):
+                        let interactor = ProfileInteractor()
+                        let viewModel = ProfileViewModel(navigationState: navigationState, interactor: interactor, userId: userId)
+                        ProfileView(viewModel: viewModel).navigationBarBackButtonHidden(true)
                     }
                 }.navigationBarBackButtonHidden(true)
             }.environment(navigationState)

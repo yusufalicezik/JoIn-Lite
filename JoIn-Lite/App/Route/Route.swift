@@ -13,6 +13,7 @@ enum Route: Hashable {
     case main
     case share
     case editProfile
+    case profile(String)
     
     enum WelcomeRoutes: Hashable {
         case onboarding

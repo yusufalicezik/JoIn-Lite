@@ -34,13 +34,13 @@ struct BaseView<Content: View>: View {
                         }).padding(.horizontal, 24)
                         Spacer(minLength: 10)
                         Divider()
-                    }.frame(maxWidth: .infinity, alignment: .leading).frame(height: 60).ignoresSafeArea(.all)
+                    }.frame(maxWidth: .infinity, alignment: .leading).frame(height: 25).ignoresSafeArea(.all)
                 }
                 content
             }
             switch pageState.wrappedValue {
             case .loading:
-                LoadingView()
+                LoadingView().ignoresSafeArea(.all).zIndex(5)
             case .popup(let uiModel):
                 PopupView(uiModel: uiModel)
             case .default:

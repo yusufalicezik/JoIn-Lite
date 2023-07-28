@@ -12,6 +12,21 @@ struct ProfileView: View {
     @StateObject var viewModel: ProfileViewModel
 
     var body: some View {
+        if !viewModel.isMe {
+            BaseView(pageState: $viewModel.pageState, backIconAction: {
+                viewModel.goBack()
+            }, content: {
+                profileViewContent().ignoresSafeArea(.all)
+            })
+        } else {
+            BaseView(pageState: $viewModel.pageState) {
+                profileViewContent()
+            }
+        }
+    }
+    
+    @ViewBuilder
+    private func profileViewContent() -> some View {
         ZStack {
             Color.softBlue.ignoresSafeArea(.all)
             ScrollView(.vertical, showsIndicators: false) {
@@ -35,7 +50,6 @@ struct ProfileView: View {
                 viewModel.refreshView()
             }
             .ignoresSafeArea(edges: [.top]).modifier(ListModifier())
-            
         }.onAppear {
             viewModel.viewOnAppear()
         }

@@ -30,7 +30,8 @@ public extension Environment {
     var baseUrl: String {
         switch self {
         case .prod:
-            return "https://join-6fcde0605741.herokuapp.com"
+//            return "https://join-6fcde0605741.herokuapp.com"
+            return "https://join-2-3a3dad94528c.herokuapp.com"
         case .dev:
             return "http://127.0.0.1:3000"
         }

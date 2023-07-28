@@ -47,6 +47,11 @@ final class SearchViewModel: ObservableObject {
         }
     }
     
+    func goToUserProfile(userId: String) {
+        guard userId != CurrentUser.shared.currentUser?._id else { return }
+        navigationState.push(to: .profile(userId))
+    }
+    
     func updateFollowState(isFollow: Bool, userId: String) {
         pageState.wrappedValue = .loading
 

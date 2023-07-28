@@ -12,7 +12,7 @@ final class ProfileViewModel: ObservableObject {
     let navigationState: NavigationState
     let interactor: ProfileInteractorProtocol
     
-    var pageState: Binding<PageState>
+    @Published var pageState: PageState = .default
     @Published var profileInfo: ProfileResponseModel? = nil
     @Published var posts: [PostResponse] = []
     
@@ -24,25 +24,28 @@ final class ProfileViewModel: ObservableObject {
         return ProfileHeaderViewModel(profileInfo: profileInfo, postCount: posts.count)
     }
     
-    init(navigationState: NavigationState, interactor: ProfileInteractorProtocol, pageState: Binding<PageState>, userId: String) {
+    var isMe: Bool {
+        userId == CurrentUser.shared.currentUser?.id
+    }
+    
+    init(navigationState: NavigationState, interactor: ProfileInteractorProtocol, userId: String) {
         self.navigationState = navigationState
         self.interactor = interactor
-        self.pageState = pageState
         self.userId = userId
     }
     
     private func showErrorPopup(message: String) {
         let action = PopupAction(name: "Tamam") { [weak self] in
-            self?.pageState.wrappedValue = .default
+            self?.pageState = .default
         }
         
-        pageState.wrappedValue = .popup(.init(title: "Uyarı", subtitle: message, type: .default(action: action)))
+        pageState = .popup(.init(title: "Uyarı", subtitle: message, type: .default(action: action)))
     }
     
     func viewOnAppear() {
         guard !initialDataFetched else { return }
         initialDataFetched = true
-        pageState.wrappedValue = .loading
+        pageState = .loading
         
         Task {
             async let profileResult = interactor.fetchProfile(userId: userId)
@@ -70,7 +73,7 @@ final class ProfileViewModel: ObservableObject {
     
     private func updateFollowState(isFollow: Bool) {
         guard let currentUserId = CurrentUser.shared.getUser()?._id else { return }
-        pageState.wrappedValue = .loading
+        pageState = .loading
 
         Task {
             let followOrUnfollowResult = await interactor.followUser(userId: userId, isFollow: isFollow)
@@ -80,6 +83,10 @@ final class ProfileViewModel: ObservableObject {
             await handleFollowResults((userInfoResult, followOrUnfollowResult, profileInfoResult))
         }
     }
+    
+    func goBack() {
+        navigationState.pop()
+    }
 }
 
 // MARK: - Network
@@ -87,7 +94,7 @@ extension ProfileViewModel {
     
     @MainActor
     func handleResults(_ results: (ProfileInfoResult, PostsResult)) {
-        pageState.wrappedValue = .default
+        pageState = .default
         
         switch results {
         case (.success(let profileResponse), .success(let postsResponse)):
@@ -100,7 +107,7 @@ extension ProfileViewModel {
     
     @MainActor
     func handleFollowResults(_ results: (UserInfoResult, FollowInfoResult, ProfileInfoResult)) {
-        pageState.wrappedValue = .default
+        pageState = .default
         
         switch results {
         case (.success(let userInfoResult), .success, .success(let profileResponse)):

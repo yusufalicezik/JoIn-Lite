@@ -44,7 +44,7 @@ struct SearchView: View {
                 if viewModel.shouldReloadItems || !viewModel.shouldReloadItems { //force reload item - workaround
                     List(viewModel.users) { user in
                         UserListItemView(user: user, didSelectItem: {
-                            print("Go to user profile")
+                            viewModel.goToUserProfile(userId: user.id)
                         }, didFollowTapped: { isFollow in
                             viewModel.updateFollowState(isFollow: isFollow, userId: user._id)
                         }).listRowSeparator(.hidden).modifier(ListModifier()).padding(.top, 15)

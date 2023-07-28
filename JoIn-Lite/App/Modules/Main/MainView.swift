@@ -21,7 +21,7 @@ struct MainView: View {
     
     private var profileViewModel: ProfileViewModel {
         let interactor = ProfileInteractor()
-        let viewModel = ProfileViewModel(navigationState: navigationState, interactor: interactor, pageState: $pageState, userId: (CurrentUser.shared.getUser()?._id) ?? .empty)
+        let viewModel = ProfileViewModel(navigationState: navigationState, interactor: interactor, userId: (CurrentUser.shared.getUser()?._id) ?? .empty)
         return viewModel
     }
     
