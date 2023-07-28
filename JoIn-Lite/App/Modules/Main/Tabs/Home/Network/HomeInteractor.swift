@@ -11,9 +11,11 @@ import Foundation
 import Environment
 
 typealias PostsResult = Result<[PostResponse], NetworkError>
+typealias LikeStateResult = Result<EmptyResponseModel, NetworkError>
 
 protocol HomeInteractorProtocol {
     func fetchPosts() async -> PostsResult
+    func likeOrUnlikePost(postId: String, isLiked: Bool) async -> LikeStateResult
 }
 
 struct HomeInteractor: HomeInteractorProtocol {
@@ -29,11 +31,19 @@ struct HomeInteractor: HomeInteractorProtocol {
             requestable: HomeEndpointItem.posts
         )
     }
+    
+    func likeOrUnlikePost(postId: String, isLiked: Bool) async -> LikeStateResult {
+        return await networkManager.request(
+            responseType: EmptyResponseModel.self,
+            requestable: isLiked ? HomeEndpointItem.like(postId) : HomeEndpointItem.unlike(postId)
+        )
+    }
 }
 
 enum HomeEndpointItem: SafeAPIEndpoint {
     case posts
-    
+    case like(String)
+    case unlike(String)
 
     var baseURL: String {
         BASE_SERVICE_URL
@@ -43,6 +53,10 @@ enum HomeEndpointItem: SafeAPIEndpoint {
         switch self {
         case .posts:
             return "/tweets"
+        case .like(let postId):
+            return "/tweets/\(postId)/like"
+        case .unlike(let postId):
+            return "/tweets/\(postId)/unlike"
         }
     }
     
@@ -50,6 +64,8 @@ enum HomeEndpointItem: SafeAPIEndpoint {
         switch self {
         case .posts:
             return .get
+        case .like, .unlike:
+            return .put
         }
     }
 }

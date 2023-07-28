@@ -30,6 +30,8 @@ struct HomeView: View {
                         } else {
                             modelContext.insert(post.toDataModel())
                         }
+                    }, didTapLikePost: { isLiked in
+                        viewModel.likeOrUnlikePost(post: post, isLiked: isLiked)
                     }).listRowBackground(Color.clear)
                 }.modifier(ListModifier())
                     .padding(.top)

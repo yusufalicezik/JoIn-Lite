@@ -59,4 +59,18 @@ extension HomeViewModel {
             self.posts = response
         }
     }
+    
+    func likeOrUnlikePost(post: PostResponse, isLiked: Bool) {
+        pageState.wrappedValue = .loading
+        
+        Task {
+            let result = await interactor.likeOrUnlikePost(postId: post.id, isLiked: isLiked)
+            await handleLikeOrUnlikeResult(result, post, isLiked)
+        }
+    }
+    
+    @MainActor
+    func handleLikeOrUnlikeResult(_ result: LikeStateResult, _ post: PostResponse, _ isLiked: Bool) {
+        pageState.wrappedValue = .default
+    }
 }

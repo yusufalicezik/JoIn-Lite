@@ -11,13 +11,17 @@ import Kingfisher
 import Environment
 
 struct PostView: View {
-    let post: PostResponse
+    @State var post: PostResponse
     var postSaved: Bool = false
     var shouldShowActions: Bool = false
-    var likeCount = 1
     
     var isLiked: Bool {
-        false
+        guard let currentUserId = CurrentUser.shared.currentUser?.id, let likes = post.likes else { return false }
+        return likes.contains(currentUserId)
+    }
+    
+    var likeCount: Int {
+        post.likes?.count ?? .zero
     }
     
     var imageExist: Bool {
@@ -25,6 +29,7 @@ struct PostView: View {
     }
     
     var didTapSavePost: VoidHandler?
+    var didTapLikePost: ((Bool) -> Void)?
     
     var body: some View {
         VStack {
@@ -72,21 +77,22 @@ struct PostView: View {
                                 .frame(width: 16, height: 16)
                                 .foregroundStyle(isLiked ? .white : .black)
                                 .onTapGesture {
-                                    print("like..")
+                                    didTapLikePost?(!isLiked)
+                                    likeOrUnlikePost(!isLiked)
                                 }
                             if isLiked {
                                 Text("\(likeCount)").font(.subheadline).foregroundStyle(.white)
                             }
                         }.padding(.vertical, isLiked ? 6 : .zero).padding(.horizontal, isLiked ? 10  : .zero).background(isLiked ? .appPrimary : .clear).clipShape(RoundedRectangle(cornerRadius: 5))
                         
-                        Image(systemName: "paperplane.fill")
-                            .resizable()
-                            .frame(width: 16, height: 16)
-                            .foregroundStyle(.black)
-                            .padding(5)
-                            .onTapGesture {
-                                print("share..")
-                            }
+                        
+                        ShareLink(item: post.text) {
+                            Image(systemName: "paperplane.fill")
+                                .resizable()
+                                .frame(width: 16, height: 16)
+                                .foregroundStyle(.black)
+                                .padding(5)
+                        }
                         
                         Spacer()
                         
@@ -109,8 +115,19 @@ struct PostView: View {
             
         }.padding().background(RoundedRectangle(cornerRadius: 16).fill(.softBlue))
     }
-}
+    
+    private func likeOrUnlikePost(_ isLiked: Bool) {
+        guard let currentUserId = CurrentUser.shared.currentUser?.id else { return }
+        
+        if isLiked {
+            self.post.likes?.append(currentUserId)
+        } else {
+            self.post.likes?.removeAll(where: { $0 == currentUserId })
+        }
+    }
 
-#Preview {
-    PostView(post: .init(_id: "123", text: "asdad", userId: "asdasd", username: "asdasd", user: "asdasd", image: nil))
 }
+//
+//#Preview {
+//    PostView(post: .init(_id: "123", text: "asdad", userId: "asdasd", username: "asdasd", user: "asdasd", image: nil, likes: nil))
+//}

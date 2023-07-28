@@ -37,6 +37,6 @@ extension PostResponse {
 
 extension PostDataModel {
     func toPostResponseModel() -> PostResponse {
-        .init(_id: id, text: text, userId: userId, username: username, user: user, image: image)
+        .init(_id: id, text: text, userId: userId, username: username, user: user, image: image, likes: nil)
     }
 }
