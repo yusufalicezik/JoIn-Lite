@@ -10,6 +10,7 @@ import IQKeyboardManagerSwift
 import Observation
 import CoreUtils
 import Environment
+import SwiftData
 
 @main
 struct JoIn_LiteApp: App {
@@ -39,7 +40,7 @@ struct JoIn_LiteApp: App {
                     }
                 }.navigationBarBackButtonHidden(true)
             }.environment(navigationState)
-        }
+        }.modelContainer(for: [PostDataModel.self])
     }
 }
 

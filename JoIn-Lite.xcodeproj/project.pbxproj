@@ -41,6 +41,7 @@
 		486CFB7F2A6BE92D0023413A /* DefaultsKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 486CFB7E2A6BE92D0023413A /* DefaultsKeys.swift */; };
 		486CFB812A6BED260023413A /* CurrentUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 486CFB802A6BED260023413A /* CurrentUser.swift */; };
 		486CFB842A6C23910023413A /* SplashView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 486CFB832A6C23910023413A /* SplashView.swift */; };
+		4882C5712A741B040049CA4F /* PostDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4882C5702A741B040049CA4F /* PostDataModel.swift */; };
 		488331242A6839920070FC5D /* ProfileImageCreator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 488331232A6839920070FC5D /* ProfileImageCreator.swift */; };
 		488331272A683C3D0070FC5D /* EditProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 488331262A683C3D0070FC5D /* EditProfileView.swift */; };
 		488331292A68421C0070FC5D /* FloatingShareButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 488331282A68421C0070FC5D /* FloatingShareButton.swift */; };
@@ -110,6 +111,7 @@
 		486CFB7E2A6BE92D0023413A /* DefaultsKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultsKeys.swift; sourceTree = "<group>"; };
 		486CFB802A6BED260023413A /* CurrentUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentUser.swift; sourceTree = "<group>"; };
 		486CFB832A6C23910023413A /* SplashView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashView.swift; sourceTree = "<group>"; };
+		4882C5702A741B040049CA4F /* PostDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostDataModel.swift; sourceTree = "<group>"; };
 		488331232A6839920070FC5D /* ProfileImageCreator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileImageCreator.swift; sourceTree = "<group>"; };
 		488331262A683C3D0070FC5D /* EditProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileView.swift; sourceTree = "<group>"; };
 		488331282A68421C0070FC5D /* FloatingShareButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FloatingShareButton.swift; sourceTree = "<group>"; };
@@ -305,6 +307,14 @@
 			path = Splash;
 			sourceTree = "<group>";
 		};
+		4882C56F2A7417CF0049CA4F /* Storage */ = {
+			isa = PBXGroup;
+			children = (
+				4882C5702A741B040049CA4F /* PostDataModel.swift */,
+			);
+			path = Storage;
+			sourceTree = "<group>";
+		};
 		488331252A683C320070FC5D /* EditProfile */ = {
 			isa = PBXGroup;
 			children = (
@@ -485,6 +495,7 @@
 		48BB3B162A68148700F6E0A6 /* Favorite */ = {
 			isa = PBXGroup;
 			children = (
+				4882C56F2A7417CF0049CA4F /* Storage */,
 				48BB3B172A68149300F6E0A6 /* FavoritesView.swift */,
 			);
 			path = Favorite;
@@ -685,6 +696,7 @@
 				484820372A714BB30043949C /* Extension+NSNotification.swift in Sources */,
 				486CFB732A6BE1E00023413A /* LoginRequestModel.swift in Sources */,
 				486CFB6E2A6B0F4E0023413A /* RegisterInteractor.swift in Sources */,
+				4882C5712A741B040049CA4F /* PostDataModel.swift in Sources */,
 				48BB3B152A67538200F6E0A6 /* ListModifier.swift in Sources */,
 				4810E22D2A63632000C9E1A0 /* LoginView.swift in Sources */,
 				48BB3AFD2A64C19C00F6E0A6 /* WelcomeRouter.swift in Sources */,

@@ -12,6 +12,8 @@ import Environment
 
 struct PostView: View {
     let post: PostResponse
+    var postSaved: Bool = false
+    var shouldShowActions: Bool = false
     var likeCount = 1
     
     var isLiked: Bool {
@@ -21,6 +23,8 @@ struct PostView: View {
     var imageExist: Bool {
         post.image == "true"
     }
+    
+    var didTapSavePost: VoidHandler?
     
     var body: some View {
         VStack {
@@ -60,52 +64,49 @@ struct PostView: View {
                     .padding(.top, 5)
                 
                 
-                HStack {
-                    HStack(alignment: .center, spacing: 5) {
+                if shouldShowActions {
+                    HStack {
+                        HStack(alignment: .center, spacing: 5) {
+                            Button(action: {
+                                //TODO: Like
+                            }, label: {
+                                Image(systemName: "heart.fill")
+                                    .resizable()
+                                    .frame(width: 16, height: 16)
+                                    .foregroundStyle(isLiked ? .white : .black)
+                                    
+                            })
+                            if isLiked {
+                                Text("\(likeCount)").font(.subheadline).foregroundStyle(.white)
+                            }
+                        }.padding(.vertical, isLiked ? 6 : .zero).padding(.horizontal, isLiked ? 10  : .zero).background(isLiked ? .appPrimary : .clear).clipShape(RoundedRectangle(cornerRadius: 5))
+                        
                         Button(action: {
                             //TODO: Like
                         }, label: {
-                            Image(systemName: "heart.fill")
+                            Image(systemName: "paperplane.fill")
                                 .resizable()
                                 .frame(width: 16, height: 16)
-                                .foregroundStyle(isLiked ? .white : .black)
-                                
+                                .foregroundStyle(.black)
+                                .padding(5)
                         })
-                        if isLiked {
-                            Text("\(likeCount)").font(.subheadline).foregroundStyle(.white)
-                        }
-                    }.padding(.vertical, isLiked ? 6 : .zero).padding(.horizontal, isLiked ? 10  : .zero).background(isLiked ? .appPrimary : .clear).clipShape(RoundedRectangle(cornerRadius: 5))
-                    
-                    Button(action: {
-                        //TODO: Like
-                    }, label: {
-                        Image(systemName: "paperplane.fill")
-                            .resizable()
-                            .frame(width: 16, height: 16)
-                            .foregroundStyle(.black)
-                            .padding(5)
-                    })
-                    
-                    Spacer()
-                    
-                    Button {
-                        //TODO: Save (add favs with using swift data)
-                    } label: {
-                        Button(action: {
-                            //TODO: Like
-                        }, label: {
-                            Image(systemName: "bookmark")
+                        
+                        Spacer()
+                        
+                        Button {
+                            didTapSavePost?()
+                        } label: {
+                            Image(systemName: postSaved ? "bookmark.fill" : "bookmark")
                                 .resizable()
                                 .scaledToFit()
                                 .frame(width: 16, height: 20)
                                 .foregroundStyle(.black)
                                 .padding(5)
-                        })
-                    }
+                        }
 
-                    
-                }.padding(.top)
-                
+                        
+                    }.padding(.top)
+                }
                 
                 Text("12 Saat Önce").align(to: .right).padding(.top, 8).font(.caption2).foregroundStyle(.opaqueBlack)
                 

@@ -788,6 +788,21 @@
                   endingLineNumber = "119"
                   offsetFromSymbolStart = "2312">
                </Location>
+               <Location
+                  uuid = "762377CB-856A-4E66-B847-8F65C06EA978 - 7e5ca7dbabf61855"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "JoIn_Lite.ProfileViewModel.handleFollowResults((Swift.Result&lt;JoIn_Lite.UserResponse, YACNetwork.NetworkError&gt;, Swift.Result&lt;CoreUtils.EmptyResponseModel, YACNetwork.NetworkError&gt;, Swift.Result&lt;JoIn_Lite.ProfileResponseModel, YACNetwork.NetworkError&gt;)) -&gt; ()"
+                  moduleName = "JoIn-Lite"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/yusufalicezik/Desktop/JoIn-Lite/JoIn-Lite/App/Modules/Main/Tabs/Profile/ProfileViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "118"
+                  endingLineNumber = "118"
+                  offsetFromSymbolStart = "2188">
+               </Location>
             </Locations>
          </BreakpointContent>
       </BreakpointProxy>
@@ -915,6 +930,21 @@
                   endingLineNumber = "116"
                   offsetFromSymbolStart = "1608">
                </Location>
+               <Location
+                  uuid = "94A96E01-0C1F-4F22-BD55-35B14A6E27D2 - 7e5ca7dbabf619b6"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "JoIn_Lite.ProfileViewModel.handleFollowResults((Swift.Result&lt;JoIn_Lite.UserResponse, YACNetwork.NetworkError&gt;, Swift.Result&lt;CoreUtils.EmptyResponseModel, YACNetwork.NetworkError&gt;, Swift.Result&lt;JoIn_Lite.ProfileResponseModel, YACNetwork.NetworkError&gt;)) -&gt; ()"
+                  moduleName = "JoIn-Lite"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/yusufalicezik/Desktop/JoIn-Lite/JoIn-Lite/App/Modules/Main/Tabs/Profile/ProfileViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "115"
+                  endingLineNumber = "115"
+                  offsetFromSymbolStart = "1484">
+               </Location>
             </Locations>
          </BreakpointContent>
       </BreakpointProxy>
@@ -1026,6 +1056,21 @@
                   endingLineNumber = "115"
                   offsetFromSymbolStart = "1524">
                </Location>
+               <Location
+                  uuid = "E72E5205-D397-4E70-B426-BA2F33240893 - 7e5ca7dbabf619e9"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "JoIn_Lite.ProfileViewModel.handleFollowResults((Swift.Result&lt;JoIn_Lite.UserResponse, YACNetwork.NetworkError&gt;, Swift.Result&lt;CoreUtils.EmptyResponseModel, YACNetwork.NetworkError&gt;, Swift.Result&lt;JoIn_Lite.ProfileResponseModel, YACNetwork.NetworkError&gt;)) -&gt; ()"
+                  moduleName = "JoIn-Lite"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/yusufalicezik/Desktop/JoIn-Lite/JoIn-Lite/App/Modules/Main/Tabs/Profile/ProfileViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "114"
+                  endingLineNumber = "114"
+                  offsetFromSymbolStart = "1400">
+               </Location>
             </Locations>
          </BreakpointContent>
       </BreakpointProxy>
@@ -1088,6 +1133,21 @@
                   startingLineNumber = "113"
                   endingLineNumber = "113"
                   offsetFromSymbolStart = "1036">
+               </Location>
+               <Location
+                  uuid = "FA15D3D3-B83D-4EEE-8219-A31C084A933A - 7e5ca7dbabf6192b"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "JoIn_Lite.ProfileViewModel.handleFollowResults((Swift.Result&lt;JoIn_Lite.UserResponse, YACNetwork.NetworkError&gt;, Swift.Result&lt;CoreUtils.EmptyResponseModel, YACNetwork.NetworkError&gt;, Swift.Result&lt;JoIn_Lite.ProfileResponseModel, YACNetwork.NetworkError&gt;)) -&gt; ()"
+                  moduleName = "JoIn-Lite"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/yusufalicezik/Desktop/JoIn-Lite/JoIn-Lite/App/Modules/Main/Tabs/Profile/ProfileViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "112"
+                  endingLineNumber = "112"
+                  offsetFromSymbolStart = "912">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -1207,15 +1267,15 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "17C0969F-5495-47BC-9F8B-9C087B13DC1D"
+            uuid = "5CE0ABA3-0B81-44B4-9445-9CFF37C48581"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "JoIn-Lite/App/JoIn_LiteApp.swift"
-            startingColumnNumber = "41"
-            endingColumnNumber = "57"
-            startingLineNumber = "37"
-            endingLineNumber = "37"
+            filePath = "JoIn-Lite/App/Modules/Main/Tabs/Home/HomeView.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "33"
+            endingLineNumber = "33"
             landmarkName = "body"
             landmarkType = "24">
          </BreakpointContent>
