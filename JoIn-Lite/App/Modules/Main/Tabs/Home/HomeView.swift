@@ -11,7 +11,7 @@ import SwiftData
 struct HomeView: View {
     @StateObject var viewModel: HomeViewModel
     @Environment(\.modelContext) private var modelContext
-    @Query(sort: \.createdAt, order: .reverse, animation: .smooth) var posts: [PostDataModel]
+    @Query(sort: \.createdAt, order: .reverse) var posts: [PostDataModel]
     
     var body: some View {
         ZStack {
@@ -51,6 +51,7 @@ struct HomeView: View {
     private func deletePost(post: PostResponse) {
         guard let deletedData = posts.first(where: { $0.id == post.id }) else { return }
         modelContext.delete(deletedData)
+        try? modelContext.save()
     }
 }
 

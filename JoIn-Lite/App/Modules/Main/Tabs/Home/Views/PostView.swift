@@ -13,7 +13,7 @@ import Environment
 struct PostView: View {
     let post: PostResponse
     var postSaved: Bool = false
-    var shouldShowActions: Bool = true
+    var shouldShowActions: Bool = false
     var likeCount = 1
     
     var isLiked: Bool {

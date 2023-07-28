@@ -9,7 +9,7 @@ import SwiftUI
 import SwiftData
 
 struct FavoritesView: View {
-    @Query(sort: \.createdAt, order: .reverse, animation: .smooth) var posts: [PostDataModel]
+    @Query(sort: \.createdAt, order: .reverse) var posts: [PostDataModel]
 
     var body: some View {
         ZStack {
