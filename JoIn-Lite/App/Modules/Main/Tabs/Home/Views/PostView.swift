@@ -13,7 +13,7 @@ import Environment
 struct PostView: View {
     let post: PostResponse
     var postSaved: Bool = false
-    var shouldShowActions: Bool = false
+    var shouldShowActions: Bool = true
     var likeCount = 1
     
     var isLiked: Bool {
@@ -67,42 +67,37 @@ struct PostView: View {
                 if shouldShowActions {
                     HStack {
                         HStack(alignment: .center, spacing: 5) {
-                            Button(action: {
-                                //TODO: Like
-                            }, label: {
-                                Image(systemName: "heart.fill")
-                                    .resizable()
-                                    .frame(width: 16, height: 16)
-                                    .foregroundStyle(isLiked ? .white : .black)
-                                    
-                            })
+                            Image(systemName: "heart.fill")
+                                .resizable()
+                                .frame(width: 16, height: 16)
+                                .foregroundStyle(isLiked ? .white : .black)
+                                .onTapGesture {
+                                    print("like..")
+                                }
                             if isLiked {
                                 Text("\(likeCount)").font(.subheadline).foregroundStyle(.white)
                             }
                         }.padding(.vertical, isLiked ? 6 : .zero).padding(.horizontal, isLiked ? 10  : .zero).background(isLiked ? .appPrimary : .clear).clipShape(RoundedRectangle(cornerRadius: 5))
                         
-                        Button(action: {
-                            //TODO: Like
-                        }, label: {
-                            Image(systemName: "paperplane.fill")
-                                .resizable()
-                                .frame(width: 16, height: 16)
-                                .foregroundStyle(.black)
-                                .padding(5)
-                        })
+                        Image(systemName: "paperplane.fill")
+                            .resizable()
+                            .frame(width: 16, height: 16)
+                            .foregroundStyle(.black)
+                            .padding(5)
+                            .onTapGesture {
+                                print("share..")
+                            }
                         
                         Spacer()
                         
-                        Button {
-                            didTapSavePost?()
-                        } label: {
-                            Image(systemName: postSaved ? "bookmark.fill" : "bookmark")
-                                .resizable()
-                                .scaledToFit()
-                                .frame(width: 16, height: 20)
-                                .foregroundStyle(.black)
-                                .padding(5)
-                        }
+                        Image(systemName: postSaved ? "bookmark.fill" : "bookmark")
+                            .resizable()
+                            .scaledToFit()
+                            .frame(width: 16, height: 20)
+                            .foregroundStyle(.black)
+                            .padding(5).onTapGesture {
+                                didTapSavePost?()
+                            }
 
                         
                     }.padding(.top)
@@ -116,6 +111,6 @@ struct PostView: View {
     }
 }
 
-//#Preview {
-//    PostView()
-//}
+#Preview {
+    PostView(post: .init(_id: "123", text: "asdad", userId: "asdasd", username: "asdasd", user: "asdasd", image: nil))
+}
