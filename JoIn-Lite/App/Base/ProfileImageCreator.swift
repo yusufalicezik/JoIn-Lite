@@ -16,7 +16,7 @@ final class ProfileImageCreator {
 
         return ZStack {
             Circle().stroke(.black, lineWidth: 0.2).frame(width: width, height: height).overlay(
-                Text(fullChars.uppercased()).font(.title).foregroundStyle(.gray)
+                Text(fullChars.uppercased()).font(.title2).foregroundStyle(.gray)
             )
         }
 

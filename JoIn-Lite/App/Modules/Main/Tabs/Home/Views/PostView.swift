@@ -34,7 +34,10 @@ struct PostView: View {
     var body: some View {
         VStack {
             HStack {
-                Image(.yac)
+                KFImage(URL(string: "\(BASE_SERVICE_URL)/tweets/\(post.userId)/avatar"))
+                    .placeholder({
+                        ProfileImageCreator.create(name: userNameAndSurname.name, surname: userNameAndSurname.surname, width: 37, height: 37)
+                    })
                     .resizable()
                     .scaledToFill()
                     .frame(width: 37, height: 37)
@@ -124,6 +127,11 @@ struct PostView: View {
         } else {
             self.post.likes?.removeAll(where: { $0 == currentUserId })
         }
+    }
+    
+    private var userNameAndSurname: (name: String, surname: String) {
+        let fullNameArr = post.user.components(separatedBy: " ")
+        return (name: fullNameArr.first ?? .empty, surname: fullNameArr.last ?? .empty)
     }
 
 }
